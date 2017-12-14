@@ -1,0 +1,30 @@
+{
+  "name": "journey",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "webpack": "cd client && webpack -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamiesime/journey.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamiesime/journey/issues"
+  },
+  "homepage": "https://github.com/jamiesime/journey#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongo": "^0.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.1",
+    "webpack": "^3.10.0"
+  }
+}
