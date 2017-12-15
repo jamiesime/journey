@@ -6,7 +6,9 @@ var app = function(){
 
   //Following displays map on load:
   var container = document.getElementById('map-container');
-  var mainMap = new MapWrapper(container, center, 10);
+  var coords = [56.4907, -4.2026];
+  debugger;
+  var mainMap = new MapWrapper(container, coords, 10);
 
 
   //Following displays instructions popup on load:
@@ -36,7 +38,6 @@ var makeRequest = function(url, callback){
 var requestLocations = function(){
   if(this.status!=200){return};
   var jsonString = this.responseText;
-  debugger;
   var journeyInfo = JSON.parse(jsonString);
 }
 
