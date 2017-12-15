@@ -1,4 +1,4 @@
-var InfoRender = require('./views/infoRender')
+var InfoView = require('./views/infoView')
 
 var app = function(){
   url = "http://localhost:3000/getlocations";
@@ -34,9 +34,9 @@ var makeRequest = function(url, callback){
 var requestLocations = function(){
   if(this.status!=200){return};
   var jsonString = this.responseText;
-  debugger;
+  // debugger;
   var journeyInfo = JSON.parse(jsonString);
-  var info = new InfoRender(journeyInfo)
+  var info = new InfoView(journeyInfo)
 }
 
 
