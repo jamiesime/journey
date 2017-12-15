@@ -7,7 +7,6 @@ var ChoicesRender = function(event){
 ChoicesRender.prototype = {
 
   render: function(event){
-    debugger;
     eventChoices = event.choices;
     eventChoices.forEach(function(choice){
       renderChoiceButton(choice);
@@ -20,6 +19,7 @@ var renderChoiceButton = function(choice){
   choiceText = choice;
   var choiceBtn = document.createElement("button");
   choiceBtn.innerText = choiceText;
+  choiceBtn.className = "choice";
   container.appendChild(choiceBtn);
 }
 
