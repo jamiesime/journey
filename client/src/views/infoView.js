@@ -13,15 +13,15 @@ InfoView.prototype = {
     section.innerHTML = " "
     var locationName = document.createElement('h2');
     var description = document.createElement('p');
-    var events = document.createElement('li');
+    // var events = document.createElement('li');
     locationName.innerText = location.placeName;
     description.innerText = location.description;
-    for(var event of location.event){
-      events.innerText = event.title;
-    }
+    // for(var events of location.events){
+    //   events.innerText = event.title;
+    // }
     section.appendChild(locationName);
     section.appendChild(description);
-    section.appendChild(events);
+    // section.appendChild(events);
 
 
   }

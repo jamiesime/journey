@@ -1,14 +1,15 @@
 //choices
 
-var ChoiceView = function(event){
+var ChoicesRender = function(event){
   this.render(event);
 }
 
-ChoiceView.prototype = {
+ChoicesRender.prototype = {
 
   render: function(event){
+    debugger;
     eventChoices = event.choices;
-    forEach(function(choice){
+    eventChoices.forEach(function(choice){
       renderChoiceButton(choice);
     });
   }
@@ -19,4 +20,7 @@ var renderChoiceButton = function(choice){
   choiceText = choice;
   var choiceBtn = document.createElement("button");
   choiceBtn.innerText = choiceText;
+  container.appendChild(choiceBtn);
 }
+
+module.exports = ChoicesRender;

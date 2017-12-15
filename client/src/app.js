@@ -1,7 +1,9 @@
 var InfoView = require('./views/infoView')
-currentPosition = 0
+var ChoicesRender = require('./views/choicesRender')
 var map = require("./mapWrapper");
 
+currentPosition = 0;
+currentEvent = 0;
 
 var app = function(){
   url = "http://localhost:3000/getlocations";
@@ -55,11 +57,11 @@ var requestLocations = function(){
 
 var determineLocation = function(locations){
   var location = new InfoView(locations[currentPosition])
-  detetermineEvent(location);
+  renderEventChoices(locations[currentPosition].events[currentEvent]);
 }
 
-var detetermineEvent = function(events){
-
+var renderEventChoices = function(event){
+  var thisEvent = new ChoicesRender(event);
 }
 
 var changePosition = function(){
