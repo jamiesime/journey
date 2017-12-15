@@ -15,6 +15,7 @@ ChoiceView.prototype = {
 }
 
 var renderChoiceButton = function(choice){
+  container = document.getElementById("choice-buttons-container");
   choiceText = choice;
   var choiceBtn = document.createElement("button");
   choiceBtn.innerText = choiceText;
