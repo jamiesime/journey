@@ -6,7 +6,7 @@ infoView.prototype = {
   render: function(locations){
     locations.forEach(function(location){
       //get current location
-      var section = document.getElementById('info-window');
+      var section = document.getElementById('sidebar-info');
       var locationName = document.createElement('h2');
       var description = document.createElement('p');
       var events = document.createElement('li');
