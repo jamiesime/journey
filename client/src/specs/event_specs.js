@@ -22,11 +22,15 @@ describe( "Event", function(){
     });
 
     it("should have a date", function(){
-
       assert.strictEqual(testEvent.date, -4167676800)
     });
 
     it("should have a choices array", function(){
       assert.deepStrictEqual(testEvent.choices, ["Stay and Fight", "Flee to America with your Family"])
+    });
+
+    it("should be able to return a month name by number", function(){
+      var monthName = testEvent.getMonth(1)
+      assert.strictEqual(monthName, "January")
     });
   });
