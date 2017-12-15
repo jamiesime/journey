@@ -18,3 +18,7 @@ MapWrapper.prototype.removeMarker = function () {
         lastMarker.setMap(null);
     };
 };
+
+MapWrapper.prototype.recenterMap = function (newCoords) {
+    this.googleMap.setCenter(newCoords);
+};
