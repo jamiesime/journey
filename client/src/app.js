@@ -16,6 +16,8 @@ var app = function(){
   var span = document.getElementById("modal-close");
   modal.style.display = "block";
   span.onclick = function() {
+    // this.style.marginRight = "2px";
+    // this.style.marginBottom = "4px";
     modal.style.display = "none";
   }
   window.onclick = function(event) {
@@ -29,6 +31,7 @@ var app = function(){
     changePosition();
     makeRequest(url, requestLocations)
   })
+
 }
 
 var makeRequest = function(url, callback){
