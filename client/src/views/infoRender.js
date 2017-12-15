@@ -19,3 +19,5 @@ infoView.prototype = {
     })
   }
 }
+
+module.exports = infoView;

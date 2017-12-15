@@ -1,3 +1,4 @@
+var InfoRender = require('./views/infoRender')
 
 var app = function(){
   url = "http://localhost:3000/getlocations";
@@ -35,6 +36,7 @@ var requestLocations = function(){
   var jsonString = this.responseText;
   debugger;
   var journeyInfo = JSON.parse(jsonString);
+  var info = new InfoRender(journeyInfo)
 }
 
 
