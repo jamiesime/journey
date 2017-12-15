@@ -33,4 +33,13 @@ describe( "Event", function(){
       var monthName = testEvent.getMonth(1)
       assert.strictEqual(monthName, "January")
     });
+
+    it("should be able to return a month name by number", function(){
+      var monthName = testEvent.getMonth(1)
+      assert.strictEqual(monthName, "January")
+    });
+
+    it("should be able to turn a unix time object into a date string" function(){
+      
+    })
   });
