@@ -1,8 +1,7 @@
 use journey;
 db.dropDatabase();
 
-db.locations.insert
-({
+db.locations.insert({
   placeName: "Halifax",
   Latlng: [ 100.00, 100.00],
   description: "Just a town.",

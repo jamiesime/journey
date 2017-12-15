@@ -22,7 +22,7 @@ MongoClient.connect("mongodb://localhost:27017/journey", function(err, client){
   });
 });
 
-app.get("/", function(req, res){
+app.get("/journey", function(req, res){
   db.collection("journey").find().toArray(function(err, results){
     if (err){
       return console.log(err);

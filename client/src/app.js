@@ -1,7 +1,6 @@
-var seeds = require("./seeds");
 
 var app = function(){
-  url = "http://localhost:3000/";
+  url = "http://localhost:3000/journey";
   makeRequest(url, requestJourney);
 }
 
@@ -15,6 +14,7 @@ var makeRequest = function(url, callback){
 var requestJourney = function(){
   if(this.status!=200){return};
   var jsonString = this.responseText;
+  debugger;
   var journeyInfo = JSON.parse(jsonString);
 }
 
