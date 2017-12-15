@@ -39,7 +39,12 @@ describe( "Event", function(){
       assert.strictEqual(monthName, "January")
     });
 
-    it("should be able to turn a unix time object into a date string" function(){
-      
+    it("should be able to turn a unix time object into a date string", function(){
+      date = new Date(testEvent.date * 1000);
+      var day = date.getDay();
+      var month = testEvent.getMonth(date.getMonth()+1);
+      var year = date.getFullYear();
+      var fullYearString = day + " " + month + ", " + year
+      assert.strictEqual(fullYearString, "4 December, 1837")
     })
   });
