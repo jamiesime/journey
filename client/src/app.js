@@ -1,5 +1,7 @@
 var InfoView = require('./views/infoView')
 
+currentPosition = 0
+
 var app = function(){
   url = "http://localhost:3000/getlocations";
   makeRequest(url, requestLocations);
@@ -36,7 +38,11 @@ var requestLocations = function(){
   var jsonString = this.responseText;
   // debugger;
   var journeyInfo = JSON.parse(jsonString);
-  var info = new InfoView(journeyInfo)
+  determineLocation(journeyInfo)
+}
+
+var determineLocation = function(locations){
+  var info = new InfoView(locations[currentPosition])
 }
 
 

@@ -14,3 +14,17 @@ db.locations.insert({
     }
   ]
 });
+
+db.locations.insert({
+  placeName: "Ottowa",
+  Latlng: [ 100.00, 100.00],
+  description: "Just another town.",
+  event:[
+    {
+      date: "12-02-1837",
+      text: "something else weird happened",
+      title: "whoah man",
+      choices: ["move to america", "embrace canada"]
+    }
+  ]
+});
