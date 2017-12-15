@@ -22,3 +22,9 @@ MapWrapper.prototype.removeMarker = function () {
 MapWrapper.prototype.recenterMap = function (newCoords) {
     this.googleMap.setCenter(newCoords);
 };
+
+MapWrapper.prototype.goToGeoLocation = function (map) {
+    navigator.geolocation.getCurrentPosition(funciton(position){
+        map.googleMap.setCenter({lat: position.coords.latitude, lng: position.coords.longitude});
+    });
+};
