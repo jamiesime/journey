@@ -10,7 +10,7 @@ var app = function(){
   //Following displays map on load:
   var container = document.getElementById('map-container');
   var coords = [56.4907, -4.2026];
-  debugger;
+  // debugger;
   var mainMap = new MapWrapper(container, coords, 10);
 
 
