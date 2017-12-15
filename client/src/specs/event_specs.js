@@ -7,7 +7,7 @@ describe( "Event", function(){
 
   beforeEach(function(){
 
-    testEvent = new Event()
+    testEvent = new Event("Battle of Montgomery's Tavern");
   });
 
   it("should have a name", function(){
