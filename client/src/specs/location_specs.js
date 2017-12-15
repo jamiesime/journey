@@ -1,16 +1,16 @@
 var assert = require("assert")
-var event = require("../location.js")
+var Location = require("../location.js")
 
 describe( "Location", function(){
 
   var testLocation
 
   beforeEach(function(){
-    testLocation = new Location();
+    testLocation = new Location("Nova Scotia");
   });
 
   it("should have a name", function(){
-    assert.strictEqual(testLocation.name, "")
+    assert.strictEqual(testLocation.name, "Nova Scotia")
   });
   it("should have a lat");
   it("should have a lng");

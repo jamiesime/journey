@@ -4,3 +4,7 @@ var Location = function(name, latlng, description, events){
   this.description = description,
   this.events = events
 }
+
+
+
+module.exports = Location;
