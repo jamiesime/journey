@@ -9,7 +9,9 @@ describe( "Location", function(){
     testLocation = new Location();
   });
 
-  it("should have a name");
+  it("should have a name", function(){
+    assert.strictEqual(testLocation.name, "")
+  });
   it("should have a lat");
   it("should have a lng");
   it("should have a description")
