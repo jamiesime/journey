@@ -1,5 +1,7 @@
 MapWrapper = function(container, coords, zoom){
-  this.googleMap = new google.maps.Map(container, center: coords, zoom: zoom
+  this.googleMap = new google.maps.Map(container, {
+    center: {lat: coords[0], lng: coords[1]},
+    zoom: zoom
   });
   this.markers = [];
 };
@@ -10,7 +12,8 @@ MapWrapper.prototype.addMarker = function (coords, content) {
   });
   var infowindow = new google.maps.InfoWindow({
     content: content
-};
+  });
+}
 
 
 MapWrapper.prototype.removeMarker = function () {
