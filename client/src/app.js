@@ -1,5 +1,6 @@
-var InfoView = require('./views/infoView')
-var ChoicesRender = require('./views/choicesRender')
+var InfoView = require('./views/infoView');
+var ChoicesRender = require('./views/choicesRender');
+var Interactions = require("./interactions");
 var map = require("./mapWrapper");
 
 currentPosition = 0;

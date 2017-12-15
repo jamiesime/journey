@@ -1,3 +1,4 @@
+var Interactions = require("../interactions");
 //choices
 
 var ChoicesRender = function(event){
@@ -22,5 +23,6 @@ var renderChoiceButton = function(choice){
   choiceBtn.className = "choice";
   container.appendChild(choiceBtn);
 }
+
 
 module.exports = ChoicesRender;
