@@ -25,9 +25,5 @@ describe( "Event", function(){
     });
     it("should have a choices array", function(){
       assert.deepStrictEqual(testEvent.choices, ["Stay and Fight", "Flee to America with your Family"])
-    })
-
-    // function(){
-    //    assert.strictEqual(recordStore.name, "Big Al's Records");
-    //  });
+    });
   });
