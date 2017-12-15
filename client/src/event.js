@@ -46,4 +46,13 @@ Event.prototype.getMonth = function(monthNumber){
   }
 }
 
+Event.prototype.getDateAsString = function(date){
+  date = new Date(date * 1000);
+  var day = date.getDay();
+  var month = this.getMonth(date.getMonth()+1);
+  var year = date.getFullYear();
+  var fullYearString = day + " " + month + ", " + year
+  return fullYearString;
+}
+
 module.exports = Event;
