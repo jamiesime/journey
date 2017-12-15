@@ -1,4 +1,5 @@
 var Interactions = require("../interactions");
+debugger;
 //choices
 
 var ChoicesRender = function(event){
@@ -21,7 +22,14 @@ var renderChoiceButton = function(choice){
   var choiceBtn = document.createElement("button");
   choiceBtn.innerText = choiceText;
   choiceBtn.className = "choice";
+  addListener(choiceBtn);
   container.appendChild(choiceBtn);
+}
+
+var addListener = function(choiceBtn){
+  choiceBtn.addEventListener("click", function(){
+    Interactions.getSelectedChoice(choiceBtn.innerText);
+  });
 }
 
 
