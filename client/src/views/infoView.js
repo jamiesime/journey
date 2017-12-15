@@ -9,12 +9,11 @@ var InfoView = function(location){
 InfoView.prototype = {
 
   render: function(location){
-  
     var section = document.getElementById('sidebar-info');
+    section.innerHTML = " "
     var locationName = document.createElement('h2');
     var description = document.createElement('p');
     var events = document.createElement('li');
-
     locationName.innerText = location.placeName;
     description.innerText = location.description;
     for(var event of location.event){
