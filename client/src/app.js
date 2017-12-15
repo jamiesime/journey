@@ -1,8 +1,8 @@
 
 
 var app = function(){
-
-
+  url = "http://localhost:3000/";
+  makeRequest(url, requestJourney);
 }
 
 var makeRequest = function(url, callback){
@@ -15,9 +15,8 @@ var makeRequest = function(url, callback){
 var requestJourney = function(){
   if(this.status!=200){return};
   var jsonString = this.responseText;
-  var countryList = JSON.parse(jsonString);
+  var journeyInfo = JSON.parse(jsonString);
 }
-
 
 
 window.addEventListener("load", app);
