@@ -4,10 +4,15 @@ body {
 
 #header {
   display: flex;
+  justify-content: center;
   height: 25vh;
-  background-color: #7F674B;
-  box-shadow: inset 0 0 10px #000000;
+  background-color: #91886E;
+  /*background-color: #4A4436;*/
+  box-shadow: inset 0 0 10px #4A4436;
+}
 
+#logo {
+  height: 90px;
 }
 
 #main-body {
