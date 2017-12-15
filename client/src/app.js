@@ -23,6 +23,11 @@ var app = function(){
     }
   }
 
+  var move = document.getElementById('advance')
+  move.addEventListener('click', function(){
+    changePosition();
+    makeRequest(url, requestLocations)
+  })
 
 }
 
@@ -43,6 +48,10 @@ var requestLocations = function(){
 
 var determineLocation = function(locations){
   var info = new InfoView(locations[currentPosition])
+}
+
+var changePosition = function(){
+  currentPosition ++
 }
 
 
