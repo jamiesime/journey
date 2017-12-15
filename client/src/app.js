@@ -10,31 +10,33 @@ var app = function(){
   //Following displays map on load:
   var container = document.getElementById('map-container');
   var coords = [56.4907, -4.2026];
-  // debugger;
   var mainMap = new MapWrapper(container, coords, 10);
 
-
-  //Following displays instructions popup on load:
   var modal = document.getElementById('myModal');
-  var span = document.getElementsByClassName("close")[0];
+  var span = document.getElementById("modal-close");
   modal.style.display = "block";
-  // When the user clicks on <span> (x), close the modal
   span.onclick = function() {
+    // this.style.marginRight = "2px";
+    // this.style.marginBottom = "4px";
     modal.style.display = "none";
   }
-  // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
     if (event.target == modal) {
       modal.style.display = "none";
     }
   }
 
-
   var move = document.getElementById('advance')
   move.addEventListener('click', function(){
     changePosition();
     makeRequest(url, requestLocations)
   })
+
+  var btn = document.getElementById('next')
+  btn.addEventListener('click', function(){
+    addTimelineEvent();
+  })
+
 }
 
 var makeRequest = function(url, callback){
@@ -47,7 +49,6 @@ var makeRequest = function(url, callback){
 var requestLocations = function(){
   if(this.status!=200){return};
   var jsonString = this.responseText;
-  // debugger;
   var journeyInfo = JSON.parse(jsonString);
   determineLocation(journeyInfo)
 }
@@ -58,6 +59,17 @@ var determineLocation = function(locations){
 
 var changePosition = function(){
   currentPosition ++
+}
+
+var addTimelineEvent = function(){
+  var timeline = document.getElementById('timeline');
+  var timelineObject = document.createElement('div');
+  var joiner = document.createElement('div');
+  joiner.className = "joiner";
+  timelineObject.className = "timeline-object";
+  timelineObject.innerText = "last place"
+  timeline.appendChild(joiner);
+  timeline.appendChild(timelineObject);
 }
 
 
