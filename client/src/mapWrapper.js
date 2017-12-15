@@ -10,3 +10,11 @@ MapWrapper.prototype.addMarker = function (coords) {
         content: owner
     });
 };
+
+
+MapWrapper.prototype.removeMarker = function () {
+    if(this.markers.length >= 1){
+        var lastMarker = this.markers.pop();
+        lastMarker.setMap(null);
+    };
+};
