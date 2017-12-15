@@ -1,5 +1,5 @@
 var assert = require("assert")
-var myEvent = require("../event.js")
+var Event = require("../event.js")
 
 describe( "Event", function(){
 
@@ -7,7 +7,7 @@ describe( "Event", function(){
 
   beforeEach(function(){
 
-    testEvent = new Event();
+    testEvent = new Event()
   });
 
   it("should have a name", function(){
