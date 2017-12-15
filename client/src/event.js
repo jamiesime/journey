@@ -52,7 +52,6 @@ Event.prototype.getDateAsString = function(date){
   var month = this.getMonth(date.getMonth()+1);
   var year = date.getFullYear();
   var fullYearString = day + " " + month + ", " + year;
-  var fullYearString = day + " " + month + ", " + year
   return fullYearString;
 }
 

@@ -15,7 +15,7 @@ infoView.prototype = {
       events.innerText = location.events;
       section.appendChild(locationName);
       section.appendChild(description);
-      section.appendChild(events)
+      section.appendChild(events);
     })
   }
 }

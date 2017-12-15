@@ -1,30 +1,26 @@
 MapWrapper = function(container, coords, zoom){
-    this.googleMap = new google.maps.Map(container, center: coords, zoom: zoom
-    });
-    this.markers = [];
+  this.googleMap = new google.maps.Map(container, center: coords, zoom: zoom
+  });
+  this.markers = [];
 };
 
-MapWrapper.prototype.addMarker = function (coords) {
-    var marker = new google.maps.Marker({
-        position: coords,
-        content: owner
-    });
+MapWrapper.prototype.addMarker = function (coords, content) {
+  var marker = new google.maps.Marker({
+    position: coords,
+  });
+  var infowindow = new google.maps.InfoWindow({
+    content: content
 };
 
 
 MapWrapper.prototype.removeMarker = function () {
-    if(this.markers.length >= 1){
-        var lastMarker = this.markers.pop();
-        lastMarker.setMap(null);
-    };
+  if(this.markers.length >= 1){
+    var lastMarker = this.markers.pop();
+    lastMarker.setMap(null);
+  };
 };
 
-MapWrapper.prototype.recenterMap = function (newCoords) {
-    this.googleMap.setCenter(newCoords);
-};
-
-MapWrapper.prototype.goToGeoLocation = function (map) {
-    navigator.geolocation.getCurrentPosition(funciton(position){
-        map.googleMap.setCenter({lat: position.coords.latitude, lng: position.coords.longitude});
-    });
+MapWrapper.prototype.repositionMap = function (newCoords, zoom) {
+  this.googleMap.setCenter(newCoords);
+  this.googleMap.setZoom(zoom);
 };
