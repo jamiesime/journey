@@ -32,6 +32,11 @@ var app = function(){
     makeRequest(url, requestLocations)
   })
 
+  var btn = document.getElementById('next')
+  btn.addEventListener('click', function(){
+    addTimelineEvent();
+  })
+
 }
 
 var makeRequest = function(url, callback){
@@ -55,5 +60,17 @@ var determineLocation = function(locations){
 var changePosition = function(){
   currentPosition ++
 }
+
+var addTimelineEvent = function(){
+  var timeline = document.getElementById('timeline');
+  var timelineObject = document.createElement('div');
+  var joiner = document.createElement('div');
+  joiner.className = "joiner";
+  timelineObject.className = "timeline-object";
+  timelineObject.innerText = "last place"
+  timeline.appendChild(joiner);
+  timeline.appendChild(timelineObject);
+}
+
 
 window.addEventListener("load", app);
