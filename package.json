@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo mocha client/src/specs && exit 1",
+    
+    "test": "mocha client/src/specs",
+
     "start": "nodemon server.js",
     "webpack": "cd client && webpack -w"
   },
