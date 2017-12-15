@@ -2,7 +2,7 @@ body {
   margin: 0 auto;
 }
 
-button#modal-close {
+button {
   background-color: #DDC7AA;
   transition: all 0.5s ease;
   color: #805243;
@@ -15,18 +15,15 @@ button#modal-close {
   box-shadow: 2px 4px;
 }
 
-button#modal-close:hover{
+button:hover{
   background: -moz-linear-gradient(top, #f1e8db 0%, #fbf4ed 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, #f1e8db 0%,#fbf4ed 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #f1e8db 0%,#fbf4ed 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   cursor: pointer;
 }
 
-button#modal-close:active {
-  /*margin-left: 2px;
-  margin-top: 4px;*/
+button:active {
   box-shadow: 0px 0px;
-
 }
 
 /*TIMELINE HEADER ITEMS*/
@@ -52,12 +49,6 @@ button#modal-close:active {
   background-color: white;
   transition: 0.5s;
 }
-
-#next {
-  float: right;
-  width: 60px;
-}
-
 
 /*HEADER STYLES*/
 
@@ -105,24 +96,42 @@ header {
 
 
 #sidebar-info {
+  font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
   background-color: #e5ddc7;
   height: 70%;
   width: 100%;
   transition: 0.5s;
   box-shadow: inset 0 0 10px #4A4436;
-
+  padding: 7% 7% 0% 7%;
 }
 
 #sidebar-info:hover {
   background-color: #cec4a7;
 }
 
+
+/*SIDEBAR CHOICES*/
 #sidebar-choices {
   background-color: #91886E;
   height: 30%;
   width: 100%;
   box-shadow: inset 0 0 10px #4A4436;
+}
 
+#choice-buttons-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height:100%
+}
+
+button#advance {
+  margin: 0;
+}
+
+button#option2 {
+  margin: 0;
 }
 
 /*MODAL*/
@@ -146,10 +155,9 @@ header {
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
-  border: 1px solid #888;
+  border: 4px solid #7F5244;
   width: 80%; /* Could be more or less, depending on screen size */
   background-image: url(http://api.thumbr.it/whitenoise-600x400.png?background=ECD7B4&noise=626262&density=25&opacity=11);
-
 }
 
 /* The Close Button */

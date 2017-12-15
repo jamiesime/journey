@@ -8,46 +8,46 @@
   <script src="https://maps.googleapis.com/maps/api/js"></script>
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
-  <body>
+</head>
+<body>
 
-    <header id="header">
-      <img id="logo" src="./images/logo.png" alt="Journey Through History">
-      <div id="timeline">
-        <div class="timeline-object">
+  <header id="header">
+    <img id="logo" src="./images/logo.png" alt="Journey Through History">
+    <div id="timeline">
+      <div class="timeline-object"></div>
+    </div>
+    <button id="next">Advance Timeline</button>
 
+  </header>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <p>Welcome to Journey of Scots, an interactive history game.</p>
+      <p>In the game, you take on the role of the MacFadyen family, who decide to leave Scotland in search of greener pastures in Canada.</p>
+      <p>Your journey will involve difficult choices that may have consequences. These may not become apparent immediately, but each decision that you take will shape your future.</p>
+      <p>The top of the page contains your timeline, to the left is the map which will show the journey that you have taken. On the right, your current situation will be explained and it's where you will make important choices that affect your future.</p>
+      <button id="modal-close">Start your journey</button>
+    </div>
+  </div>
+  <main id="main-body">
+
+    <div id="map-container"></div>
+    <div id="sidebar">
+      <div id="sidebar-info">
+      </div>
+      <div id="sidebar-choices">
+        <div class="choice" id="choice-buttons-container">
+          <button id="advance" type="button" name="move">Move</button>
+          <button class="choice" id="option2" type="button" name="option 2">Choice 2</button>
         </div>
 
-
-      </div>
-      <button id="next">Advance Timeline</button>
-
-    </header>
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-
-      <!-- Modal content -->
-      <div class="modal-content">
-        <p>Welcome to Journey of Scots, an interactive history game.</p>
-        <p>In the game, you take on the role of the MacFadyen family, who decide to leave Scotland in search of greener pastures in Canada.</p>
-        <p>Your journey will involve difficult choices that may have consequences. These may not become apparent immediately, but each decision that you take will shape your future.</p>
-        <p>The top of the page contains your timeline, to the left is the map which will show the journey that you have taken. On the right, your current situation will be explained and it's where you will make important choices that affect your future.</p>
-        <button id="modal-close">Start your journey</button>
       </div>
     </div>
-    <main id="main-body">
 
-      <div id="map-container"></div>
-      <div id="sidebar">
-        <div id="sidebar-info">
-        </div>
-        <div id="sidebar-choices">
-          <button id="advance" type="button" name="move">Move</button>
+  </main>
 
-        </div>
-      </div>
-
-    </main>
-  </body>
-
-  </html>
+</body>
+</html>
