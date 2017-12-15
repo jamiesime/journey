@@ -13,7 +13,7 @@ var app = function(){
   var mainMap = new MapWrapper(container, coords, 10);
 
   var modal = document.getElementById('myModal');
-  var span = document.getElementsByClassName("close")[0];
+  var span = document.getElementById("modal-close");
   modal.style.display = "block";
   span.onclick = function() {
     modal.style.display = "none";

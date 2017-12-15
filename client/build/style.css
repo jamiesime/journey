@@ -2,6 +2,27 @@ body {
   margin: 0 auto;
 }
 
+button {
+  background-color: #DDC7AA;
+  color: #805243;
+  border: 2px solid saddleBrown;
+  font-family: "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
+  font-size: 20px;
+  text-align: center;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+button:hover{
+  background: -moz-linear-gradient(top, #f1e8db 0%, #fbf4ed 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #f1e8db 0%,#fbf4ed 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #f1e8db 0%,#fbf4ed 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e8db', endColorstr='#fbf4ed',GradientType=0 ); /* IE6-9 */
+  cursor: pointer;
+}
+
+/*HEADER STYLES*/
+
 #header {
   display: flex;
   justify-content: center;
