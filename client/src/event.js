@@ -5,4 +5,6 @@ var Event = function(name, description, date, choices) {
   this.choices = choices;
 }
 
+// Event.prototype.
+
 module.exports = Event;
