@@ -1,7 +1,7 @@
 use journey;
 db.dropDatabase();
 
-db.locations.insertMany({
+db.locations.insertMany([{
   placeName: "Ottowa",
   Latlng: [ 100.00, 100.00],
   description: "Just another town.",
@@ -13,8 +13,7 @@ db.locations.insertMany({
       choices: ["move to america", "embrace canada"]
     }
   ]
-});
-
+},{
         placeName: "Montreal",
         Latlng: [ 45.501689, -73.567256],
         description: "Just a town.",
@@ -48,9 +47,4 @@ db.locations.insertMany({
                             title: "whoah",
                             choices: ["move to america", "embrace canada"]
                         }]}
-
-
-
-
-
                     ]);
