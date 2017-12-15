@@ -6,7 +6,7 @@ describe( "Location", function(){
   var testLocation
 
   beforeEach(function(){
-    testLocation = new Location("Nova Scotia", [5, 3], "Galic name for New Scotland");
+    testLocation = new Location("Nova Scotia", [5, 3], "Galic name for New Scotland", ["Event A", "Event B"]);
   });
 
   it("should have a name", function(){
@@ -21,7 +21,9 @@ describe( "Location", function(){
   it("should have a description", function(){
     assert.strictEqual(testLocation.description, "Galic name for New Scotland")
   })
-  it("should have events");
+  it("should have events", function(){
+    assert.strictEqual(testLocation.events.length, 2)
+  });
 
 
 });
