@@ -15,7 +15,9 @@ describe( "Location", function(){
   it("should have a lat", function(){
     assert.deepStrictEqual(testLocation.latlng[0], 5)
   });
-  it("should have a lng");
+  it("should have a lng", function(){
+    assert.deepStrictEqual(testLocation.latlng[1], 3)
+  });
   it("should have a description")
   it("should have events");
 
