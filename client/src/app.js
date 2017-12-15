@@ -25,17 +25,17 @@ var app = function(){
       modal.style.display = "none";
     }
   }
-
-  var move = document.getElementById('advance')
-  move.addEventListener('click', function(){
-    changePosition();
-    makeRequest(url, requestLocations)
-  })
-
-  var btn = document.getElementById('next')
-  btn.addEventListener('click', function(){
-    addTimelineEvent();
-  })
+  //
+  // var move = document.getElementById('advance')
+  // move.addEventListener('click', function(){
+  //   changePosition();
+  //   makeRequest(url, requestLocations)
+  // })
+  //
+  // var btn = document.getElementById('next')
+  // btn.addEventListener('click', function(){
+  //   addTimelineEvent();
+  // })
 
 }
 
@@ -54,11 +54,20 @@ var requestLocations = function(){
 }
 
 var determineLocation = function(locations){
-  var info = new InfoView(locations[currentPosition])
+  var location = new InfoView(locations[currentPosition])
+  detetermineEvent(location);
+}
+
+var detetermineEvent = function(events){
+
 }
 
 var changePosition = function(){
   currentPosition ++
+}
+
+var changeEvent = function(){
+  currentEvent++;
 }
 
 var addTimelineEvent = function(){
