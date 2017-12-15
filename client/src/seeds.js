@@ -39,3 +39,4 @@ db.locations.insert({
           choices: ["move to america", "embrace canada"]
       }]
 });
+
