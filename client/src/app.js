@@ -1,4 +1,4 @@
-
+var seeds = require("./seeds");
 
 var app = function(){
   url = "http://localhost:3000/";
