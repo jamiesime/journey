@@ -1,7 +1,7 @@
 
 var app = function(){
-  url = "http://localhost:3000/journey";
-  makeRequest(url, requestJourney);
+  url = "http://localhost:3000/getlocations";
+  makeRequest(url, requestLocations);
 }
 
 var makeRequest = function(url, callback){
@@ -11,7 +11,7 @@ var makeRequest = function(url, callback){
   request.send();
 };
 
-var requestJourney = function(){
+var requestLocations = function(){
   if(this.status!=200){return};
   var jsonString = this.responseText;
   debugger;
