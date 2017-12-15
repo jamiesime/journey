@@ -1,4 +1,7 @@
+var InfoView = require('./views/infoView')
+currentPosition = 0
 var map = require("./mapWrapper");
+
 
 var app = function(){
   url = "http://localhost:3000/getlocations";
@@ -26,6 +29,12 @@ var app = function(){
     }
   }
 
+
+  var move = document.getElementById('advance')
+  move.addEventListener('click', function(){
+    changePosition();
+    makeRequest(url, requestLocations)
+  })
 }
 
 var makeRequest = function(url, callback){
@@ -38,7 +47,17 @@ var makeRequest = function(url, callback){
 var requestLocations = function(){
   if(this.status!=200){return};
   var jsonString = this.responseText;
+  // debugger;
   var journeyInfo = JSON.parse(jsonString);
+  determineLocation(journeyInfo)
+}
+
+var determineLocation = function(locations){
+  var info = new InfoView(locations[currentPosition])
+}
+
+var changePosition = function(){
+  currentPosition ++
 }
 
 
