@@ -10,7 +10,8 @@ describe( "Event", function(){
     testEvent = new Event(
       "Battle of Montgomery's Tavern",
       "The Battle of Montgomery's Tavern was an incident in the Upper Canada Rebellion. The abortive revolutionary insurrection inspired by William Lyon Mackenzie was crushed by British authorities and Canadian volunteer units near a tavern on Yonge Street, Toronto.",
-      "7 December, 1837");
+      "7 December, 1837",
+      ["Stay and Fight", "Flee to America with your Family"]);
     });
 
     it("should have a name", function(){
@@ -22,7 +23,9 @@ describe( "Event", function(){
     it("should have a date", function(){
       assert.strictEqual(testEvent.date, "7 December, 1837")
     });
-    xit("should have a choices array")
+    it("should have a choices array", function(){
+      assert.deepStrictEqual(testEvent.choices, ["Stay and Fight", "Flee to America with your Family"])
+    })
 
     // function(){
     //    assert.strictEqual(recordStore.name, "Big Al's Records");
