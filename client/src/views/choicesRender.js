@@ -8,6 +8,8 @@ ChoicesRender.prototype = {
 
   render: function(event){
     eventChoices = event.choices;
+    container = document.getElementById("choice-buttons-container");
+    container.innerHTML = "";
     eventChoices.forEach(function(choice){
       renderChoiceButton(choice);
     });
