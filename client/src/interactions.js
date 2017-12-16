@@ -1,7 +1,6 @@
 
 var Interactions = {
   getSelectedChoice: function(buttonText){
-    debugger;
     return buttonText
   }
 }
