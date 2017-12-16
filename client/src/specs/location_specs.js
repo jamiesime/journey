@@ -65,6 +65,7 @@ describe( "Location", function(){
     assert.strictEqual(testLocation.events[2].name, "Another event");
 
   })
+
   it("should be able to remove an event", function(){
     testLocation.events.splice(1, 1);
     assert.strictEqual(testLocation.events.length, 1);
