@@ -26,6 +26,10 @@ button:active {
   box-shadow: 0px 0px;
 }
 
+h2 {
+  text-align: center;
+}
+
 /*TIMELINE HEADER ITEMS*/
 
 #timeline {
@@ -89,10 +93,10 @@ header {
   transition: 0.5s;
 }
 
-#sidebar:hover {
+/*#sidebar:hover {
   width: 75%;
   transition: 0.5s;
-}
+}*/
 
 
 #sidebar-info {
@@ -107,6 +111,20 @@ header {
 
 #sidebar-info:hover {
   background-color: #cec4a7;
+}
+
+/*SIDEBAR MENU*/
+#sidebar-menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background-color: #e5ddc7;
+}
+
+.menu-btn {
+  margin: 0;
 }
 
 

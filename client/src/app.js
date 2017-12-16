@@ -1,15 +1,22 @@
 var InfoView = require('./views/infoView');
 var ChoicesRender = require('./views/choicesRender');
 var Interactions = require("./interactions");
+var Family = require("./family");
+var FamilyMember = require("./familyMember");
+var FamilyRender = require("./views/familyRender");
 var map = require("./mapWrapper");
 var MarkerRender = require('./views/markerRender.js')
 
+family = [];
 currentPosition = 0;
 currentEvent = 0;
 
 var app = function(){
   url = "http://localhost:3000/getlocations";
   makeRequest(url, requestLocations);
+
+  //Following sets up initial family - all users will start with this familyMember
+  initialFamilySetUp();
 
   //Following displays map on load:
   var container = document.getElementById('map-container');
@@ -28,6 +35,20 @@ var app = function(){
     }
   }
 
+
+  // SUBMENU BUTTONS
+  var eventBtn = document.getElementById("event-btn");
+  eventBtn.addEventListener("click", function(){
+    makeRequest(url, requestLocations);
+  });
+
+  var familyBtn = document.getElementById("family-btn");
+  familyBtn.addEventListener("click", function(){
+    familyInfo = new FamilyRender(family);
+  });
+
+
+  // is this still needed? - jamie
   var move = document.getElementById("next");
   move.addEventListener("click", function(){
       changePosition();
@@ -81,5 +102,16 @@ var addTimelineEvent = function(){
 var renderNewMarker = function(locations){
     var currentlocation  = new MarkerRender(locations[currentPosition]);
 };
+
+var initialFamilySetUp = function(){
+  var member1 = new FamilyMember("Jonas", "24", "100");
+  var member2 = new FamilyMember("Alice", "24", "100");
+  var member3 = new FamilyMember("Grace", "6", "100");
+  initialMembers = [];
+  initialMembers.push(member1);
+  initialMembers.push(member2);
+  initialMembers.push(member3);
+  family = new Family(initialMembers);
+}
 
 window.addEventListener("load", app);
