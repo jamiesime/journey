@@ -3,7 +3,7 @@ MapWrapper = function(container, coords, zoom){
         center: {lat: coords[0], lng: coords[1]},
         zoom: zoom,
         mapTypeControl: false,
-        draggable: true,
+        draggable: false,
         scaleControl: true,
         scrollwheel: false,
         navigationControl: false,
@@ -300,7 +300,6 @@ MapWrapper.prototype.addMarker = function (coords) {
         url: "https://i.imgur.com/BDkqWAw.png",
         scaledSize: new google.maps.Size(50, 50),
         origin: new google.maps.Point(0,0),
-        // anchor: new google.maps.Point(0,0)
     };
     var marker = new google.maps.Marker({
         position: coords,
@@ -315,12 +314,14 @@ MapWrapper.prototype.addMarker = function (coords) {
     //   content: content
     // });
 
+//Dash length controlled by path -1, 1
     var lineSymbol = {
       path: 'M 0,-1 0,1',
       strokeOpacity: 0.5,
       scale: 4
     };
 
+//Dash spacing controlled by repeat
     var path = new google.maps.Polyline({
       path: this.markers,
       strokeOpacity: 0,
