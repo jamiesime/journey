@@ -300,16 +300,39 @@ MapWrapper.prototype.addMarker = function (coords) {
         url: "https://i.imgur.com/BDkqWAw.png",
         scaledSize: new google.maps.Size(50, 50),
         origin: new google.maps.Point(0,0),
-        anchor: new google.maps.Point(0,0)
     };
     var marker = new google.maps.Marker({
         position: coords,
         map: this.googleMap,
         icon: markerImage
     });
+
+    this.markers.push(marker.position)
+    console.log(this.markers);
+
     // var infowindow = new google.maps.InfoWindow({
     //   content: content
     // });
+
+//Dash length controlled by path -1, 1
+    var lineSymbol = {
+      path: 'M 0,-1 0,1',
+      strokeOpacity: 0.5,
+      scale: 4
+    };
+
+//Dash spacing controlled by repeat
+    var path = new google.maps.Polyline({
+      path: this.markers,
+      strokeOpacity: 0,
+      icons: [{
+        icon: lineSymbol,
+        offset: '0',
+        repeat: '20px'
+      }],
+    })
+
+    path.setMap(this.googleMap)
 }
 
 

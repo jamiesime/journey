@@ -2,6 +2,23 @@ use journey;
 db.dropDatabase();
 
 db.locations.insert({
+    placeName: "Isle of Lewis",
+    Latlng: [ 58.241575, -6.661592],
+    description: "The Highlands are high in scotland",
+    events:
+      [{
+          date: "12-02-1830",
+          text: "Bla bla bla",
+          title: "Go to Greenock",
+          choices:
+          [
+            { text: "Go to Greenock",
+              goto: [1, 0] }
+          ]
+      }]
+});
+
+db.locations.insert({
     placeName: "Greenock",
     Latlng: [ 55.956476, -4.771983],
     description: "Greenock is a port town located in the west cental Lowlands of Scotland",
@@ -13,14 +30,14 @@ db.locations.insert({
           choices:
           [
             { text: "Get on the Boat",
-              goto: [1, 0] }
+              goto: [2, 0] }
           ]
       }]
 });
 
 db.locations.insert({
     placeName: "Atlantic Ocean",
-    Latlng: [ -14.599413, -28.673147],
+    Latlng: [ 52.908902, -32.519531],
     description: "Many passenger ships travelled across the Atlantic to America and Canada",
     events:
       [{
@@ -30,12 +47,33 @@ db.locations.insert({
           choices:
           [
             { text: "Go to Halifax",
-              goto: [1, 0] },
+              goto: [3, 0] },
               { text: "Go to Nova Scotia",
-                goto: [1, 0] }
+                goto: [3, 0] }
           ]
       }]
 });
+
+db.locations.insert({
+    placeName: "Halifax",
+    Latlng: [ 41.991213, -70.861985],
+    description: "Halifax Canida",
+    events:
+      [{
+          date: "12-02-1830",
+          text: "Bla bla bla",
+          title: "Go to Greenock",
+          choices:
+          [
+            { text: "Go to Greenock",
+              goto: [1, 0] }
+          ]
+      }]
+});
+
+
+
+
 
 db.locations.insert({
     placeName: "California",
