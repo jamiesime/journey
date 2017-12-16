@@ -65,10 +65,6 @@ var requestLocations = function(){
 var determineLocation = function(locations){
   var location = new InfoView(locations[currentPosition])
   var currentlocation  = new MarkerRender(locations[currentPosition]);
-  console.log(currentPosition)
-  if (currentPosition !== 0) {
-    addTimelineEvent()
-  };
   renderEventChoices(locations[currentPosition].events[currentEvent]);
 }
 
@@ -85,18 +81,23 @@ var changeEvent = function(change){
 }
 
 var addTimelineEvent = function(){
+  console.log("Hello")
   var timeline = document.getElementById('timeline');
   var timelineObject = document.createElement('div');
   var joiner = document.createElement('div');
   joiner.className = "joiner";
+  console.log("Test")
+
   timelineObject.className = "timeline-object";
   timelineObject.innerText = "last place"
   timeline.appendChild(joiner);
   timeline.appendChild(timelineObject);
+  console.log("Hello33")
+
 }
 
 var renderNewMarker = function(locations){
-    var currentlocation  = new MarkerRender(locations[currentPosition]);
+  var currentlocation  = new MarkerRender(locations[currentPosition]);
 };
 
 var initialFamilySetUp = function(){
