@@ -315,12 +315,20 @@ MapWrapper.prototype.addMarker = function (coords) {
     //   content: content
     // });
 
+    var lineSymbol = {
+      path: 'M 0,-1 0,1',
+      strokeOpacity: 0.5,
+      scale: 4
+    };
+
     var path = new google.maps.Polyline({
       path: this.markers,
-      geodesic: false,
-      strokeColor: '#FF0000',
-      strokeOpacity: 1.0,
-      strokeWeight: 2
+      strokeOpacity: 0,
+      icons: [{
+        icon: lineSymbol,
+        offset: '0',
+        repeat: '20px'
+      }],
     })
 
     path.setMap(this.googleMap)
