@@ -24,7 +24,7 @@ db.locations.insert({
 db.locations.insert({
     placeName: "Vancouver",
     Latlng: [ 41.991213, -70.861985],
-    description: "Just a town 3.",
+    description: "Just a town 2.",
     events:
       [{
           date: "12-02-1837",
@@ -33,9 +33,9 @@ db.locations.insert({
           choices:
           [
             { text: "go to Halifax",
-              goto: [1, 0] },
+              goto: [0, 0] },
             { text: "go to Canada City",
-              goto: [0, 0]}
+              goto: [2, 0]}
           ]
       }]
 });
@@ -54,20 +54,7 @@ db.locations.insert({
             { text: "go to vancouver",
               goto: [1, 0] },
             { text: "go to halifax",
-              goto: [2, 0]}
+              goto: [0, 0]}
           ]
-      }]
-});
-
-db.locations.insert({
-    placeName: "Aberdeen",
-    Latlng: [ 57.149717, -2.094278],
-    description: "Just a town 4.",
-    events:
-      [{
-          date: "12-02-1837",
-          text: "something weird happened",
-          title: "whoah",
-          choices: ["move to america", "embrace canada"]
       }]
 });

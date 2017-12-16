@@ -1,5 +1,5 @@
 var InfoView = require('./views/infoView');
-var MarkerRender = require('./views/markerRender')
+var MarkerRender = require('./views/markerRender');
 
 console.log(InfoView);
 console.log(MarkerRender);
