@@ -47,11 +47,15 @@ var checkSpecialEvents = function(choice){
     console.log("will remove " + choice.memberRemove);
   }
   if(choice.moneyChange != null && choice.moneyChange != undefined){
-    console.log("change money by " + choice.moneyChange)
+    changeMoney(choice.moneyChange);
   }
   if(choice.memberHealthChange != null && choice.memberHealthChange != undefined){
     console.log(choice.memberHealthChange.name + " health to change by " + choice.memberHealthChange.value);
   }
+}
+
+var changeMoney = function(value){
+  money += value;
 }
 
 module.exports = Interactions;
