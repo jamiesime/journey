@@ -3,6 +3,7 @@ var ChoicesRender = require('./views/choicesRender');
 var Interactions = require("./interactions");
 var map = require("./mapWrapper");
 var MarkerRender = require('./views/markerRender.js')
+console.log(ChoicesRender);
 
 currentPosition = 0;
 currentEvent = 0;
@@ -20,8 +21,6 @@ var app = function(){
   var span = document.getElementById("modal-close");
   modal.style.display = "block";
   span.onclick = function() {
-    // this.style.marginRight = "2px";
-    // this.style.marginBottom = "4px";
     modal.style.display = "none";
   }
   window.onclick = function(event) {
@@ -34,20 +33,7 @@ var app = function(){
   move.addEventListener("click", function(){
       changePosition();
       makeRequest(url, requestLocations);
-      // determineLocation(locations);
   })
-  //
-  // var move = document.getElementById('advance')
-  // move.addEventListener('click', function(){
-  //   changePosition();
-  //   makeRequest(url, requestLocations)
-  // })
-  //
-  // var btn = document.getElementById('next')
-  // btn.addEventListener('click', function(){
-  //   addTimelineEvent();
-  // })
-
 };
 
 var makeRequest = function(url, callback){
@@ -96,6 +82,5 @@ var addTimelineEvent = function(){
 var renderNewMarker = function(locations){
     var currentlocation  = new MarkerRender(locations[currentPosition]);
 };
-
 
 window.addEventListener("load", app);
