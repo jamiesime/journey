@@ -6,10 +6,12 @@ FamilyRender.prototype = {
 
   render: function(family){
     container = document.getElementById("sidebar-info");
-    container.innerHTML = "";
+    content = document.getElementById("sidebar-info-content");
+    content.innerHTML = "";
     var header = document.createElement("h2");
     header.innerText = "Generic Family!";
-    container.appendChild(header);
+    content.appendChild(header);
+    container.appendChild(content);
     renderEachMember(family);
   }
 
@@ -19,7 +21,7 @@ var renderEachMember = function(family){
   family.members.forEach(function(member){
     var pTest = document.createElement("p");
     pTest.innerText = member.name;
-    container.appendChild(pTest);
+    content.appendChild(pTest);
   })
 }
 
