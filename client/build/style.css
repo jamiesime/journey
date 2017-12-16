@@ -128,6 +128,21 @@ h2 {
   margin: 0;
 }
 
+/*FAMILY MENU*/
+
+#family-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.member-box{
+  background-color: #cec4a7;
+  border-radius: 4px;
+  margin: 10px;
+  width: 20%;
+}
+
 /*SIDEBAR CHOICES*/
 #sidebar-choices {
   background-color: #91886E;
