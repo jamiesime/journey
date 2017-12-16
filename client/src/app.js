@@ -14,7 +14,7 @@ var app = function(){
   //Following displays map on load:
   var container = document.getElementById('map-container');
   var coords = [56.4907, -4.2026];
-   mainMap = new MapWrapper(container, coords, 6);
+  mainMap = new MapWrapper(container, coords, 6);
 
   var modal = document.getElementById('myModal');
   var span = document.getElementById("modal-close");
@@ -33,7 +33,7 @@ var app = function(){
   var move = document.getElementById("next");
   move.addEventListener("click", function(){
       changePosition();
-      determineLocation(currentlocation);
+      determineLocation(locations);
   })
   //
   // var move = document.getElementById('advance')
