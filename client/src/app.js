@@ -1,7 +1,10 @@
-var InfoView = require('./views/infoView')
-currentPosition = 0
+var InfoView = require('./views/infoView');
+var ChoicesRender = require('./views/choicesRender');
+var Interactions = require("./interactions");
 var map = require("./mapWrapper");
 
+currentPosition = 0;
+currentEvent = 0;
 
 var app = function(){
   url = "http://localhost:3000/getlocations";
@@ -10,7 +13,7 @@ var app = function(){
   //Following displays map on load:
   var container = document.getElementById('map-container');
   var coords = [56.4907, -4.2026];
-  var mainMap = new MapWrapper(container, coords, 10);
+  var mainMap = new MapWrapper(container, coords, 6);
 
   var modal = document.getElementById('myModal');
   var span = document.getElementById("modal-close");
@@ -25,17 +28,17 @@ var app = function(){
       modal.style.display = "none";
     }
   }
-
-  var move = document.getElementById('advance')
-  move.addEventListener('click', function(){
-    changePosition();
-    makeRequest(url, requestLocations)
-  })
-
-  var btn = document.getElementById('next')
-  btn.addEventListener('click', function(){
-    addTimelineEvent();
-  })
+  //
+  // var move = document.getElementById('advance')
+  // move.addEventListener('click', function(){
+  //   changePosition();
+  //   makeRequest(url, requestLocations)
+  // })
+  //
+  // var btn = document.getElementById('next')
+  // btn.addEventListener('click', function(){
+  //   addTimelineEvent();
+  // })
 
 }
 
@@ -54,11 +57,20 @@ var requestLocations = function(){
 }
 
 var determineLocation = function(locations){
-  var info = new InfoView(locations[currentPosition])
+  var location = new InfoView(locations[currentPosition])
+  renderEventChoices(locations[currentPosition].events[currentEvent]);
+}
+
+var renderEventChoices = function(event){
+  var thisEvent = new ChoicesRender(event);
 }
 
 var changePosition = function(){
   currentPosition ++
+}
+
+var changeEvent = function(){
+  currentEvent++;
 }
 
 var addTimelineEvent = function(){
