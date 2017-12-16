@@ -2,7 +2,7 @@ use journey;
 db.dropDatabase();
 
 db.locations.insert({
-    placeName: "Highlands",
+    placeName: "Isle of Lewis",
     Latlng: [ 58.241575, -6.661592],
     description: "The Highlands are high in scotland",
     events:
@@ -47,12 +47,33 @@ db.locations.insert({
           choices:
           [
             { text: "Go to Halifax",
-              goto: [1, 0] },
+              goto: [3, 0] },
               { text: "Go to Nova Scotia",
-                goto: [1, 0] }
+                goto: [3, 0] }
           ]
       }]
 });
+
+db.locations.insert({
+    placeName: "Halifax",
+    Latlng: [ 41.991213, -70.861985],
+    description: "Halifax Canida",
+    events:
+      [{
+          date: "12-02-1830",
+          text: "Bla bla bla",
+          title: "Go to Greenock",
+          choices:
+          [
+            { text: "Go to Greenock",
+              goto: [1, 0] }
+          ]
+      }]
+});
+
+
+
+
 
 db.locations.insert({
     placeName: "California",
