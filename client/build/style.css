@@ -177,6 +177,11 @@ button#option2 {
 
 /*MODAL*/
 
+#logoImg{
+  display:flex;
+  justify-content: center;
+}
+
 .modal {
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
