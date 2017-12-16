@@ -18,6 +18,7 @@ SubMenuRender.prototype = {
     familyBtn.innerText = "Family";
     moneyDisplay = document.createElement("p");
     moneyDisplay.innerText = "Money: " + money;
+    moneyDisplay.id = "money-display";
     container.appendChild(eventBtn);
     container.appendChild(familyBtn);
     container.appendChild(moneyDisplay);
