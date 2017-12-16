@@ -28,23 +28,23 @@ describe( "Location", function(){
   });
 
   it("should have a name", function(){
-    assert.strictEqual(testLocation.name, "Nova Scotia")
+    assert.strictEqual(testLocation.name, "Nova Scotia");
   });
 
   it("should have a lat", function(){
-    assert.deepStrictEqual(testLocation.latlng[0], 44.651070)
+    assert.deepStrictEqual(testLocation.latlng[0], 44.651070);
   });
 
   it("should have a lng", function(){
-    assert.deepStrictEqual(testLocation.latlng[1], -63.582687)
+    assert.deepStrictEqual(testLocation.latlng[1], -63.582687);
   });
 
   it("should have a description", function(){
-    assert.strictEqual(testLocation.description, "Gaelic name for New Scotland")
+    assert.strictEqual(testLocation.description, "Gaelic name for New Scotland");
   })
 
   it("should have events", function(){
-    assert.strictEqual(testLocation.events.length, 2)
+    assert.strictEqual(testLocation.events.length, 2);
   });
 
   it("should be able to get event details", function(){
@@ -63,13 +63,11 @@ describe( "Location", function(){
     testLocation.events.push(event3);
     assert.strictEqual(testLocation.events.length, 3);
     assert.strictEqual(testLocation.events[2].name, "Another event");
-
   })
 
   it("should be able to remove an event", function(){
     testLocation.events.splice(1, 1);
     assert.strictEqual(testLocation.events.length, 1);
   });
-
 
 });
