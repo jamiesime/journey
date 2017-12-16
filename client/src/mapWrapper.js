@@ -342,6 +342,11 @@ MapWrapper.prototype.addMarker = function (coords) {
 
   var distanceCalculator = google.maps.geometry.spherical.computeLength(path.getPath());
   console.log(distanceCalculator);
+
+  kmCovered = distanceCalculator / 1000;
+  console.log(kmCovered);
+
+
 }
 
 
