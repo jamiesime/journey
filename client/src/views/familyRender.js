@@ -5,13 +5,23 @@ var FamilyRender = function(family){
 FamilyRender.prototype = {
 
   render: function(family){
+    debugger;
     container = document.getElementById("sidebar-info");
     container.innerHTML = "";
-    var pTest = document.createElement("p");
-    pTest.innerText = "this is a test";
-    container.appendChild(pTest);
+    var header = document.createElement("h2");
+    header.innerText = "Generic Family!";
+    container.appendChild(header);
+    renderEachMember(family);
   }
 
+}
+
+var renderEachMember = function(family){
+  family.members.forEach(function(member){
+    var pTest = document.createElement("p");
+    pTest.innerText = member.name;
+    container.appendChild(pTest);
+  })
 }
 
 module.exports = FamilyRender;

@@ -26,6 +26,10 @@ button:active {
   box-shadow: 0px 0px;
 }
 
+h2 {
+  text-align: center;
+}
+
 /*TIMELINE HEADER ITEMS*/
 
 #timeline {
@@ -110,11 +114,13 @@ header {
 }
 
 /*SIDEBAR MENU*/
-.sidebar-menu{
+#sidebar-menu{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  padding: 20px;
+  background-color: #e5ddc7;
 }
 
 .menu-btn {
