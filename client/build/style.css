@@ -110,6 +110,8 @@ h2 {
   padding: 7% 0% 7% 7%;
 }
 
+
+
 #sidebar-info:hover {
   background-color: #cec4a7;
 }
@@ -134,13 +136,19 @@ h2 {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .member-box{
   background-color: #cec4a7;
   border-radius: 4px;
   margin: 10px;
-  width: 20%;
+  padding: 0px 5px;
+  min-width: 20%;
+  min-height: 30%;
+  border: 2px solid saddleBrown;
+  box-shadow: 2px 4px;
 }
 
 /*SIDEBAR CHOICES*/
