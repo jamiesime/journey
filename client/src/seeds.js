@@ -73,6 +73,23 @@ db.locations.insert({
 });
 
 db.locations.insert({
+    placeName: "Greenock",
+    Latlng: [ 55.956476, -4.771983],
+    description: "Greenock is a port town located in the west cental Lowlands of Scotland",
+    events:
+      [{
+          date: "12-02-1830",
+          text: "Due to the Highland Clearances, which were the evictions of a significant number of tenants in the Scottish Highlands mostly during the 18th and 19th centuries, a large number of the of the evictee’s travelled abroad.",
+          title: "Leaving Scotland",
+          choices:
+          [
+            { text: "Get on the Boat",
+              goto: [1, 0] }
+          ]
+      }]
+});
+
+db.locations.insert({
     placeName: "California",
     Latlng: [ 36.778261, -119.417932],
     description: "California, a western U.S. state, stretches from the Mexican border along the Pacific for nearly 900 miles",
