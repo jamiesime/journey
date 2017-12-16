@@ -17,17 +17,22 @@ ChoicesRender.prototype = {
 
 var renderChoiceButton = function(choice){
   container = document.getElementById("choice-buttons-container");
-  choiceText = choice;
+  choiceForm = document.createElement("form");
+  choiceText = choice.text;
+  choiceGoto = choice.goto;
+  // choiceForm.method = "GET";
+  // choiceForm.action = "/getnext/" + choiceGoto[0] + "/" + choiceGoto[1];
   var choiceBtn = document.createElement("button");
   choiceBtn.innerText = choiceText;
   choiceBtn.className = "choice";
-  addListener(choiceBtn);
+  addListener(choiceBtn, choiceGoto);
+  // choiceForm.appendChild(choiceBtn);
   container.appendChild(choiceBtn);
 }
 
-var addListener = function(choiceBtn){
+var addListener = function(choiceBtn, choiceGoto){
   choiceBtn.addEventListener("click", function(){
-    Interactions.getSelectedChoice(choiceBtn.innerText);
+    Interactions.getSelectedChoice(choiceGoto);
   });
 }
 

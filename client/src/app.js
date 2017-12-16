@@ -65,12 +65,12 @@ var renderEventChoices = function(event){
   var thisEvent = new ChoicesRender(event);
 }
 
-var changePosition = function(){
-  currentPosition ++
+var changePosition = function(change){
+  currentPosition += change;
 }
 
-var changeEvent = function(){
-  currentEvent++;
+var changeEvent = function(change){
+  currentEvent += change;
 }
 
 var addTimelineEvent = function(){
