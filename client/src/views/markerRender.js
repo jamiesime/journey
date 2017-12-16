@@ -6,8 +6,12 @@ MapView.prototype.render = function (markers) {
     console.log(markers);
 
     markers.forEach(function(marker){
-        mainMap = addMarker(lat: position.coords.latitude, lng: position.coords.longitude);
+        mainMap = addMarker(lat: marker.latlng[0], lng: marker.latlng[1]);
     });
+};
+
+MapView.prototype.moveLocation = function (location) {
+
 };
 
 module.exports = MapView;
