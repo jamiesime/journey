@@ -1,7 +1,7 @@
 var InfoView = require('./views/infoView');
 var MarkerRender = require('./views/markerRender');
 var TimelineRender = require('./views/timelineRender')
-
+var SubMenuRender = require('./views/submenuRender');
 
 var Interactions = {
   getSelectedChoice: function(choice){
@@ -10,6 +10,7 @@ var Interactions = {
     currentEvent = choice.goto[1];
     url = "http://localhost:3000/getlocations";
     makeRequest(url, requestLocations);
+    var refreshMenu = new SubMenuRender();
   }
 }
 

@@ -4,6 +4,7 @@ var Interactions = require("./interactions");
 var Family = require("./family");
 var FamilyMember = require("./familyMember");
 var FamilyRender = require("./views/familyRender");
+var SubMenuRender = require("./views/submenuRender");
 var map = require("./mapWrapper");
 var MarkerRender = require('./views/markerRender.js')
 
@@ -38,6 +39,9 @@ var app = function(){
 
 
   // SUBMENU BUTTONS
+
+  var renderSubMenu = new SubMenuRender();
+  debugger;
   var eventBtn = document.getElementById("event-btn");
   eventBtn.addEventListener("click", function(){
     makeRequest(url, requestLocations);
