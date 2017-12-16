@@ -51,7 +51,18 @@ describe( "Location", function(){
     assert.strictEqual(testLocation.events[0].name, "Battle of Montgomery's Tavern");
   });
 
-  xit("should be able to add an event")
+  it("should be able to add an event", function(){
+    event3 = new Event(
+      "Another event",
+      "Something else happened",
+      -4167676800,
+      ["Choice 1", "Choice 2", "Choice 3"]
+    );
+    testLocation.events.push(event3);
+    assert.strictEqual(testLocation.events.length, 3);
+    assert.strictEqual(testLocation.events[2].name, "Another event");
+
+  })
   xit("should be able to remove an event");
 
 
