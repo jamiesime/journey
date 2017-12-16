@@ -26,9 +26,6 @@ renderChoiceButton = function(choice){
   choiceBtn.className = "choice";
   addListener(choiceBtn, choiceGoto);
   container.appendChild(choiceBtn);
-  if (currentPosition !== 0) {
-    addTimelineEvent();
-  }
 }
 
 addListener = function(choiceBtn, choiceGoto){
@@ -36,16 +33,5 @@ addListener = function(choiceBtn, choiceGoto){
     Interactions.getSelectedChoice(choiceGoto);
   });
 }
-
-var addTimelineEvent = function(){
-  var timeline = document.getElementById('timeline');
-  var timelineObject = document.createElement('div');
-  var joiner = document.createElement('div');
-  joiner.className = "joiner";
-  timelineObject.className = "timeline-object";
-  timeline.appendChild(joiner);
-  timeline.appendChild(timelineObject);
-}
-
 
 module.exports = ChoicesRender;
