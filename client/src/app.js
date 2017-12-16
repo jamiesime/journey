@@ -46,14 +46,6 @@ var app = function(){
   familyBtn.addEventListener("click", function(){
     familyInfo = new FamilyRender(family);
   });
-
-
-  // is this still needed? - jamie
-  var move = document.getElementById("next");
-  move.addEventListener("click", function(){
-      changePosition();
-      makeRequest(url, requestLocations);
-  })
 };
 
 var makeRequest = function(url, callback){
@@ -73,6 +65,10 @@ var requestLocations = function(){
 var determineLocation = function(locations){
   var location = new InfoView(locations[currentPosition])
   var currentlocation  = new MarkerRender(locations[currentPosition]);
+  console.log(currentPosition)
+  if (currentPosition !== 0) {
+    addTimelineEvent()
+  };
   renderEventChoices(locations[currentPosition].events[currentEvent]);
 }
 

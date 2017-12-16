@@ -37,20 +37,27 @@ h2 {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  background-color: #F5A746
 }
 
 .timeline-object {
-  height: 60px;
-  width: 60px;
-  background-color: white;
+  height: 20px;
+  width: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: #7A4315;
   border-radius: 50%;
   transition: 0.5s;
 }
 
+.timeline-object:first-child {
+  margin-top: 5px;
+}
+
 .joiner {
-  height: 10px;
-  width: 30px;
-  background-color: white;
+  height: 8px;
+  width: 5px;
+  background-color: #e19251;
   transition: 0.5s;
 }
 

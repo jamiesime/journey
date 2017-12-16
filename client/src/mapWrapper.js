@@ -308,7 +308,6 @@ MapWrapper.prototype.addMarker = function (coords) {
     });
 
     this.markers.push(marker.position)
-    console.log(this.markers);
 
     // var infowindow = new google.maps.InfoWindow({
     //   content: content

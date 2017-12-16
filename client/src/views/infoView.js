@@ -15,7 +15,6 @@ InfoView.prototype = {
     var description = document.createElement('p');
     var eventDesc = document.createElement('p');
 
-console.log(location.events[0])
     locationName.innerText = location.placeName;
     description.innerText = location.description;
     eventDesc.innerText = location.events[0].text;
