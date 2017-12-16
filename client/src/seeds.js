@@ -20,7 +20,7 @@ db.locations.insert({
 
 db.locations.insert({
     placeName: "Atlantic Ocean",
-    Latlng: [ -14.599413, -28.673147],
+    Latlng: [ 52.908902, -32.519531],
     description: "Many passenger ships travelled across the Atlantic to America and Canada",
     events:
       [{
