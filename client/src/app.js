@@ -34,6 +34,16 @@ var app = function(){
     }
   }
 
+  var eventBtn = document.getElementById("event-btn");
+  eventBtn.addEventListener("click", function(){
+    makeRequest(url, requestLocations);
+  });
+
+  var familyBtn = document.getElementById("family-btn");
+  familyBtn.addEventListener("click", function(){
+    
+  });
+
   var move = document.getElementById("next");
   move.addEventListener("click", function(){
       changePosition();

@@ -109,6 +109,18 @@ header {
   background-color: #cec4a7;
 }
 
+/*SIDEBAR MENU*/
+.sidebar-menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menu-btn {
+  margin: 0;
+}
+
 
 /*SIDEBAR CHOICES*/
 #sidebar-choices {
