@@ -1,5 +1,4 @@
 var Interactions = require("../interactions");
-debugger;
 //choices
 
 var ChoicesRender = function(event){
