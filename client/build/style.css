@@ -89,10 +89,10 @@ header {
   transition: 0.5s;
 }
 
-#sidebar:hover {
+/*#sidebar:hover {
   width: 75%;
   transition: 0.5s;
-}
+}*/
 
 
 #sidebar-info {

@@ -3,6 +3,7 @@ var ChoicesRender = require('./views/choicesRender');
 var Interactions = require("./interactions");
 var Family = require("./family");
 var FamilyMember = require("./familyMember");
+var FamilyRender = require("./views/familyRender");
 var map = require("./mapWrapper");
 var MarkerRender = require('./views/markerRender.js')
 
@@ -34,6 +35,8 @@ var app = function(){
     }
   }
 
+
+  // SUBMENU BUTTONS
   var eventBtn = document.getElementById("event-btn");
   eventBtn.addEventListener("click", function(){
     makeRequest(url, requestLocations);
@@ -41,9 +44,11 @@ var app = function(){
 
   var familyBtn = document.getElementById("family-btn");
   familyBtn.addEventListener("click", function(){
-    
+    familyInfo = new FamilyRender(family);
   });
 
+
+  // is this still needed? - jamie
   var move = document.getElementById("next");
   move.addEventListener("click", function(){
       changePosition();
