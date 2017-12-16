@@ -13,9 +13,10 @@ ChoicesRender.prototype = {
       renderChoiceButton(choice);
     });
   }
+
 }
 
-var renderChoiceButton = function(choice){
+renderChoiceButton = function(choice){
   container = document.getElementById("choice-buttons-container");
   choiceForm = document.createElement("form");
   choiceText = choice.text;
@@ -30,7 +31,7 @@ var renderChoiceButton = function(choice){
   container.appendChild(choiceBtn);
 }
 
-var addListener = function(choiceBtn, choiceGoto){
+addListener = function(choiceBtn, choiceGoto){
   choiceBtn.addEventListener("click", function(){
     Interactions.getSelectedChoice(choiceGoto);
   });

@@ -12,9 +12,9 @@ db.locations.insert({
           title: "whoah",
           choices:
           [
-            { text: "move to america",
+            { text: "go to vancouver",
               goto: [1, 0] },
-            { text: "embrace canada",
+            { text: "go to canada city",
               goto: [2, 0]}
               //[0] in goto is location index, [1] is event index
           ]
@@ -32,10 +32,10 @@ db.locations.insert({
           title: "whoah",
           choices:
           [
-            { text: "move to america",
+            { text: "go to Halifax",
               goto: [1, 0] },
-            { text: "embrace canada",
-              goto: [2, 0]}
+            { text: "go to Canada City",
+              goto: [0, 0]}
           ]
       }]
 });
@@ -51,9 +51,9 @@ db.locations.insert({
           title: "whoah",
           choices:
           [
-            { text: "move to america",
+            { text: "go to vancouver",
               goto: [1, 0] },
-            { text: "embrace canada",
+            { text: "go to halifax",
               goto: [2, 0]}
           ]
       }]
