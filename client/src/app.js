@@ -2,6 +2,7 @@ var InfoView = require('./views/infoView');
 var ChoicesRender = require('./views/choicesRender');
 var Interactions = require("./interactions");
 var map = require("./mapWrapper");
+var MarkerRender = require('./views/markerRender.js')
 
 currentPosition = 0;
 currentEvent = 0;
@@ -83,6 +84,11 @@ var addTimelineEvent = function(){
   timeline.appendChild(joiner);
   timeline.appendChild(timelineObject);
 }
+
+var renderNewMarker = function(locations){
+    var currentlocation  = new MarkerRender(locations[currentPosition]);
+
+};
 
 
 window.addEventListener("load", app);
