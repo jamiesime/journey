@@ -39,3 +39,16 @@ db.locations.insert({
           choices: ["move to america", "embrace canada"]
       }]
 });
+
+db.locations.insert({
+    placeName: "Aberdeen",
+    Latlng: [ 57.149717, -2.094278],
+    description: "Just a town 4.",
+    events:
+      [{
+          date: "12-02-1837",
+          text: "something weird happened",
+          title: "whoah",
+          choices: ["move to america", "embrace canada"]
+      }]
+});

@@ -293,13 +293,14 @@ MapWrapper = function(container, coords, zoom){
   this.markers = [];
 };
 
-MapWrapper.prototype.addMarker = function (coords, content) {
+MapWrapper.prototype.addMarker = function (coords) {
   var marker = new google.maps.Marker({
     position: coords,
+    map: this.googleMap
   });
-  var infowindow = new google.maps.InfoWindow({
-    content: content
-  });
+  // var infowindow = new google.maps.InfoWindow({
+  //   content: content
+  // });
 }
 
 
