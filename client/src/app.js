@@ -33,6 +33,7 @@ var app = function(){
   var move = document.getElementById("next");
   move.addEventListener("click", function(){
       changePosition();
+      makeRequest(url, requestLocations);
       determineLocation(locations);
   })
   //
