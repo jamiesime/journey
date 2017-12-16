@@ -103,10 +103,21 @@ db.locations.insert({
           choices:
           [
             { text: "Lincoln Assasination",
-              goto: [0, 1] },
+              goto: [0, 2] },
             { text: "Go to xxx",
               goto: [2, 0]}
           ]
+      },
+      {
+          date: "14-04-1865",
+          text: "Abraham Lincoln, the 16th President of the United States, was assassinated by well-known stage actor John Wilkes Booth on April 14, 1865, while attending the play Our American Cousin at Ford's Theatre",
+          title: "Lincoln Assassination",
+          choices:
+          [
+            { text: "Leave DC",
+              goto: [2, 0]}
+          ]
       }
+
     ]
 });
