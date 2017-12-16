@@ -10,7 +10,14 @@ db.locations.insert({
           date: "12-02-1837",
           text: "something weird happened",
           title: "whoah",
-          choices: ["move to america", "embrace canada"]
+          choices:
+          [
+            { text: "go to vancouver",
+              goto: [1, 0] },
+            { text: "go to canada city",
+              goto: [2, 0]}
+              //[0] in goto is location index, [1] is event index
+          ]
       }]
 });
 
@@ -23,7 +30,13 @@ db.locations.insert({
           date: "12-02-1837",
           text: "something weird happened",
           title: "whoah",
-          choices: ["move to america", "embrace canada"]
+          choices:
+          [
+            { text: "go to Halifax",
+              goto: [1, 0] },
+            { text: "go to Canada City",
+              goto: [0, 0]}
+          ]
       }]
 });
 
@@ -36,7 +49,13 @@ db.locations.insert({
           date: "12-02-1837",
           text: "something weird happened",
           title: "whoah",
-          choices: ["move to america", "embrace canada"]
+          choices:
+          [
+            { text: "go to vancouver",
+              goto: [1, 0] },
+            { text: "go to halifax",
+              goto: [2, 0]}
+          ]
       }]
 });
 
