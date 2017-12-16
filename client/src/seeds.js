@@ -71,3 +71,22 @@ db.locations.insert({
           choices: ["move to america", "embrace canada"]
       }]
 });
+
+db.locations.insert({
+    placeName: "California",
+    Latlng: [ 36.778261, -119.417932],
+    description: "California, a western U.S. state, stretches from the Mexican border along the Pacific for nearly 900 miles",
+    events:
+      [{
+          date: "24-01-1848",
+          text: "The California Gold Rush began on January 24, 1848, when gold was found by James W. Marshall at Sutter's Mill in Coloma, California. The news of gold brought some 300,000 people to California from the rest of the United States and abroad.",
+          title: "California Gold Rush",
+          choices:
+          [
+            { text: "Find Gold",
+              goto: [0, 1] },
+            { text: "Go to xxx",
+              goto: [2, 0]}
+          ]
+      }]
+});
