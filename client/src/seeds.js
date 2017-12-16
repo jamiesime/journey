@@ -90,3 +90,23 @@ db.locations.insert({
           ]
       }]
 });
+
+db.locations.insert({
+    placeName: "Washington DC",
+    Latlng: [ 38.907192, -77.036871],
+    description: "Washington DC is the capital of the US.  It’s defined by imposing neoclassical monuments and buildings – including the iconic ones that house the federal government’s 3 branches: the Capitol, White House and Supreme Court.",
+    events:
+      [{
+          date: "22-07-1862",
+          text: "President Lincoln read the first draft of the Emancipation Proclamation to his Cabinet members on July 22, 1862. After some changes, he issued the preliminary version on September 22, which specified that the final document would take effect January 1, 1863. Slaves in Confederate states which were not back in the Union by then would be free, but slaves in the Border States were not affected.",
+          title: "Emancipation Proclamation",
+          choices:
+          [
+            { text: "Lincoln Assasination",
+              goto: [0, 1] },
+            { text: "Go to xxx",
+              goto: [2, 0]}
+          ]
+      }
+    ]
+});
