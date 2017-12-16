@@ -42,7 +42,7 @@ db.locations.insert({
 
 db.locations.insert({
     placeName: "Canada City",
-    Latlng: [ 41.991213, -70.861985],
+    Latlng: [ 0, 1],
     description: "Just a town 3.",
     events:
       [{
