@@ -29,6 +29,12 @@ var app = function(){
       modal.style.display = "none";
     }
   }
+
+  var move = document.getElementById("next");
+  move.addEventListener("click", function(){
+      changePosition();
+      renderNewMarker(currentPosition);
+  })
   //
   // var move = document.getElementById('advance')
   // move.addEventListener('click', function(){
@@ -41,7 +47,7 @@ var app = function(){
   //   addTimelineEvent();
   // })
 
-}
+};
 
 var makeRequest = function(url, callback){
   request = new XMLHttpRequest();
