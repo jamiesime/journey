@@ -2,6 +2,7 @@ var InfoView = require('./views/infoView');
 var ChoicesRender = require('./views/choicesRender');
 var Interactions = require("./interactions");
 var map = require("./mapWrapper");
+var MarkerRender = require('./views/markerRender.js')
 
 currentPosition = 0;
 currentEvent = 0;
@@ -28,6 +29,12 @@ var app = function(){
       modal.style.display = "none";
     }
   }
+
+  var move = document.getElementById("next");
+  move.addEventListener("click", function(){
+      changePosition();
+      renderNewMarker(currentPosition);
+  })
   //
   // var move = document.getElementById('advance')
   // move.addEventListener('click', function(){
@@ -40,7 +47,7 @@ var app = function(){
   //   addTimelineEvent();
   // })
 
-}
+};
 
 var makeRequest = function(url, callback){
   request = new XMLHttpRequest();
@@ -83,6 +90,11 @@ var addTimelineEvent = function(){
   timeline.appendChild(joiner);
   timeline.appendChild(timelineObject);
 }
+
+var renderNewMarker = function(locations){
+    var currentlocation  = new MarkerRender(locations[currentPosition]);
+
+};
 
 
 window.addEventListener("load", app);

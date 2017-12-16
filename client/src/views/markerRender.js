@@ -1,13 +1,21 @@
-MapView = function(markers){
-this.render(markers);
+MarkerRender = function(location){
+this.moveLocation(location);
 };
 
-MapView.prototype.render = function (markers) {
-    console.log(markers);
+MarkerRender.prototype.render = function (location) {
+    console.log(location);
 
-    markers.forEach(function(marker){
-        mainMap = addMarker(lat: position.coords.latitude, lng: position.coords.longitude);
+    location.forEach(function(marker){
+        mainMap = addMarker(lat: marker.Latlng[0], lng: marker.Latlng[1]);
     });
 };
 
-module.exports = MapView;
+MarkerRender.prototype.moveLocation = function (location) {
+    var lat = location.Latlng[0];
+    var lng = location.Latlng[1];
+    var newCoords ={lat: lat, lng: lng};
+    mainMap.addMarker(newCoords, location.placeName);
+    mainMap.repositionMap(newCoords, 7);
+};
+
+module.exports = MarkerRender;
