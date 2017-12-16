@@ -53,9 +53,6 @@ h2 {
 .timeline-object:hover {
   -webkit-box-sizing: border-box;
   border: 2px solid white;
-  /*-webkit-animation-name: white;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-iteration-count: 1;*/
   -webkit-box-shadow: 0 0 25px white;
   transition: 0.5s ease-in;
 }
@@ -117,7 +114,6 @@ header {
   width: 100%;
   transition: 0.5s;
   box-shadow: inset 0 0 10px #4A4436;
-  padding: 7% 7% 0% 7%;
 }
 
 #sidebar-info:hover {

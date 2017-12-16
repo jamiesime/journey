@@ -38,7 +38,6 @@ addListener = function(choiceBtn, choiceGoto){
 }
 
 var addTimelineEvent = function(){
-  console.log("Hello")
   var timeline = document.getElementById('timeline');
   var timelineObject = document.createElement('div');
   var joiner = document.createElement('div');
