@@ -1,3 +1,5 @@
+/*GENERAL STYLING*/
+
 body {
   margin: 0 auto;
 }
@@ -16,9 +18,9 @@ button {
 }
 
 button:hover{
-  background: -moz-linear-gradient(top, #f1e8db 0%, #fbf4ed 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #f1e8db 0%,#fbf4ed 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #f1e8db 0%,#fbf4ed 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-linear-gradient(top, #f1e8db 0%, #fbf4ed 100%);
+  background: -webkit-linear-gradient(top, #f1e8db 0%,#fbf4ed 100%);
+  background: linear-gradient(to bottom, #f1e8db 0%,#fbf4ed 100%);
   cursor: pointer;
 }
 
@@ -30,7 +32,7 @@ h2 {
   text-align: center;
 }
 
-/*TIMELINE HEADER ITEMS*/
+/*TIMELINE SIDEBAR ITEMS*/
 
 #timeline {
   display: flex;
@@ -68,31 +70,13 @@ h2 {
   transition: 0.5s;
 }
 
-/*HEADER STYLES*/
-
-header {
-  display: flex;
-  flex-direction: column;
-}
-
-#header {
-  display: flex;
-  justify-content: center;
-  height: 25vh;
-  background-color: #91886E;
-  box-shadow: inset 0 0 10px #4A4436;
-}
-
-#logo {
-  height: 90px;
-}
+/*MAIN CONTENT STYLES*/
 
 #main-body {
   display:flex;
   height: 100vh;
   background-color: lightGrey;
 }
-
 
 #map-container {
   width: 50%;
@@ -115,10 +99,15 @@ header {
   box-shadow: inset 0 0 10px #4A4436;
 }
 
+#sidebar-info:hover{
+  -moz-box-shadow:    inset 0 0 55px #4A4436;
+  -webkit-box-shadow: inset 0 0 55px #4A4436;
+  box-shadow:         inset 0 0 55px #4A4436;
+}
+
 #sidebar-info-content{
   font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
   padding: 7% 0% 7% 7%;
-
 }
 
 #sidebar-info:hover {
@@ -138,7 +127,6 @@ header {
 .menu-btn {
   margin: 0;
 }
-
 
 /*SIDEBAR CHOICES*/
 #sidebar-choices {
@@ -176,6 +164,10 @@ button#option2 {
 }
 
 /*MODAL*/
+
+#logo {
+  height: 90px;
+}
 
 #logoImg{
   display:flex;
