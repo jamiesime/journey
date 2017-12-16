@@ -1,5 +1,6 @@
 var InfoView = require('./views/infoView');
 var MarkerRender = require('./views/markerRender');
+var TimelineRender = require('./views/timelineRender')
 
 
 var Interactions = {
@@ -29,6 +30,7 @@ var determineLocation = function(locations){
   var location = new InfoView(locations[currentPosition])
   var currentlocation  = new MarkerRender(locations[currentPosition]);
   renderEventChoices(locations[currentPosition].events[currentEvent]);
+  var thisEvent = new TimelineRender(event);
 }
 
 var renderEventChoices = function(event){

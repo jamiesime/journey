@@ -8,6 +8,7 @@ MarkerRender.prototype.moveLocation = function (location) {
     var newCoords ={lat: lat, lng: lng};
     mainMap.addMarker(newCoords);
     mainMap.repositionMap(newCoords, 7);
+
 };
 
 module.exports = MarkerRender;
