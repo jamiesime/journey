@@ -4,9 +4,10 @@ var TimelineRender = require('./views/timelineRender')
 
 
 var Interactions = {
-  getSelectedChoice: function(choiceGoto){
-    currentPosition = choiceGoto[0];
-    currentEvent = choiceGoto[1];
+  getSelectedChoice: function(choice){
+    checkSpecialEvents(choice);
+    currentPosition = choice.goto[0];
+    currentEvent = choice.goto[1];
     url = "http://localhost:3000/getlocations";
     makeRequest(url, requestLocations);
   }
@@ -36,6 +37,18 @@ var determineLocation = function(locations){
 var renderEventChoices = function(event){
   var ChoicesRender = require('./views/choicesRender');
   var thisEvent = new ChoicesRender(event);
+}
+
+var checkSpecialEvents = function(choice){
+  if(choice.memberAdd != ""){
+    console.log("will remove " + choice.memberadd);
+  }
+  if(choice.memberRemove != ""){
+    console.log("will remove " + choice.memberRemove);
+  }
+  if(choice.moneyChange != 0){
+    console.log("change money by " + choice.moneyChange)
+  }
 }
 
 module.exports = Interactions;

@@ -8,6 +8,7 @@ var map = require("./mapWrapper");
 var MarkerRender = require('./views/markerRender.js')
 
 family = [];
+money = 500;
 currentPosition = 0;
 currentEvent = 0;
 

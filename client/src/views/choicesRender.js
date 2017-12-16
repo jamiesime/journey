@@ -24,13 +24,13 @@ renderChoiceButton = function(choice){
   var choiceBtn = document.createElement("button");
   choiceBtn.innerText = choiceText;
   choiceBtn.className = "choice";
-  addListener(choiceBtn, choiceGoto);
+  addListener(choiceBtn, choice);
   container.appendChild(choiceBtn);
 }
 
-addListener = function(choiceBtn, choiceGoto){
+addListener = function(choiceBtn, choice){
   choiceBtn.addEventListener("click", function(){
-    Interactions.getSelectedChoice(choiceGoto);
+    Interactions.getSelectedChoice(choice);
   });
 }
 
