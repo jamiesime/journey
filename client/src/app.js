@@ -46,14 +46,6 @@ var app = function(){
   familyBtn.addEventListener("click", function(){
     familyInfo = new FamilyRender(family);
   });
-
-
-  // is this still needed? - jamie
-  var move = document.getElementById("next");
-  move.addEventListener("click", function(){
-      changePosition();
-      makeRequest(url, requestLocations);
-  })
 };
 
 var makeRequest = function(url, callback){
@@ -88,19 +80,8 @@ var changeEvent = function(change){
   currentEvent += change;
 }
 
-var addTimelineEvent = function(){
-  var timeline = document.getElementById('timeline');
-  var timelineObject = document.createElement('div');
-  var joiner = document.createElement('div');
-  joiner.className = "joiner";
-  timelineObject.className = "timeline-object";
-  timelineObject.innerText = "last place"
-  timeline.appendChild(joiner);
-  timeline.appendChild(timelineObject);
-}
-
 var renderNewMarker = function(locations){
-    var currentlocation  = new MarkerRender(locations[currentPosition]);
+  var currentlocation  = new MarkerRender(locations[currentPosition]);
 };
 
 var initialFamilySetUp = function(){
