@@ -3,7 +3,6 @@ var ChoicesRender = require('./views/choicesRender');
 var Interactions = require("./interactions");
 var map = require("./mapWrapper");
 var MarkerRender = require('./views/markerRender.js')
-console.log(ChoicesRender);
 
 currentPosition = 0;
 currentEvent = 0;
