@@ -5,7 +5,6 @@ var FamilyRender = function(family){
 FamilyRender.prototype = {
 
   render: function(family){
-    debugger;
     container = document.getElementById("sidebar-info");
     container.innerHTML = "";
     var header = document.createElement("h2");
