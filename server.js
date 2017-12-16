@@ -30,3 +30,8 @@ app.get("/getlocations", function(req, res){
     res.json(results);
   });
 });
+
+app.get("/getnext/:locName/:eventIndex", function(req, res){
+  db.collection("locations").find({"placename": locName, "event": eventIndex});
+  res.json(results);
+})
