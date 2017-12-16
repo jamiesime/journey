@@ -2,10 +2,6 @@ var InfoView = function(location){
   this.render(location)
 }
 
-// var currentPosition =
-// this.render(currentPosition)
-
-
 InfoView.prototype = {
 
   render: function(location){
