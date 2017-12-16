@@ -1,5 +1,5 @@
 var InfoView = require('./views/infoView');
-var ChoicesRenderer = require('./views/choicesRender');
+var ChoicesRender = require('./views/choicesRender');
 
 var Interactions = {
   getSelectedChoice: function(choiceGoto){
@@ -30,7 +30,7 @@ var determineLocation = function(locations){
 }
 
 var renderEventChoices = function(event){
-  var thisEvent = new ChoicesRenderer(event);
+  var thisEvent = new ChoicesRender(event);
 }
 
 
