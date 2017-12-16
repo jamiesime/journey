@@ -90,6 +90,25 @@ db.locations.insert({
 });
 
 db.locations.insert({
+    placeName: "Atlantic Ocean",
+    Latlng: [ -14.599413, -28.673147],
+    description: "Many passenger ships travelled across the Atlantic to America and Canada",
+    events:
+      [{
+          date: "14-02-1830",
+          text: "On the journey you talk to some other families.  After landing in Quebec its recommended you travel to either Halifax or Nova Scotia",
+          title: "Journey across the Atlantic",
+          choices:
+          [
+            { text: "Go to Halifax",
+              goto: [1, 0] },
+              { text: "Go to Nova Scotia",
+                goto: [1, 0] }
+          ]
+      }]
+});
+
+db.locations.insert({
     placeName: "California",
     Latlng: [ 36.778261, -119.417932],
     description: "California, a western U.S. state, stretches from the Mexican border along the Pacific for nearly 900 miles",
