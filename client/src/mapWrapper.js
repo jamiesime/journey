@@ -334,9 +334,8 @@ MapWrapper.prototype.addMarker = function (coords) {
   path.setMap(this.googleMap)
 
 
-
-  var distanceCalculator = google.maps.geometry.spherical.computeArea(path.getPath().getArray());
-alert(distanceCalculator);
+  var distanceCalculator = google.maps.geometry.spherical.computeArea(path.getPath());
+  console.log(distanceCalculator);
 }
 
 
