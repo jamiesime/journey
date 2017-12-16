@@ -34,7 +34,7 @@ var app = function(){
   move.addEventListener("click", function(){
       changePosition();
       makeRequest(url, requestLocations);
-      determineLocation(locations);
+      // determineLocation(locations);
   })
   //
   // var move = document.getElementById('advance')
