@@ -13,10 +13,7 @@ db.locations.insert({
           choices:
           [
             { text: "Go to Greenock",
-              goto: [1, 0],
-              memberRemove: "",
-              memberAdd: "",
-              moneyChange: 0}
+              goto: [1, 0]}
           ]
       }]
 });
@@ -34,8 +31,6 @@ db.locations.insert({
           [
             { text: "Get on the Boat",
               goto: [2, 0],
-              memberRemove: "",
-              memberAdd: "",
               moneyChange: -50}
           ]
       }]

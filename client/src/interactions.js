@@ -40,14 +40,17 @@ var renderEventChoices = function(event){
 }
 
 var checkSpecialEvents = function(choice){
-  if(choice.memberAdd != ""){
+  if(choice.memberAdd != null && choice.memberadd != undefined){
     console.log("will remove " + choice.memberadd);
   }
-  if(choice.memberRemove != ""){
+  if(choice.memberRemove != null && choice.memberRemove != undefined){
     console.log("will remove " + choice.memberRemove);
   }
-  if(choice.moneyChange != 0){
+  if(choice.moneyChange != null && choice.moneyChange != undefined){
     console.log("change money by " + choice.moneyChange)
+  }
+  if(choice.memberHealthChange != null && choice.memberHealthChange != undefined){
+    console.log(choice.memberHealthChange.name + " health to change by " + choice.memberHealthChange.value);
   }
 }
 
