@@ -3,7 +3,7 @@ MapWrapper = function(container, coords, zoom){
         center: {lat: coords[0], lng: coords[1]},
         zoom: zoom,
         mapTypeControl: false,
-        draggable: false,
+        draggable: true,
         scaleControl: true,
         scrollwheel: false,
         navigationControl: false,
@@ -300,7 +300,7 @@ MapWrapper.prototype.addMarker = function (coords) {
         url: "https://i.imgur.com/BDkqWAw.png",
         scaledSize: new google.maps.Size(50, 50),
         origin: new google.maps.Point(0,0),
-        anchor: new google.maps.Point(0,0)
+        // anchor: new google.maps.Point(0,0)
     };
     var marker = new google.maps.Marker({
         position: coords,
