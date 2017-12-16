@@ -21,7 +21,7 @@ describe( "Location", function(){
       "Random event",
       "Something happened",
       -4167676800,
-      ["Choice 1", "Choice 2"]
+      ["Choice 1", "Choice 2", "Choice 3"]
     );
 
     testLocation = new Location("Nova Scotia", [44.651070, -63.582687], "Gaelic name for New Scotland", [event1, event2]);
@@ -49,6 +49,7 @@ describe( "Location", function(){
 
   it("should be able to get event details", function(){
     assert.strictEqual(testLocation.events[0].name, "Battle of Montgomery's Tavern");
+    assert.strictEqual(testLocation.events[1].choices.length, 3);
   });
 
   it("should be able to add an event", function(){
