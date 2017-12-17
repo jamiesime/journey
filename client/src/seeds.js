@@ -50,7 +50,8 @@ db.locations.insert({
             { text: "Go to Halifax",
               goto: [3, 0] },
               { text: "Go to Nova Scotia",
-                goto: [3, 0] }
+                goto: [3, 0],
+                memberRemove: "Grace"}
           ]
       }]
 });

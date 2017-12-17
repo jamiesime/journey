@@ -56,10 +56,10 @@ var addSubMenuListeners = function(){
 
 var checkSpecialEvents = function(choice){
   if(choice.memberAdd != null && choice.memberadd != undefined){
-    console.log("will remove " + choice.memberadd);
+    addFamilyMember(choice.memberAdd);
   }
   if(choice.memberRemove != null && choice.memberRemove != undefined){
-    console.log("will remove " + choice.memberRemove);
+    removeFamilyMember(choice.memberRemove);
   }
   if(choice.moneyChange != null && choice.moneyChange != undefined){
     changeMoney(choice.moneyChange);
@@ -71,6 +71,24 @@ var checkSpecialEvents = function(choice){
 
 var changeMoney = function(value){
   money += value;
+}
+
+var addFamilyMember = function(memberToAdd){
+  family.push(memberToAdd);
+}
+
+var removeFamilyMember = function(memberToRemove){
+  var index = null;
+  for(var i = 0 ; i < family.members.length; i++){
+    if(family.members[i].name === memberToRemove){
+      index = i;
+      console.log("found index");
+    }
+  }
+  if(index != null){
+    console.log("trying to remove");
+    family.members.splice(index, 1);
+  }
 }
 
 module.exports = Interactions;

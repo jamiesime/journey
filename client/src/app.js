@@ -41,7 +41,7 @@ var app = function(){
   // SUBMENU BUTTONS
 
   var renderSubMenu = new SubMenuRender();
-  debugger;
+
   var eventBtn = document.getElementById("event-btn");
   eventBtn.addEventListener("click", function(){
     makeRequest(url, requestLocations);
