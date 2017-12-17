@@ -9,6 +9,7 @@ TimelineRender.prototype = {
     var joiner = document.createElement('div');
     joiner.className = "joiner";
     timelineObject.className = "timeline-object";
+    timelineObject.setAttribute('title', `${location.placeName}`)
     timeline.appendChild(joiner);
     timeline.appendChild(timelineObject);
   }
