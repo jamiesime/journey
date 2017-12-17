@@ -4,7 +4,7 @@ var TimelineRender = require('./views/timelineRender');
 var FamilyMember = require("./familyMember");
 var FamilyRender = require("./views/familyRender");
 var SubMenuRender = require('./views/submenuRender');
-var SpecialEventRender = require(".views/specialEventRender");
+var SpecialEventRender = require("./views/specialEventRender");
 
 var redrawRoute = false;
 
@@ -90,7 +90,8 @@ var changeMoney = function(value){
 }
 
 var addFamilyMember = function(memberToAdd){
-  family.members.push(new FamilyMember(memberToAdd[0], memberToAdd[1], memberToAdd[2]));
+  var toRender = family.members.push(new FamilyMember(memberToAdd[0], memberToAdd[1], memberToAdd[2]));
+  renderNewMember(toRender);
 }
 
 var removeFamilyMember = function(memberToRemove){
@@ -119,5 +120,11 @@ var changeMemberHealth = function(memberHealthChange){
     }
   }
 }
+
+var renderNewMember = function(newMember){
+  specialModal = new SpecialEventRender();
+}
+
+
 
 module.exports = Interactions;
