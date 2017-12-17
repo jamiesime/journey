@@ -14,6 +14,9 @@ FamilyRender.prototype = {
     familyContainer.id = "family-container";
     container.appendChild(familyContainer);
     renderEachMember(family);
+    var distanceCovered = document.createElement("p");
+    distanceCovered.innerText = `Distance Travelled: ${kmCovered}km`;
+    familyContainer.appendChild(distanceCovered)
   }
 
 }
