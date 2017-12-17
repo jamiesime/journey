@@ -293,8 +293,6 @@ MapWrapper = function(container, coords, zoom){
   this.markers = [];
 };
 
-
-
 MapWrapper.prototype.addMarker = function (coords) {
   var markerImage = {
     url: "https://i.imgur.com/BDkqWAw.png",
@@ -309,11 +307,7 @@ MapWrapper.prototype.addMarker = function (coords) {
 
   this.markers.push(marker.position)
 
-  // var infowindow = new google.maps.InfoWindow({
-  //   content: content
-  // });
-
-  //Dash length controlled by path -1, 1
+  //Dash length controlled by path -1, 1, M stands for MoveTo
   var lineSymbol = {
     path: 'M 0,-1 0,1',
     strokeOpacity: 0.5,
@@ -333,15 +327,11 @@ MapWrapper.prototype.addMarker = function (coords) {
 
   path.setMap(this.googleMap)
 
-
   var distanceCalculator = google.maps.geometry.spherical.computeLength(path.getPath());
 
-  kmCovered = distanceCalculator / 1000;
+  kmCovered = Math.round(distanceCalculator / 1000);
   console.log(kmCovered);
-
-
 }
-
 
 MapWrapper.prototype.removeMarker = function () {
   if(this.markers.length >= 1){
