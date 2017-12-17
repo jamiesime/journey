@@ -313,7 +313,7 @@ MapWrapper.prototype.addMarker = function (coords) {
   //   content: content
   // });
 
-  //Dash length controlled by path -1, 1
+  //Dash length controlled by path -1, 1, M stands for MoveTo
   var lineSymbol = {
     path: 'M 0,-1 0,1',
     strokeOpacity: 0.5,
