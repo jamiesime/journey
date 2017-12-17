@@ -4,6 +4,7 @@ var TimelineRender = require('./views/timelineRender');
 var FamilyMember = require("./familyMember");
 var FamilyRender = require("./views/familyRender");
 var SubMenuRender = require('./views/submenuRender');
+var SpecialEventRender = require(".views/specialEventRender");
 
 var redrawRoute = false;
 
