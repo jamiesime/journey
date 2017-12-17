@@ -39,7 +39,8 @@ h2 {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: #F5A746
+  background-color: #F5A746;
+  overflow-x: visible;
 }
 
 .timeline-object {
@@ -57,10 +58,23 @@ h2 {
   border: 2px solid white;
   -webkit-box-shadow: 0 0 25px white;
   transition: 0.5s ease-in;
+  position: relative;
 }
 
 .timeline-object:first-child {
   margin-top: 5px;
+}
+
+.timeline-object[data-title]:hover::after {
+     content: attr(data-title);
+     padding: 4px 8px;
+     position: absolute;
+     left: 0;
+     top: 100%;
+     white-space: nowrap;
+     z-index: 2;
+     border: 2px solid saddleBrown;
+     background-image: url(http://api.thumbr.it/whitenoise-600x400.png?background=ECD7B4&noise=626262&density=25&opacity=11);
 }
 
 .joiner {
