@@ -48,7 +48,8 @@ db.locations.insert({
           choices:
           [
             { text: "Go to Halifax",
-              goto: [3, 0] },
+              goto: [3, 0],
+              memberAdd: ["Claire", "10", "75"]},
               { text: "Go to Nova Scotia",
                 goto: [3, 0],
                 memberRemove: "Grace"}

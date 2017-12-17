@@ -1,6 +1,7 @@
 var InfoView = require('./views/infoView');
 var MarkerRender = require('./views/markerRender');
 var TimelineRender = require('./views/timelineRender');
+var FamilyMember = require("./familyMember");
 var FamilyRender = require("./views/familyRender");
 var SubMenuRender = require('./views/submenuRender');
 
@@ -55,7 +56,7 @@ var addSubMenuListeners = function(){
 }
 
 var checkSpecialEvents = function(choice){
-  if(choice.memberAdd != null && choice.memberadd != undefined){
+  if(choice.memberAdd != null && choice.memberAdd != undefined){
     addFamilyMember(choice.memberAdd);
   }
   if(choice.memberRemove != null && choice.memberRemove != undefined){
@@ -74,7 +75,7 @@ var changeMoney = function(value){
 }
 
 var addFamilyMember = function(memberToAdd){
-  family.push(memberToAdd);
+  family.members.push(new FamilyMember(memberToAdd[0], memberToAdd[1], memberToAdd[2]));
 }
 
 var removeFamilyMember = function(memberToRemove){
