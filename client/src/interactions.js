@@ -5,9 +5,12 @@ var FamilyMember = require("./familyMember");
 var FamilyRender = require("./views/familyRender");
 var SubMenuRender = require('./views/submenuRender');
 
+var redrawRoute = false;
+
 var Interactions = {
   getSelectedChoice: function(choice){
     checkSpecialEvents(choice);
+    redrawRoute = true;
     currentPosition = choice.goto[0];
     currentEvent = choice.goto[1];
     url = "http://localhost:3000/getlocations";
@@ -31,9 +34,19 @@ var requestLocations = function(){
   determineLocation(journeyInfo)
 }
 
+var reloadInfoWindow = function(){
+  if(this.status!=200){return};
+  var jsonString = this.responseText;
+  var journeyInfo = JSON.parse(jsonString);
+  redrawRoute = false;
+  determineLocation(journeyInfo)
+}
+
 var determineLocation = function(locations){
   var location = new InfoView(locations[currentPosition])
-  var currentlocation  = new MarkerRender(locations[currentPosition]);
+  if (redrawRoute){
+    var currentlocation  = new MarkerRender(locations[currentPosition]);
+  }
   renderEventChoices(locations[currentPosition].events[currentEvent]);
   var thisEvent = new TimelineRender(event);
 }
@@ -46,7 +59,7 @@ var renderEventChoices = function(event){
 var addSubMenuListeners = function(){
   var eventBtn = document.getElementById("event-btn");
   eventBtn.addEventListener("click", function(){
-    makeRequest(url, requestLocations);
+    makeRequest(url, reloadInfoWindow);
   });
 
   var familyBtn = document.getElementById("family-btn");
