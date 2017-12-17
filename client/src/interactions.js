@@ -91,7 +91,7 @@ var changeMoney = function(value){
 
 var addFamilyMember = function(memberToAdd){
   family.members.push(new FamilyMember(memberToAdd[0], memberToAdd[1], memberToAdd[2]));
-  renderNewMember(memberToAdd[0]);
+  renderNewMember(memberToAdd);
 }
 
 var removeFamilyMember = function(memberToRemove){
@@ -122,8 +122,8 @@ var changeMemberHealth = function(memberHealthChange){
 }
 
 var renderNewMember = function(newMember){
-  var eventText = newMember + " has joined your family!";
-  var imgUrl = "./images/" + newMember + ".png";
+  var eventText = newMember[0] + " has joined your family!";
+  var imgUrl = "./images/" + newMember[0] + ".png";
   specialModal = new SpecialEventRender(newMember, eventText, imgUrl);
 }
 
