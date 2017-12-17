@@ -1,6 +1,7 @@
 var InfoView = require('./views/infoView');
 var MarkerRender = require('./views/markerRender');
-var TimelineRender = require('./views/timelineRender')
+var TimelineRender = require('./views/timelineRender');
+var FamilyRender = require("./views/familyRender");
 var SubMenuRender = require('./views/submenuRender');
 
 var Interactions = {
@@ -11,6 +12,7 @@ var Interactions = {
     url = "http://localhost:3000/getlocations";
     makeRequest(url, requestLocations);
     var refreshMenu = new SubMenuRender();
+    addSubMenuListeners();
   }
 }
 
@@ -38,6 +40,18 @@ var determineLocation = function(locations){
 var renderEventChoices = function(event){
   var ChoicesRender = require('./views/choicesRender');
   var thisEvent = new ChoicesRender(event);
+}
+
+var addSubMenuListeners = function(){
+  var eventBtn = document.getElementById("event-btn");
+  eventBtn.addEventListener("click", function(){
+    makeRequest(url, requestLocations);
+  });
+
+  var familyBtn = document.getElementById("family-btn");
+  familyBtn.addEventListener("click", function(){
+    familyInfo = new FamilyRender(family);
+  });
 }
 
 var checkSpecialEvents = function(choice){
