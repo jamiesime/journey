@@ -336,9 +336,8 @@ MapWrapper.prototype.addMarker = function (coords) {
 
   var distanceCalculator = google.maps.geometry.spherical.computeLength(path.getPath());
 
-  kmCovered = distanceCalculator / 1000;
+  kmCovered = Math.round(distanceCalculator / 1000);
   console.log(kmCovered);
-
 
 }
 
