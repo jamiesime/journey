@@ -46,9 +46,10 @@ var determineLocation = function(locations){
   var location = new InfoView(locations[currentPosition])
   if (redrawRoute){
     var currentlocation  = new MarkerRender(locations[currentPosition]);
+    var thisEvent = new TimelineRender(event);
   }
   renderEventChoices(locations[currentPosition].events[currentEvent]);
-  var thisEvent = new TimelineRender(event);
+
 }
 
 var renderEventChoices = function(event){
@@ -96,11 +97,9 @@ var removeFamilyMember = function(memberToRemove){
   for(var i = 0 ; i < family.members.length; i++){
     if(family.members[i].name === memberToRemove){
       index = i;
-      console.log("found index");
     }
   }
   if(index != null){
-    console.log("trying to remove");
     family.members.splice(index, 1);
   }
 }
@@ -110,13 +109,11 @@ var changeMemberHealth = function(memberHealthChange){
   for(var i = 0 ; i < family.members.length; i++){
     if(family.members[i].name === memberHealthChange[0]){
       index = i;
-      console.log("found index");
     }
   }
   if(index != null){
     var health = family.members[index].health += memberHealthChange[1];
     if(health < 1){
-      console.log(family.members[index].name + " has died. What a shame!");
       family.members.splice(index, 1);
     }
   }
