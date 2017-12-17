@@ -13,7 +13,7 @@ db.locations.insert({
           choices:
           [
             { text: "Go to Greenock",
-              goto: [1, 0] }
+              goto: [1, 0]}
           ]
       }]
 });
@@ -30,7 +30,8 @@ db.locations.insert({
           choices:
           [
             { text: "Get on the Boat",
-              goto: [2, 0] }
+              goto: [2, 0],
+              moneyChange: -50}
           ]
       }]
 });
@@ -47,9 +48,11 @@ db.locations.insert({
           choices:
           [
             { text: "Go to Halifax",
-              goto: [3, 0] },
+              goto: [3, 0],
+              memberAdd: ["Claire", "10", 75]},
               { text: "Go to Nova Scotia",
-                goto: [3, 0] }
+                goto: [3, 0],
+                memberRemove: "Grace"}
           ]
       }]
 });
@@ -66,7 +69,8 @@ db.locations.insert({
           choices:
           [
             { text: "Go to Greenock",
-              goto: [1, 0] }
+              goto: [1, 0],
+              memberHealthChange: ["Jonas", -20]}
           ]
       }]
 });

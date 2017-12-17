@@ -110,6 +110,8 @@ h2 {
   padding: 7% 0% 7% 7%;
 }
 
+
+
 #sidebar-info:hover {
   background-color: #cec4a7;
 }
@@ -126,6 +128,39 @@ h2 {
 
 .menu-btn {
   margin: 0;
+}
+
+#money-display{
+  background-color: #DDC7AA;
+  transition: all 0.5s ease;
+  color: #805243;
+  border: 2px solid saddleBrown;
+  font-family: "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
+  font-size: 20px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/*FAMILY MENU*/
+
+#family-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.member-box{
+  background-color: #cec4a7;
+  border-radius: 4px;
+  margin: 10px;
+  padding: 0px 5px;
+  min-width: 20%;
+  min-height: 30%;
+  border: 2px solid saddleBrown;
+  box-shadow: 2px 4px;
 }
 
 /*SIDEBAR CHOICES*/

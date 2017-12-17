@@ -5,13 +5,14 @@ var FamilyRender = function(family){
 FamilyRender.prototype = {
 
   render: function(family){
-    container = document.getElementById("sidebar-info");
-    content = document.getElementById("sidebar-info-content");
-    content.innerHTML = "";
+    container = document.getElementById("sidebar-info-content");
+    container.innerHTML = "";
     var header = document.createElement("h2");
     header.innerText = "Generic Family!";
-    content.appendChild(header);
-    container.appendChild(content);
+    container.appendChild(header);
+    familyContainer = document.createElement("div");
+    familyContainer.id = "family-container";
+    container.appendChild(familyContainer);
     renderEachMember(family);
   }
 
@@ -19,9 +20,18 @@ FamilyRender.prototype = {
 
 var renderEachMember = function(family){
   family.members.forEach(function(member){
-    var pTest = document.createElement("p");
-    pTest.innerText = member.name;
-    content.appendChild(pTest);
+    memberBox = document.createElement("div");
+    memberBox.classList += "member-box";
+    var name = document.createElement("p");
+    name.innerText = member.name;
+    var age = document.createElement("p");
+    age.innerText = "Age: " + member.age;
+    var health = document.createElement("p");
+    health.innerText = "Health: " + member.health;
+    memberBox.appendChild(name);
+    memberBox.appendChild(age);
+    memberBox.appendChild(health);
+    familyContainer.appendChild(memberBox);
   })
 }
 

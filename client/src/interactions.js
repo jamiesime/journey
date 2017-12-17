@@ -1,14 +1,19 @@
 var InfoView = require('./views/infoView');
 var MarkerRender = require('./views/markerRender');
-var TimelineRender = require('./views/timelineRender')
-
+var TimelineRender = require('./views/timelineRender');
+var FamilyMember = require("./familyMember");
+var FamilyRender = require("./views/familyRender");
+var SubMenuRender = require('./views/submenuRender');
 
 var Interactions = {
-  getSelectedChoice: function(choiceGoto){
-    currentPosition = choiceGoto[0];
-    currentEvent = choiceGoto[1];
+  getSelectedChoice: function(choice){
+    checkSpecialEvents(choice);
+    currentPosition = choice.goto[0];
+    currentEvent = choice.goto[1];
     url = "http://localhost:3000/getlocations";
     makeRequest(url, requestLocations);
+    var refreshMenu = new SubMenuRender();
+    addSubMenuListeners();
   }
 }
 
@@ -36,6 +41,72 @@ var determineLocation = function(locations){
 var renderEventChoices = function(event){
   var ChoicesRender = require('./views/choicesRender');
   var thisEvent = new ChoicesRender(event);
+}
+
+var addSubMenuListeners = function(){
+  var eventBtn = document.getElementById("event-btn");
+  eventBtn.addEventListener("click", function(){
+    makeRequest(url, requestLocations);
+  });
+
+  var familyBtn = document.getElementById("family-btn");
+  familyBtn.addEventListener("click", function(){
+    familyInfo = new FamilyRender(family);
+  });
+}
+
+var checkSpecialEvents = function(choice){
+  if(choice.memberAdd != null && choice.memberAdd != undefined){
+    addFamilyMember(choice.memberAdd);
+  }
+  if(choice.memberRemove != null && choice.memberRemove != undefined){
+    removeFamilyMember(choice.memberRemove);
+  }
+  if(choice.moneyChange != null && choice.moneyChange != undefined){
+    changeMoney(choice.moneyChange);
+  }
+  if(choice.memberHealthChange != null && choice.memberHealthChange != undefined){
+    changeMemberHealth(choice.memberHealthChange);
+  }
+}
+
+var changeMoney = function(value){
+  money += value;
+}
+
+var addFamilyMember = function(memberToAdd){
+  family.members.push(new FamilyMember(memberToAdd[0], memberToAdd[1], memberToAdd[2]));
+}
+
+var removeFamilyMember = function(memberToRemove){
+  var index = null;
+  for(var i = 0 ; i < family.members.length; i++){
+    if(family.members[i].name === memberToRemove){
+      index = i;
+      console.log("found index");
+    }
+  }
+  if(index != null){
+    console.log("trying to remove");
+    family.members.splice(index, 1);
+  }
+}
+
+var changeMemberHealth = function(memberHealthChange){
+  var index = null;
+  for(var i = 0 ; i < family.members.length; i++){
+    if(family.members[i].name === memberHealthChange[0]){
+      index = i;
+      console.log("found index");
+    }
+  }
+  if(index != null){
+    var health = family.members[index].health += memberHealthChange[1];
+    if(health < 1){
+      console.log(family.members[index].name + " has died. What a shame!");
+      family.members.splice(index, 1);
+    }
+  }
 }
 
 module.exports = Interactions;

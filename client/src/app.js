@@ -4,10 +4,12 @@ var Interactions = require("./interactions");
 var Family = require("./family");
 var FamilyMember = require("./familyMember");
 var FamilyRender = require("./views/familyRender");
+var SubMenuRender = require("./views/submenuRender");
 var map = require("./mapWrapper");
 var MarkerRender = require('./views/markerRender.js')
 
 family = [];
+money = 500;
 currentPosition = 0;
 currentEvent = 0;
 
@@ -37,6 +39,9 @@ var app = function(){
 
 
   // SUBMENU BUTTONS
+
+  var renderSubMenu = new SubMenuRender();
+
   var eventBtn = document.getElementById("event-btn");
   eventBtn.addEventListener("click", function(){
     makeRequest(url, requestLocations);
@@ -85,9 +90,9 @@ var renderNewMarker = function(locations){
 };
 
 var initialFamilySetUp = function(){
-  var member1 = new FamilyMember("Jonas", "24", "100");
-  var member2 = new FamilyMember("Alice", "24", "100");
-  var member3 = new FamilyMember("Grace", "6", "100");
+  var member1 = new FamilyMember("Jonas", "24", 100);
+  var member2 = new FamilyMember("Alice", "24", 100);
+  var member3 = new FamilyMember("Grace", "6", 100);
   initialMembers = [];
   initialMembers.push(member1);
   initialMembers.push(member2);
