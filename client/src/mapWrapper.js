@@ -309,9 +309,6 @@ MapWrapper.prototype.addMarker = function (coords) {
 
   this.markers.push(marker.position)
 
-  // var infowindow = new google.maps.InfoWindow({
-  //   content: content
-  // });
 
   //Dash length controlled by path -1, 1, M stands for MoveTo
   var lineSymbol = {
