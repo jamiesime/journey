@@ -153,14 +153,29 @@ h2 {
 }
 
 .member-box{
-  background-color: #cec4a7;
+  background-color: #91886E;
   border-radius: 4px;
   margin: 10px;
-  padding: 0px 5px;
+  padding: 5px 5px;
   min-width: 20%;
   min-height: 30%;
+  max-width: 25%;
   border: 2px solid saddleBrown;
   box-shadow: 2px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
+}
+
+.member-box p {
+  margin: 4px;
+}
+
+.family-sprite{
+  width: 64px;
+  height: 64px;
 }
 
 /*SIDEBAR CHOICES*/
