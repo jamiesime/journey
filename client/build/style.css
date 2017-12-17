@@ -65,8 +65,8 @@ h2 {
   margin-top: 5px;
 }
 
-.timeline-object[title]:hover::after {
-     content: attr(title);
+.timeline-object[data-title]:hover::after {
+     content: attr(data-title);
      padding: 4px 8px;
      position: absolute;
      left: 0;
