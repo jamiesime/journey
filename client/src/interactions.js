@@ -4,6 +4,7 @@ var TimelineRender = require('./views/timelineRender');
 var FamilyMember = require("./familyMember");
 var FamilyRender = require("./views/familyRender");
 var SubMenuRender = require('./views/submenuRender');
+var SpecialEventRender = require("./views/specialEventRender");
 
 var redrawRoute = false;
 
@@ -46,10 +47,10 @@ var determineLocation = function(locations){
   var location = new InfoView(locations[currentPosition])
   if (redrawRoute){
     var currentlocation  = new MarkerRender(locations[currentPosition]);
-    var thisEvent = new TimelineRender(locations[currentPosition]);
-
+    var thisEvent = new TimelineRender(event);
   }
   renderEventChoices(locations[currentPosition].events[currentEvent]);
+
 }
 
 var renderEventChoices = function(event){
@@ -90,6 +91,7 @@ var changeMoney = function(value){
 
 var addFamilyMember = function(memberToAdd){
   family.members.push(new FamilyMember(memberToAdd[0], memberToAdd[1], memberToAdd[2]));
+  renderNewMember(memberToAdd);
 }
 
 var removeFamilyMember = function(memberToRemove){
@@ -97,11 +99,9 @@ var removeFamilyMember = function(memberToRemove){
   for(var i = 0 ; i < family.members.length; i++){
     if(family.members[i].name === memberToRemove){
       index = i;
-      console.log("found index");
     }
   }
   if(index != null){
-    console.log("trying to remove");
     family.members.splice(index, 1);
   }
 }
@@ -111,16 +111,22 @@ var changeMemberHealth = function(memberHealthChange){
   for(var i = 0 ; i < family.members.length; i++){
     if(family.members[i].name === memberHealthChange[0]){
       index = i;
-      console.log("found index");
     }
   }
   if(index != null){
     var health = family.members[index].health += memberHealthChange[1];
     if(health < 1){
-      console.log(family.members[index].name + " has died. What a shame!");
       family.members.splice(index, 1);
     }
   }
 }
+
+var renderNewMember = function(newMember){
+  var eventText = newMember[0] + " has joined your family!";
+  var imgUrl = "./images/" + newMember[0] + ".png";
+  specialModal = new SpecialEventRender(newMember, eventText, imgUrl);
+}
+
+
 
 module.exports = Interactions;
