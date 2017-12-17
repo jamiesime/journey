@@ -66,7 +66,7 @@ var checkSpecialEvents = function(choice){
     changeMoney(choice.moneyChange);
   }
   if(choice.memberHealthChange != null && choice.memberHealthChange != undefined){
-    console.log(choice.memberHealthChange.name + " health to change by " + choice.memberHealthChange.value);
+    changeMemberHealth(choice.memberHealthChange);
   }
 }
 
@@ -89,6 +89,23 @@ var removeFamilyMember = function(memberToRemove){
   if(index != null){
     console.log("trying to remove");
     family.members.splice(index, 1);
+  }
+}
+
+var changeMemberHealth = function(memberHealthChange){
+  var index = null;
+  for(var i = 0 ; i < family.members.length; i++){
+    if(family.members[i].name === memberHealthChange[0]){
+      index = i;
+      console.log("found index");
+    }
+  }
+  if(index != null){
+    var health = family.members[index].health += memberHealthChange[1];
+    if(health < 1){
+      console.log(family.members[index].name + " has died. What a shame!");
+      family.members.splice(index, 1);
+    }
   }
 }
 

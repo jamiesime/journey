@@ -90,9 +90,9 @@ var renderNewMarker = function(locations){
 };
 
 var initialFamilySetUp = function(){
-  var member1 = new FamilyMember("Jonas", "24", "100");
-  var member2 = new FamilyMember("Alice", "24", "100");
-  var member3 = new FamilyMember("Grace", "6", "100");
+  var member1 = new FamilyMember("Jonas", "24", 100);
+  var member2 = new FamilyMember("Alice", "24", 100);
+  var member3 = new FamilyMember("Grace", "6", 100);
   initialMembers = [];
   initialMembers.push(member1);
   initialMembers.push(member2);
