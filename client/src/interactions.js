@@ -46,9 +46,10 @@ var determineLocation = function(locations){
   var location = new InfoView(locations[currentPosition])
   if (redrawRoute){
     var currentlocation  = new MarkerRender(locations[currentPosition]);
+    var thisEvent = new TimelineRender(event);
+
   }
   renderEventChoices(locations[currentPosition].events[currentEvent]);
-  var thisEvent = new TimelineRender(event);
 }
 
 var renderEventChoices = function(event){
