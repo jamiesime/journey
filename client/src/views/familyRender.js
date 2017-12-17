@@ -22,12 +22,16 @@ var renderEachMember = function(family){
   family.members.forEach(function(member){
     memberBox = document.createElement("div");
     memberBox.classList += "member-box";
+    var sprite = document.createElement("img");
+    sprite.src = "./images/" + member.name + ".png";
+    sprite.classList += "family-sprite";
     var name = document.createElement("p");
     name.innerText = member.name;
     var age = document.createElement("p");
     age.innerText = "Age: " + member.age;
     var health = document.createElement("p");
     health.innerText = "Health: " + member.health;
+    memberBox.appendChild(sprite);
     memberBox.appendChild(name);
     memberBox.appendChild(age);
     memberBox.appendChild(health);
