@@ -1,9 +1,9 @@
-var TimelineRender = function(event){
-  this.render(event);
+var TimelineRender = function(location){
+  this.render(location);
 }
 
 TimelineRender.prototype = {
-  render: function(event){
+  render: function(location){
     var timeline = document.getElementById('timeline');
     var timelineObject = document.createElement('div');
     var joiner = document.createElement('div');
