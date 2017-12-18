@@ -4,7 +4,7 @@ var TimelineRender = require('./views/timelineRender');
 var FamilyMember = require("./familyMember");
 var FamilyRender = require("./views/familyRender");
 var SubMenuRender = require('./views/submenuRender');
-var resultQueueRender = require("./views/resultQueueRender");
+var ResultQueueRender = require("./views/resultQueueRender");
 var Result = require("./result");
 
 var redrawRoute = false;
@@ -87,6 +87,9 @@ var checkSpecialEvents = function(choice){
     changeMemberHealth(choice.memberHealthChange);
     renderMemberHealthChange(choice.memberHealthChange);
   }
+  if (eventQueue.length > 0){
+  renderEventsSequence(eventQueue);
+  }
 }
 
 var changeMoney = function(value){
@@ -125,7 +128,6 @@ var changeMemberHealth = function(memberHealthChange){
       family.members.splice(index, 1);
     }
   }
-  renderEventsSequence(eventQueue);
 }
 
 var renderNewMember = function(newMember){
@@ -174,11 +176,11 @@ var renderMemberHealthChange = function(memberHealthChange){
 }
 
 var renderEventsSequence = function(eventQueue){
-  if (eventQueue != null || undefined){
-      new resultQueueRender(eventQueue);
+  if (eventQueue != null && eventQueue != undefined){
+      var resultQueue = new ResultQueueRender(eventQueue);
     }
   }
   eventQueue.splice(0, eventQueue.length);
-}
+
 
 module.exports = Interactions;

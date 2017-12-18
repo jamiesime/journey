@@ -1,10 +1,10 @@
-var SpecialEventRender = function(eventQueue){
+var ResultQueueRender = function(eventQueue){
   this.render(eventQueue);
 }
 
 var currentEvent = 0;
 
-SpecialEventRender.prototype = {
+ResultQueueRender.prototype = {
 
   render: function(eventQueue){
     var modal = document.getElementById("special-event-invisible");
@@ -32,8 +32,9 @@ SpecialEventRender.prototype = {
     close.id = "special-event-close";
     close.innerText = "Ok";
     close.addEventListener("click", function(){
+      
       modal.id = "special-event-invisible";
-    });
+      });
     content.appendChild(close);
   }
 
@@ -58,4 +59,4 @@ var renderMemberInfo = function(content, member){
   content.appendChild(health);
 }
 
-module.exports = SpecialEventRender;
+module.exports = ResultQueueRender;
