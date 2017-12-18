@@ -7,6 +7,7 @@ var SubMenuRender = require('./views/submenuRender');
 var ResultQueueRender = require("./views/resultQueueRender");
 var Result = require("./result");
 
+var locations = {};
 var redrawRoute = false;
 var eventQueue = [];
 
@@ -34,7 +35,8 @@ var requestLocations = function(){
   if(this.status!=200){return};
   var jsonString = this.responseText;
   var journeyInfo = JSON.parse(jsonString);
-  determineLocation(journeyInfo)
+  determineLocation(journeyInfo);
+  locations = journeyInfo;
 }
 
 var reloadInfoWindow = function(){
@@ -50,8 +52,6 @@ var determineLocation = function(locations){
 
   var familyBtn = document.getElementById("family-btn");
   familyBtn.addEventListener("click", function(){
-    console.log(locations[currentPosition]);
-
     familyInfo = new FamilyRender(family, locations[currentPosition]);
   });
   if (redrawRoute){
@@ -103,7 +103,7 @@ var changeMoney = function(value){
 }
 
 var addFamilyMember = function(memberToAdd){
-  family.members.push(new FamilyMember(memberToAdd.name, memberToAdd.age, memberToAdd.health));
+  family.members.push(new FamilyMember(memberToAdd.name, memberToAdd.born, memberToAdd.health));
   renderNewMember(memberToAdd);
 }
 
@@ -189,7 +189,7 @@ var renderMemberHealthChange = function(memberHealthChange){
 
 var renderEventsSequence = function(eventQueue){
   if (eventQueue != null && eventQueue != undefined){
-      var resultQueue = new ResultQueueRender(eventQueue);
+      var resultQueue = new ResultQueueRender(eventQueue, locations);
     }
     eventQueue.splice(0, eventQueue.length);
   }

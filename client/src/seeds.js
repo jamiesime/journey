@@ -52,7 +52,7 @@ db.locations.insert({
           [
             { text: "Arrive to Halifax",
               goto: [3, 0],
-              memberAdd: {name: "James", age: 4, health: 75}
+              memberAdd: {name: "James", born: 1828, health: 75}
             },
               { text: "Play dice with the crew....",
                 goto: [3, 0],
@@ -78,7 +78,7 @@ db.locations.insert({
             { text: "Go to Quebec City",
               goto: [4, 0],
               moneyChange: { value: -25, source: "carriage ticket"},
-              memberHealthChange: {name: "Jonas", change: -20}
+              memberHealthChange: {name: "John", change: -20}
             }
           ]
       }]
@@ -116,6 +116,7 @@ db.locations.insert({
           [
             { text: "Travel to New York",
               goto: [6, 0]}
+
           ]
       }]
 });
