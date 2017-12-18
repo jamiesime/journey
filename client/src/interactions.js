@@ -4,9 +4,11 @@ var TimelineRender = require('./views/timelineRender');
 var FamilyMember = require("./familyMember");
 var FamilyRender = require("./views/familyRender");
 var SubMenuRender = require('./views/submenuRender');
-var SpecialEventRender = require("./views/specialEventRender");
+var resultQueueRender = require("./views/resultQueueRender");
+var Result = require("./result");
 
 var redrawRoute = false;
+var eventQueue = [];
 
 var Interactions = {
   getSelectedChoice: function(choice){
@@ -123,19 +125,22 @@ var changeMemberHealth = function(memberHealthChange){
       family.members.splice(index, 1);
     }
   }
+  renderEventsSequence(eventQueue);
 }
 
 var renderNewMember = function(newMember){
   var eventText = newMember.name + " has joined your family!";
   var imgUrl = "./images/" + newMember.name + ".png";
-  specialModal = new SpecialEventRender(newMember, eventText, imgUrl);
+  var result = new Result(newMember, eventText, imgUrl);
+  eventQueue.push(result);
 }
 
 var renderRemoveMember = function(removeMember){
   var memberObject = removeMember[0];
   var eventText = memberObject.name + " has died!";
   var imgUrl = "./images/" + memberObject.name + ".png";
-  var specialModal = new SpecialEventRender(memberObject, eventText, imgUrl);
+  var result = new Result(memberObject, eventText, imgUrl);
+  eventQueue.push(result);
 }
 
 var renderMoneyChange = function(moneyChange){
@@ -145,7 +150,8 @@ var renderMoneyChange = function(moneyChange){
   else {
     var eventText = "Money decreased by " + moneyChange.value + " due to " + moneyChange.source;
   }
-  var specialModal = new SpecialEventRender(null, eventText, null);
+  var result = new Result(null, eventText, null);
+  eventQueue.push(result);
 }
 
 var renderMemberHealthChange = function(memberHealthChange){
@@ -163,14 +169,13 @@ var renderMemberHealthChange = function(memberHealthChange){
   else {
     var eventText = memberObject.name + "'s health got worse!";
   }
-  var specialModal = new SpecialEventRender(memberObject, eventText, imgUrl);
+  var result = new Result(memberObject, eventText, imgUrl);
 }
 
 var renderEventsSequence = function(eventQueue){
   if (eventQueue != null || undefined){
-    eventQueue.forEach(function(event){
-      new SpecialEventRender(eventQueue);
-    });
+      new resultQueueRender(eventQueue);
+    }
   }
 }
 
