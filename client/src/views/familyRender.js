@@ -29,18 +29,26 @@ FamilyRender.prototype = {
 
 var renderEachMember = function(family){
   family.members.forEach(function(member){
+    memberFlex = document.createElement("div")
+    memberFlex.style.display = "flex";
+    memberFlex.style.flexDirection = "column";
+    memberFlex.style.alignItems = "center";
     memberBox = document.createElement("div");
     memberBox.classList += "member-box";
     var healthBarContainer = document.createElement("div");
     var healthBar = document.createElement("div");
+
     healthBarContainer.style.position = "relative";
-    healthBarContainer.style.backgroundColor = "tomato";
+    healthBarContainer.style.backgroundColor = "#E68364";
     healthBar.style.position = "absolute";
-    healthBar.style.backgroundColor = "green";
+    healthBar.style.backgroundColor = "#8DB255";
     healthBarContainer.style.height = "20px";
+    healthBarContainer.style.borderRadius = "10px";
+    healthBar.style.borderRadius = "10px";
+
     healthBar.style.height = "20px";
-    healthBarContainer.style.width = "100px";
-    healthBar.style.width = "110px";
+    healthBarContainer.style.width = "110px";
+    healthBar.style.width = member.health + "%";
 
     var sprite = document.createElement("img");
     sprite.src = "./images/" + member.name + ".png";
@@ -57,8 +65,10 @@ var renderEachMember = function(family){
     memberBox.appendChild(name);
     memberBox.appendChild(age);
     memberBox.appendChild(health);
-    memberBox.appendChild(healthBarContainer);
-    familyContainer.appendChild(memberBox);
+
+    memberFlex.appendChild(memberBox);
+    memberFlex.appendChild(healthBarContainer);
+    familyContainer.appendChild(memberFlex);
   })
 }
 
