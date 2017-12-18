@@ -27,7 +27,7 @@ db.locations.insert({
     events:
       [{
           date: "30-03-1830",
-          text: "The Family arrives to a busy bustling town. Greenock itself is full of fisherman and sailors from the canal and ocean, with tales from far and wide. Your guide, the fortuitously met sailor, leads you strait to the vessel he is to travel on and you negotiate passage for the voyage ahead. Getting yourself settled into the available cabins on board, you spot a few other families who are travelling the same brave path as your own. Upon high tide, the call from the captain comes to cast off, and as the ship pulls out of dock your family says farewell the home they thought they'd never leave.",
+          text: "The Family arrives to a busy bustling town. Greenock itself is full of workers from the differing industries. With so many branches of work, you hope that there would be a job available but with the only experience you have being in farming no offers are made. Your guide, the fortuitously met sailor, has told  you which vessel he is to travel on and realising your funds are drying up quickly, you negotiate passage for the voyage abroad. Getting yourself settled into the available cabins on board, you spot a few other families who are travelling the same brave path as your own. Upon high tide, the call from the captain comes to cast off, and as the ship pulls out of dock, your family says farewell the home they thought they'd never leave.",
           title: "Leaving Scotland",
           choices:
           [
@@ -67,11 +67,11 @@ db.locations.insert({
 db.locations.insert({
     placeName: "Halifax, Nova Scotia",
     Latlng: [ 44.655537, -63.578568],
-    description: "Halifax, the capital city of the Nova Scotia region, was considered one of the most important financial centres of the North Britsh America (and later Canada, when it was formed). ",
+    description: "Halifax, the capital city of the Nova Scotia region, was considered one of the most important financial centres of the North Britsh America (and later Canada, when it was formed). It was originally inhabited by the Mi'Kmaq people. The first European settlers were French, who set up a collony called Acadia in the early 1600's. When the British settled in 1749, it sparked the Father Le Loutre's War, in which the British had to erect fortifications to defend the newly built Protestant settlement.",
     events:
       [{
           date: "02-05-1830",
-          text: "You've arrived on new land, shaky from the voyage. Eager for work, your family finds slim choice locally, but upon asking around word reaches you of employment prospects in nearby provinces. ",
+          text: "You've arrived on this new land, shaky from the voyage. Eager for work, your family finds slim choice locally, but upon asking around word reaches you of employment prospects in nearby provinces. ",
           title: "Where to now?",
           choices:
           [
