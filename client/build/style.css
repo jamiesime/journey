@@ -67,9 +67,10 @@ h2 {
 
 .timeline-object:last-child {
   background-color: green;
-  height: 35px;
-  width: 35px;
+  border: 2px solid white;
+  border-radius: 50%;
 }
+
 
 .timeline-object[data-title]:hover::after {
   content: attr(data-title);
@@ -273,7 +274,7 @@ button#option2 {
   left: 0;
   top: 0;
   width: 100%; /* Full width */
-  /*height: 100vh;*/
+  height: 100vh;
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
