@@ -3,9 +3,9 @@ db.dropDatabase();
 
 // index 0 in array
 db.locations.insert({
-    placeName: "Isle of Lewis",
-    Latlng: [ 58.241575, -6.661592],
-    description: "The Highlands are high in scotland",
+    placeName: "Scottish Highlands",
+    Latlng: [ 57.394109, -4.899902],
+    description: "The Highlands are a vast landscape of differing rural topographies. It is the year 1830, and over the past few decades the land owners have implemented the Highland Clearances; the forced eviction of inhabitants of the Highlands and western islands of Scotland. Woken in the late of night by ",
     events:
       [{
           date: "12-02-1830",
