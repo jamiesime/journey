@@ -202,7 +202,6 @@ var randomDeathOfOldAge = function(){
     var age = (locations[currentPosition].events[currentEvent].date - member.born);
     if( age > 45){
       var chance = getRandomInt();
-      console.log(chance);
       if(chance > 90){
         removeFamilyMember(member.name);
       }
