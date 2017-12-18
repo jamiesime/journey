@@ -9,5 +9,7 @@ describe( "Dice Roll", function(){
     dice = new Dice();
   });
 
-  it("return 5 random numbers")
+  it("return 5 random numbers", function(){
+    assert.deepStrictEqual(dice.rollDice().length, 5);
+  });
 });
