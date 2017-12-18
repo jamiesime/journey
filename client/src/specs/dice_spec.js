@@ -16,7 +16,10 @@ describe( "Dice Roll", function(){
   it("should, before rolling, have shipExist set to false", function(){
     assert.strictEqual(dice.shipExist, false);
   });
-  it("should, before rolling, have captExist set to false");
+  
+  it("should, before rolling, have captExist set to false", function(){
+    assert.strictEqual(dice.captExist, false);
+  });
   it("should, before rolling, have crewExist set to false");
   it("should, before rolling, have cargo set to zero");
 
