@@ -68,7 +68,7 @@ var addSubMenuListeners = function(){
 
   var familyBtn = document.getElementById("family-btn");
   familyBtn.addEventListener("click", function(){
-    familyInfo = new FamilyRender(family);
+    familyInfo = new FamilyRender(family, locations[currentPosition]);
   });
 }
 

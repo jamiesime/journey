@@ -27,7 +27,7 @@ FamilyRender.prototype = {
 
 }
 
-var renderEachMember = function(family){
+var renderEachMember = function(family, location){
   family.members.forEach(function(member){
     memberFlex = document.createElement("div")
     memberFlex.classList += "member-container"
@@ -47,7 +47,7 @@ var renderEachMember = function(family){
     var name = document.createElement("p");
     name.innerText = member.name;
     var age = document.createElement("p");
-    age.innerText = "Age: " + member.age;
+    age.innerText = "Age: " + member.born;
     var health = document.createElement("p");
     health.innerText = "Health: " + member.health;
 
