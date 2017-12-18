@@ -1,6 +1,7 @@
 use journey;
 db.dropDatabase();
 
+// index 0 in array
 db.locations.insert({
     placeName: "Isle of Lewis",
     Latlng: [ 58.241575, -6.661592],
@@ -18,13 +19,14 @@ db.locations.insert({
       }]
 });
 
+// index 1 in array
 db.locations.insert({
     placeName: "Greenock",
     Latlng: [ 55.956476, -4.771983],
     description: "Greenock is a port town located in the west cental Lowlands of Scotland",
     events:
       [{
-          date: "12-02-1830",
+          date: "30-03-1830",
           text: "Due to the Highland Clearances, which were the evictions of a significant number of tenants in the Scottish Highlands mostly during the 18th and 19th centuries, a large number of the of the evictee’s travelled abroad.",
           title: "Leaving Scotland",
           choices:
@@ -36,9 +38,55 @@ db.locations.insert({
       }]
 });
 
+// index 2 in array
 db.locations.insert({
     placeName: "Atlantic Ocean",
     Latlng: [ 52.908902, -32.519531],
+    description: "Many passenger ships made the month long voyage across the Atlantic to America and Canada.",
+    events:
+      [{
+          date: "14-04-1830",
+          text: "On the journey over you hear tales of the new land to be. Fresh lands, not yet steeped in the heavy industries like back home, full of opportunities",
+          title: "Journey across the Atlantic",
+          choices:
+          [
+            { text: "Arrive to Halifax",
+              goto: [3, 0],
+              memberAdd: ["James", "4", 75]},
+              { text: "Play dice with the crew....",
+                goto: [3, 0],
+                gambleDice: 10
+                // ,
+                // memberRemove: "Grace"
+            }
+          ]
+      }]
+});
+
+// index 3 in array
+db.locations.insert({
+    placeName: "Halifax, Nova Scotia",
+    Latlng: [ 44.655537, -63.578568],
+    description: "Halifax, the capital city of the Nova Scotia region, was considered one of the most important financial centres of the North Britsh America (and later Canada, when it was formed). ",
+    events:
+      [{
+          date: "02-05-1830",
+          text: "You've arrived on new land, shaky from the voyage. Eager for work, your family finds slim choice locally, but upon asking around word reaches you of employment prospects in nearby provinces. ",
+          title: "Where to now?",
+          choices:
+          [
+            { text: "Go to Quebec City",
+              goto: [1, 0],
+              moneyChange: -25,
+              memberHealthChange: ["Jonas", -20]}
+          ]
+      }]
+});
+
+// index 4 in array
+db.locations.insert({
+    placeName: "Quebec City, Quebec",
+    Latlng: [ 46.813878, -71.207981],
     description: "Many passenger ships travelled across the Atlantic to America and Canada",
     events:
       [{
@@ -53,24 +101,6 @@ db.locations.insert({
               { text: "Go to Nova Scotia",
                 goto: [3, 0],
                 memberRemove: "Grace"}
-          ]
-      }]
-});
-
-db.locations.insert({
-    placeName: "Halifax",
-    Latlng: [ 41.991213, -70.861985],
-    description: "Halifax Canida",
-    events:
-      [{
-          date: "12-02-1830",
-          text: "Bla bla bla",
-          title: "Go to Greenock",
-          choices:
-          [
-            { text: "Go to Greenock",
-              goto: [1, 0],
-              memberHealthChange: ["Jonas", -20]}
           ]
       }]
 });
