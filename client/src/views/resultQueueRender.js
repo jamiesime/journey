@@ -13,16 +13,20 @@ SpecialEventRender.prototype = {
     var content = document.createElement("div");
     content.id = "special-event-content";
     modal.appendChild(content);
-    if(eventQueue[currentEvent].imgUrl != null || undefined){
-      renderImg(content, eventQueue[currentEvent].imgUrl);
-    }
-    if(eventQueue[currentEvent].member != null || undefined){
-      renderMemberInfo(content, eventQueue[currentEvent].member);
-    }
+    eventQueue.forEach(function(thisEvent){
 
-    var text = document.createElement("p");
-    text.innerText = eventQueue[currentEvent].eventText;
-    content.appendChild(text);
+      if(thisEvent.imgUrl != null || undefined){
+        renderImg(content, thisEvent.imgUrl);
+      }
+      if(thisEvent.member != null || undefined){
+        renderMemberInfo(content, thisEvent.member);
+      }
+
+      var text = document.createElement("p");
+      text.innerText = eventQueue[currentEvent].eventText;
+      content.appendChild(text);
+
+    });
 
     var close = document.createElement("button");
     close.id = "special-event-close";

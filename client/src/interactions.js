@@ -170,6 +170,7 @@ var renderMemberHealthChange = function(memberHealthChange){
     var eventText = memberObject.name + "'s health got worse!";
   }
   var result = new Result(memberObject, eventText, imgUrl);
+  eventQueue.push(result);
 }
 
 var renderEventsSequence = function(eventQueue){
@@ -177,6 +178,7 @@ var renderEventsSequence = function(eventQueue){
       new resultQueueRender(eventQueue);
     }
   }
+  eventQueue.splice(0, eventQueue.length);
 }
 
 module.exports = Interactions;
