@@ -192,6 +192,11 @@ h2 {
   height: 64px;
 }
 
+#distance-display {
+  display: flex;
+  justify-content: center;
+}
+
 /*SIDEBAR CHOICES*/
 #sidebar-choices {
   background-color: #91886E;
