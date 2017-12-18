@@ -8,7 +8,7 @@ FamilyRender.prototype = {
     container = document.getElementById("sidebar-info-content");
     container.innerHTML = "";
     var header = document.createElement("h2");
-    header.innerText = document.getElementById('userInput').value;
+    header.innerText = document.getElementById('userInput').value + " family";
     if(document.getElementById('userInput').value.length === 0){
       header.innerText = "Generic Family"
     }
@@ -29,8 +29,18 @@ FamilyRender.prototype = {
 
 var renderEachMember = function(family){
   family.members.forEach(function(member){
+    memberFlex = document.createElement("div")
+    memberFlex.classList += "member-container"
+    memberFlex.style.alignItems = "center";
     memberBox = document.createElement("div");
     memberBox.classList += "member-box";
+    var healthBarContainer = document.createElement("div");
+    healthBarContainer.id = "health-bar-container";
+    var healthBar = document.createElement("div");
+    healthBar.id = "health-bar";
+
+    healthBar.style.width = member.health + "%";
+
     var sprite = document.createElement("img");
     sprite.src = "./images/" + member.name + ".png";
     sprite.classList += "family-sprite";
@@ -40,11 +50,15 @@ var renderEachMember = function(family){
     age.innerText = "Age: " + member.age;
     var health = document.createElement("p");
     health.innerText = "Health: " + member.health;
+
+    healthBarContainer.appendChild(healthBar);
     memberBox.appendChild(sprite);
     memberBox.appendChild(name);
     memberBox.appendChild(age);
     memberBox.appendChild(health);
-    familyContainer.appendChild(memberBox);
+    memberFlex.appendChild(memberBox);
+    memberFlex.appendChild(healthBarContainer);
+    familyContainer.appendChild(memberFlex);
   })
 }
 
