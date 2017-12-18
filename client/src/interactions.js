@@ -78,7 +78,9 @@ var checkSpecialEvents = function(choice){
     removeFamilyMember(choice.memberRemove);
   }
   if(choice.moneyChange != null && choice.moneyChange != undefined){
-    changeMoney(choice.moneyChange);
+    changeMoney(choice.moneyChange.value);
+    debugger;
+    renderMoneyChange(choice.moneyChange);
   }
   if(choice.memberHealthChange != null && choice.memberHealthChange != undefined){
     changeMemberHealth(choice.memberHealthChange);
@@ -134,6 +136,16 @@ var renderRemoveMember = function(removeMember){
   var eventText = memberAsArray[0] + " has died!";
   var imgUrl = "./images/" + memberAsArray[0] + ".png";
   specialModal = new SpecialEventRender(memberAsArray, eventText, imgUrl);
+}
+
+var renderMoneyChange = function(moneyChange){
+  if (Math.sign(moneyChange.value) === 1){
+    var eventText = "positive number";
+  }
+  else {
+    var eventText = "negative number";
+  }
+  specialModal = new SpecialEventRender(null, eventText, null);
 }
 
 
