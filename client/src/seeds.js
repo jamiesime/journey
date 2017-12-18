@@ -98,6 +98,7 @@ db.locations.insert({
             { text: "Go to La Prairie",
               goto: [5, 0],
               moneyChange: {value: +150, source: "railway work"}
+            }
           ]
       }]
 });
