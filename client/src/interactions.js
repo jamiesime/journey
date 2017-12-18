@@ -79,12 +79,11 @@ var checkSpecialEvents = function(choice){
   }
   if(choice.moneyChange != null && choice.moneyChange != undefined){
     changeMoney(choice.moneyChange.value);
-    debugger;
     renderMoneyChange(choice.moneyChange);
   }
   if(choice.memberHealthChange != null && choice.memberHealthChange != undefined){
     changeMemberHealth(choice.memberHealthChange);
-    renderMemberChange(choice.memberHealthChange);
+    renderMemberHealthChange(choice.memberHealthChange);
   }
 }
 
@@ -136,7 +135,7 @@ var renderRemoveMember = function(removeMember){
   var memberAsArray = Object.values(removeMember[0]);
   var eventText = memberAsArray[0] + " has died!";
   var imgUrl = "./images/" + memberAsArray[0] + ".png";
-  specialModal = new SpecialEventRender(memberAsArray, eventText, imgUrl);
+  var specialModal = new SpecialEventRender(memberAsArray, eventText, imgUrl);
 }
 
 var renderMoneyChange = function(moneyChange){
@@ -146,11 +145,20 @@ var renderMoneyChange = function(moneyChange){
   else {
     var eventText = "Money decreased by " + moneyChange.value + " due to " + moneyChange.source;
   }
-  specialModal = new SpecialEventRender(null, eventText, null);
+  var specialModal = new SpecialEventRender(null, eventText, null);
 }
 
-var renderMemberHealthChange = function(member){
-
+var renderMemberHealthChange = function(memberHealthChange){
+  var index = null;
+  var memberAsArray;
+  for(var i = 0 ; i < family.members.length; i++){
+    if(family.members[i].name === memberHealthChange[0]){
+      memberAsArray = Object.values(family.members[i]);
+    }
+  }
+  var imgUrl = "./images/" + memberAsArray[0] + ".png";
+  var eventText = memberAsArray[0] + "'s health got worse!";
+  var specialModal = new SpecialEventRender(memberAsArray, eventText, imgUrl);
 }
 
 module.exports = Interactions;
