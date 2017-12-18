@@ -9,6 +9,6 @@ describe( "Die Roll", function(){
   });
 
   it("return a random number", function(){
-    assert.isTrue(die.roll(), 5);
+    assert.strictEqual(die.roll(), 5);
   });
 });
