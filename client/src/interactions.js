@@ -194,5 +194,22 @@ var renderEventsSequence = function(eventQueue){
     eventQueue.splice(0, eventQueue.length);
   }
 
+var randomDeathOfOldAge = function(){
+  family.forEach(function(member){
+    var age = (locations[currentPosition].events[currentEvent].date - member.born);
+    if( age > 45){
+      if(getRandomInt > 90){
+        var gone = family.members.splice(index, 1);
+        removeFamilyMember(member.name);
+      }
+    }
+  });
+}
+
+var getRandomInt(){
+  min = Math.ceil(1);
+  max = Math.floor(100);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 
 module.exports = Interactions;
