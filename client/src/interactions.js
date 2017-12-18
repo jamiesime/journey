@@ -85,7 +85,6 @@ var checkSpecialEvents = function(choice){
   }
   if(choice.memberHealthChange != null && choice.memberHealthChange != undefined){
     changeMemberHealth(choice.memberHealthChange);
-    renderMemberHealthChange(choice.memberHealthChange);
   }
   if (eventQueue.length > 0){
   renderEventsSequence(eventQueue);
@@ -125,7 +124,12 @@ var changeMemberHealth = function(memberHealthChange){
   if(index != null){
     var health = family.members[index].health += memberHealthChange.change;
     if(health < 1){
-      family.members.splice(index, 1);
+      var gone = family.members.splice(index, 1);
+      gone[0].health = 0;
+      renderRemoveMember(gone);
+    }
+    else{
+      renderMemberHealthChange(memberHealthChange);
     }
   }
 }
