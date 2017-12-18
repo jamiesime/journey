@@ -103,6 +103,39 @@ db.locations.insert({
       }]
 });
 
+// index 5 in array
+db.locations.insert({
+    placeName: "La Prairie, Quebec",
+    Latlng: [ 45.41678, -73.49917],
+    description: "July 21, 1836, a wood-burning steam locomotive chugged out of La Prairie, Quebec, pulling the first train on the first public railroad in Canada. Its first official run was held with great fanfare. The locomotive pulled two first-class coaches carrying thirty-two dignitaries, including Lord Gosford, the governor general of Lower Canada. A second train pulled by a team of horses followed close behind. Two hours later, the trains arrived in St. John to a rousing welcome.",
+    events:
+      [{
+          date: 1836,
+          text: "The railway served as a way for those travelling between Montreal and New York to avoid a bumpy stagecoach journey that bypassed a series of difficult rapids on the Richelieu. At Saint-Jean, passengers transferred to a steamer that carried them south to New York City via Lake Champlain and the Hudson River.",
+          choices:
+          [
+            { text: "Travel to New York",
+              goto: [6, 0]}
+          ]
+      }]
+});
+
+// index  in array
+db.locations.insert({
+    placeName: "New York City, New York",
+    Latlng: [ 40.712775, -74.005973],
+    description: " ",
+    events:
+      [{
+          date: 1836,
+          text: " ",
+          choices:
+          [
+            { text: "Travel to New York",
+              goto: [6, 0]}
+          ]
+      }]
+});
 
 
 
