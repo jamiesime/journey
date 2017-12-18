@@ -17,7 +17,7 @@ button {
   box-shadow: 2px 4px;
 }
 
-button:hover{
+button:hover {
   background: -moz-linear-gradient(top, #f1e8db 0%, #fbf4ed 100%);
   background: -webkit-linear-gradient(top, #f1e8db 0%,#fbf4ed 100%);
   background: linear-gradient(to bottom, #f1e8db 0%,#fbf4ed 100%);
@@ -119,19 +119,17 @@ h2 {
   box-shadow:         inset 0 0 55px #4A4436;
 }
 
-#sidebar-info-content{
+#sidebar-info-content {
   font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
   padding: 7%;
 }
-
-
 
 #sidebar-info:hover {
   background-color: #cec4a7;
 }
 
 /*SIDEBAR MENU*/
-#sidebar-menu{
+#sidebar-menu {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -144,7 +142,7 @@ h2 {
   margin: 0;
 }
 
-#money-display{
+#money-display {
   background-color: #DDC7AA;
   transition: all 0.5s ease;
   color: #805243;
@@ -166,7 +164,7 @@ h2 {
   flex-wrap: wrap;
 }
 
-.member-box{
+.member-box {
   background-color: #91886E;
   border-radius: 4px;
   margin: 10px;
@@ -187,7 +185,7 @@ h2 {
   margin: 4px;
 }
 
-.member-container{
+.member-container {
   display: flex;
   flex-direction: column;
 }
@@ -207,7 +205,7 @@ h2 {
   height: 20px;
 }
 
-.family-sprite{
+.family-sprite {
   width: 64px;
   height: 64px;
 }
@@ -225,7 +223,7 @@ h2 {
   box-shadow: inset 0 0 10px #4A4436;
 }
 
-#choice-buttons-container{
+#choice-buttons-container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -233,14 +231,14 @@ h2 {
   height:50%
 }
 
-#choice-header{
+#choice-header {
   font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
   font-size: 20px;
   text-align: center;
   margin-top: 10px;
 }
 
-button.choice{
+button.choice {
   margin: 0;
 }
 
@@ -258,7 +256,7 @@ button#option2 {
   height: 90px;
 }
 
-#logoImg{
+#logoImg {
   display:flex;
   justify-content: center;
 }
@@ -287,21 +285,6 @@ button#option2 {
   background-image: url(http://api.thumbr.it/whitenoise-600x400.png?background=ECD7B4&noise=626262&density=25&opacity=11);
 }
 
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 #userInput {
   border: 1px solid #7F5244;
   height: auto;
@@ -316,7 +299,7 @@ button#option2 {
   display: none;
 }
 
-#special-event-display{
+#special-event-display {
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
@@ -329,7 +312,7 @@ button#option2 {
   font-family: "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
 }
 
-#special-event-content{
+#special-event-content {
   display: flex;
   flex-direction: column;
   justify-content: center;

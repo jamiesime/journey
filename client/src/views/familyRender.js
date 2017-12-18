@@ -39,12 +39,6 @@ var renderEachMember = function(family){
     var healthBar = document.createElement("div");
     healthBar.id = "health-bar";
 
-    // healthBar.style.position = "absolute";
-    // healthBar.style.backgroundColor = "#8DB255";
-    // healthBar.style.borderRadius = "10px";
-    //
-    // healthBar.style.height = "20px";
-    // healthBarContainer.style.width = "110px";
     healthBar.style.width = member.health + "%";
 
     var sprite = document.createElement("img");
@@ -62,7 +56,6 @@ var renderEachMember = function(family){
     memberBox.appendChild(name);
     memberBox.appendChild(age);
     memberBox.appendChild(health);
-
     memberFlex.appendChild(memberBox);
     memberFlex.appendChild(healthBarContainer);
     familyContainer.appendChild(memberFlex);
