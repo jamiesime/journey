@@ -24,7 +24,9 @@ describe( "Dice Roll", function(){
   it("should, before rolling, have crewExist set to false", function(){
     assert.strictEqual(dice.crewExist, false);
   });
-  
-  it("should, before rolling, have cargo set to zero");
+
+  it("should, before rolling, have cargo set to zero", function(){
+    assert.strictEqual(dice.cargo, 0);
+  });
 
 });
