@@ -43,6 +43,7 @@ var app = function(){
 
 
   // SUBMENU BUTTONS
+  // family is in determine locations
 
   var renderSubMenu = new SubMenuRender();
 
@@ -77,11 +78,6 @@ var determineLocation = function(locations){
   familyBtn.addEventListener("click", function(){
     familyInfo = new FamilyRender(family, locations[currentPosition]);
   });
-
-  var logBtn = document.getElementById("log-btn");
-  logBtn.addEventListener("click", function(){
-    var logInfo = new LogRender();
-  })
 }
 
 var renderEventChoices = function(event){
