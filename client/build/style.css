@@ -201,7 +201,7 @@ h2 {
 #health-bar {
   position: absolute;
   background-color: #8DB255;
-  border-radius: 10px;
+  border-radius: 10px 0px 0px 10px;
   height: 20px;
 }
 
