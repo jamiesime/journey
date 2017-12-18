@@ -8,5 +8,7 @@ describe( "Die Roll", function(){
     die = new Die();
   });
 
-  it("return a random number")
+  it("return a random number", function(){
+    assert.isTrue(die.roll(), 5);
+  });
 });
