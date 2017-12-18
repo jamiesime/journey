@@ -49,10 +49,10 @@ var app = function(){
     makeRequest(url, requestLocations);
   });
 
-  var familyBtn = document.getElementById("family-btn");
-  familyBtn.addEventListener("click", function(){
-    familyInfo = new FamilyRender(family);
-  });
+  // var familyBtn = document.getElementById("family-btn");
+  // familyBtn.addEventListener("click", function(){
+  //   familyInfo = new FamilyRender(family, locations[currentPosition]);
+  // });
 };
 
 var makeRequest = function(url, callback){
@@ -73,6 +73,11 @@ var determineLocation = function(locations){
   var location = new InfoView(locations[currentPosition])
   var currentlocation  = new MarkerRender(locations[currentPosition]);
   renderEventChoices(locations[currentPosition].events[currentEvent]);
+
+  var familyBtn = document.getElementById("family-btn");
+  familyBtn.addEventListener("click", function(){
+    familyInfo = new FamilyRender(family, locations[currentPosition]);
+  });
 }
 
 var renderEventChoices = function(event){
@@ -92,9 +97,9 @@ var renderNewMarker = function(locations){
 };
 
 var initialFamilySetUp = function(){
-  var member1 = new FamilyMember("Alice", "24", 89);
-  var member2 = new FamilyMember("Jonas", "24", 91);
-  var member3 = new FamilyMember("Grace", "6", 50);
+  var member1 = new FamilyMember("Alice", 1805, 89);
+  var member2 = new FamilyMember("Jonas", 1804, 91);
+  var member3 = new FamilyMember("Grace", 1824, 50);
   initialMembers = [];
   initialMembers.push(member1);
   initialMembers.push(member2);

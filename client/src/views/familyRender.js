@@ -1,10 +1,10 @@
-var FamilyRender = function(family){
-  this.render(family);
+var FamilyRender = function(family, location){
+  this.render(family, location);
 }
 
 FamilyRender.prototype = {
 
-  render: function(family){
+  render: function(family, location){
     container = document.getElementById("sidebar-info-content");
     container.innerHTML = "";
     var header = document.createElement("h2");
@@ -16,7 +16,7 @@ FamilyRender.prototype = {
     familyContainer = document.createElement("div");
     familyContainer.id = "family-container";
     container.appendChild(familyContainer);
-    renderEachMember(family);
+    renderEachMember(family, location);
     var distanceDiv = document.createElement('div');
     distanceDiv.id = "distance-display"
     var distanceCovered = document.createElement("p");
@@ -27,7 +27,7 @@ FamilyRender.prototype = {
 
 }
 
-var renderEachMember = function(family){
+var renderEachMember = function(family, location){
   family.members.forEach(function(member){
     memberFlex = document.createElement("div")
     memberFlex.classList += "member-container"
@@ -47,7 +47,7 @@ var renderEachMember = function(family){
     var name = document.createElement("p");
     name.innerText = member.name;
     var age = document.createElement("p");
-    age.innerText = "Age: " + member.age;
+    age.innerText = "Age: " + (location.events[0].date - member.born);
     var health = document.createElement("p");
     health.innerText = "Health: " + member.health;
 

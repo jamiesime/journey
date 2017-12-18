@@ -1,6 +1,6 @@
-var FamilyMember = function(name, age, health){
+var FamilyMember = function(name, born, health){
   this.name = name;
-  this.age = age;
+  this.born = born;
   this.health = health;
 }
 

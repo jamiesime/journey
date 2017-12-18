@@ -8,7 +8,7 @@ db.locations.insert({
     description: "The Highlands are a vast landscape of differing rural topographies. It is the year 1830, and over the past few decades the land owners have implemented the Highland Clearances; the forced eviction of inhabitants of the Highlands and western islands of Scotland. Woken in the late of night by a gang of armed men, hired by the local landowner, you're family is forced out your home. Told never to return, you're left with no other option than to head south in hope of opportunity.",
     events:
       [{
-          date: "12-02-1830",
+          date: 1830,
           text: "Upon reaching the nearest town, you hear about the conditions of the cities. Edinburgh rife with over population and crammed housing conditions, horrible working conditions for adults and children in the mills. But a fated meeting in a tavern one night brings hope. A sailor speaks of his coming voyage, to sail from Greenock and cross the western ocean and reach the Empires collonies in Canada where war has past and the land is thirving with opportunity. Seeing no better fortune arising, the family reailises the only path before them.",
           title: "Go to Greenock",
           choices:
@@ -26,8 +26,8 @@ db.locations.insert({
     description: "Greenock became a centre of industry, with water power being used to process imported goods. In 1827 Loch Thom was constructed as a reservoir with The Cut aqueduct, bringing water to two lines of falls for water mills to power a paper mill, cotton and woollen mills, sugar refineries and shipbuilding. This made the port one of the most economically viable ports in Scotland at this time.",
     events:
       [{
-          date: "30-03-1830",
-          text: "The Family arrives to a busy bustling town. Greenock itself is full of workers from the differing industries. With so many branches of work, you hope that there would be a job available but with the only experience you have being in farming no offers are made. Your guide, the fortuitously met sailor, has told  you which vessel he is to travel on and realising your funds are drying up quickly, you negotiate passage for the voyage abroad. Getting yourself settled into the available cabins on board, you spot a few other families who are travelling the same brave path as your own. Upon high tide, the call from the captain comes to cast off, and as the ship pulls out of dock, your family says farewell the home they thought they'd never leave.",
+          date: 1831,
+          text: "The Family arrives to a busy bustling town. Greenock itself is full of fisherman and sailors from the canal and ocean, with tales from far and wide. Your guide, the fortuitously met sailor, leads you strait to the vessel he is to travel on and you negotiate passage for the voyage ahead. Getting yourself settled into the available cabins on board, you spot a few other families who are travelling the same brave path as your own. Upon high tide, the call from the captain comes to cast off, and as the ship pulls out of dock your family says farewell the home they thought they'd never leave.",
           title: "Leaving Scotland",
           choices:
           [
@@ -45,7 +45,7 @@ db.locations.insert({
     description: "Many passenger ships made the month long voyage across the Atlantic to America and Canada.",
     events:
       [{
-          date: "14-04-1830",
+          date: 1832,
           text: "On the journey over you hear tales of the new land to be. Fresh lands, not yet steeped in the heavy industries like back home, full of opportunities",
           title: "Journey across the Atlantic",
           choices:
