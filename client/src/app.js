@@ -30,11 +30,12 @@ var app = function(){
   var span = document.getElementById("modal-close");
   modal.style.display = "block";
   span.onclick = function() {
-    modal.style.display = "none";
+    modal.className = "modal-click";
+    // modal.style.display = "none";
   }
   window.onclick = function(event) {
     if (event.target == modal) {
-      modal.style.display = "none";
+      modal.className = "modal-click";
     }
   }
 
