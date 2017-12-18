@@ -67,6 +67,8 @@ h2 {
 
 .timeline-object:last-child {
   background-color: green;
+  height: 35px;
+  width: 35px;
 }
 
 .timeline-object[data-title]:hover::after {
