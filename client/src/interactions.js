@@ -102,7 +102,9 @@ var removeFamilyMember = function(memberToRemove){
     }
   }
   if(index != null){
-    family.members.splice(index, 1);
+    var gone = family.members.splice(index, 1);
+    gone[0].health = 0;
+    renderRemoveMember(gone);
   }
 }
 
@@ -127,6 +129,12 @@ var renderNewMember = function(newMember){
   specialModal = new SpecialEventRender(newMember, eventText, imgUrl);
 }
 
+var renderRemoveMember = function(removeMember){
+  var memberAsArray = Object.values(removeMember[0]);
+  var eventText = memberAsArray[0] + " has died!";
+  var imgUrl = "./images/" + memberAsArray[0] + ".png";
+  specialModal = new SpecialEventRender(memberAsArray, eventText, imgUrl);
+}
 
 
 module.exports = Interactions;
