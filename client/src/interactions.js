@@ -7,7 +7,7 @@ var SubMenuRender = require('./views/submenuRender');
 var ResultQueueRender = require("./views/resultQueueRender");
 var Result = require("./result");
 
-var locations = {};
+var locations;
 var redrawRoute = false;
 var eventQueue = [];
 
@@ -95,6 +95,10 @@ var checkSpecialEvents = function(choice){
   }
   if (eventQueue.length > 0){
   renderEventsSequence(eventQueue);
+  }
+  if (locations != null && locations != undefined){
+    console.log("trying random death");
+    randomDeathOfOldAge();
   }
 }
 
@@ -195,18 +199,19 @@ var renderEventsSequence = function(eventQueue){
   }
 
 var randomDeathOfOldAge = function(){
-  family.forEach(function(member){
+  family.members.forEach(function(member){
     var age = (locations[currentPosition].events[currentEvent].date - member.born);
-    if( age > 45){
-      if(getRandomInt > 90){
-        var gone = family.members.splice(index, 1);
+    if( age > 5){
+      var chance = getRandomInt();
+      console.log(chance);
+      if(chance > 50){
         removeFamilyMember(member.name);
       }
     }
   });
 }
 
-var getRandomInt(){
+var getRandomInt = function(){
   min = Math.ceil(1);
   max = Math.floor(100);
   return Math.floor(Math.random() * (max - min)) + min;
