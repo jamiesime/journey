@@ -157,7 +157,13 @@ var renderMemberHealthChange = function(memberHealthChange){
     }
   }
   var imgUrl = "./images/" + memberAsArray[0] + ".png";
-  var eventText = memberAsArray[0] + "'s health got worse!";
+  if (Math.sign(memberHealthChange[1]) === 1){
+      var eventText = memberAsArray[0] + "'s health got better!";
+  }
+  else {
+    var eventText = memberAsArray[0] + "'s health got worse!";
+  }
+
   var specialModal = new SpecialEventRender(memberAsArray, eventText, imgUrl);
 }
 
