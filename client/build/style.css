@@ -65,6 +65,10 @@ h2 {
   margin-top: 10px;
 }
 
+.timeline-object:last-child {
+  background-color: green;
+}
+
 .timeline-object[data-title]:hover::after {
   content: attr(data-title);
   padding: 4px 8px;
