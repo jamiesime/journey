@@ -1,11 +1,11 @@
-var ResultQueueRender = function(eventQueue){
-  this.render(eventQueue);
+var ResultQueueRender = function(eventQueue, locations){
+  this.render(eventQueue, locations);
 }
 
 
 ResultQueueRender.prototype = {
 
-  render: function(eventQueue){
+  render: function(eventQueue, locations){
     var modal = document.getElementById("special-event-invisible");
     modal.innerHTML = "";
     modal.id = "special-event-display";
@@ -18,7 +18,7 @@ ResultQueueRender.prototype = {
         renderImg(content, thisEvent.imgUrl);
       }
       if(thisEvent.member != null || undefined){
-        renderMemberInfo(content, thisEvent.member);
+        renderMemberInfo(content, thisEvent.member, locations);
       }
 
       var text = document.createElement("p");
@@ -46,11 +46,12 @@ var renderImg = function(content, imgUrl){
   content.appendChild(eventImg);
 }
 
-var renderMemberInfo = function(content, member){
+var renderMemberInfo = function(content, member, locations){
   var name = document.createElement("p");
   name.innerText = member.name;
   var age = document.createElement("p");
-  age.innerText = "Age: " + member.age;
+  console.log(locations);
+  age.innerText = "Age: " + (locations[currentPosition].events[currentEvent].date - member.born);
   var health = document.createElement("p");
   health.innerText = "Health: " + member.health;
   content.appendChild(name);
