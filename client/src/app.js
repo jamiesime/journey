@@ -49,10 +49,10 @@ var app = function(){
     makeRequest(url, requestLocations);
   });
 
-  var familyBtn = document.getElementById("family-btn");
-  familyBtn.addEventListener("click", function(){
-    familyInfo = new FamilyRender(family);
-  });
+  // var familyBtn = document.getElementById("family-btn");
+  // familyBtn.addEventListener("click", function(){
+  //   familyInfo = new FamilyRender(family, locations[currentPosition]);
+  // });
 };
 
 var makeRequest = function(url, callback){
@@ -73,6 +73,11 @@ var determineLocation = function(locations){
   var location = new InfoView(locations[currentPosition])
   var currentlocation  = new MarkerRender(locations[currentPosition]);
   renderEventChoices(locations[currentPosition].events[currentEvent]);
+
+  var familyBtn = document.getElementById("family-btn");
+  familyBtn.addEventListener("click", function(){
+    familyInfo = new FamilyRender(family, locations[currentPosition]);
+  });
 }
 
 var renderEventChoices = function(event){
