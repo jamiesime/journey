@@ -150,21 +150,20 @@ var renderMoneyChange = function(moneyChange){
 
 var renderMemberHealthChange = function(memberHealthChange){
   var index = null;
-  var memberAsArray;
+  var memberObject
   for(var i = 0 ; i < family.members.length; i++){
     if(family.members[i].name === memberHealthChange[0]){
-      memberAsArray = Object.values(family.members[i]);
+      memberObject = family.members[i];
     }
   }
-  var imgUrl = "./images/" + memberAsArray[0] + ".png";
-  if (Math.sign(memberHealthChange[1]) === 1){
-      var eventText = memberAsArray[0] + "'s health got better!";
+  var imgUrl = "./images/" + memberObject.name + ".png";
+  if (Math.sign(memberHealthChange.change) === 1){
+      var eventText = memberObject.name + "'s health got better!";
   }
   else {
-    var eventText = memberAsArray[0] + "'s health got worse!";
+    var eventText = memberObject.name + "'s health got worse!";
   }
-
-  var specialModal = new SpecialEventRender(memberAsArray, eventText, imgUrl);
+  var specialModal = new SpecialEventRender(memberObject, eventText, imgUrl);
 }
 
 module.exports = Interactions;
