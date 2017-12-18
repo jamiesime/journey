@@ -26,11 +26,9 @@ var Interactions = {
   }
 }
 
-var logBtn = document.getElementById("log-btn");
-debugger;
-logBtn.addEventListener("click", function(){
-  var logInfo = new LogRender(loggedEvents);
-})
+var getLoggedEvents = function(){
+  return loggedEvents;
+}
 
 var makeRequest = function(url, callback){
   request = new XMLHttpRequest();
@@ -79,6 +77,11 @@ var addSubMenuListeners = function(){
   var eventBtn = document.getElementById("event-btn");
   eventBtn.addEventListener("click", function(){
     makeRequest(url, reloadInfoWindow);
+  });
+
+  var logBtn = document.getElementById("log-btn");
+  logBtn.addEventListener("click", function(){
+    var logInfo = new LogRender(loggedEvents);
   });
 
   // var familyBtn = document.getElementById("family-btn");
@@ -201,7 +204,9 @@ var renderMemberHealthChange = function(memberHealthChange){
 var renderEventsSequence = function(eventQueue){
   if (eventQueue != null && eventQueue != undefined){
       var resultQueue = new ResultQueueRender(eventQueue, locations);
-      loggedEvents.push(eventQueue);
+      eventQueue.forEach(function(event){
+        loggedEvents.push(event);
+      });
     }
     eventQueue.splice(0, eventQueue.length);
   }

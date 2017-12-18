@@ -4,6 +4,7 @@ var Interactions = require("./interactions");
 var Family = require("./family");
 var FamilyMember = require("./familyMember");
 var FamilyRender = require("./views/familyRender");
+var LogRender = require("./views/logRender");
 var SubMenuRender = require("./views/submenuRender");
 var map = require("./mapWrapper");
 var MarkerRender = require('./views/markerRender.js')
@@ -14,7 +15,6 @@ previousPosition = 0;
 currentPosition = 0;
 currentEvent = 0;
 
-var loggedEvents = [];
 
 var app = function(){
   url = "http://localhost:3000/getlocations";

@@ -6,11 +6,14 @@ LogRender.prototype = {
 
   render: function(loggedEvents){
     container = document.getElementById("sidebar-info-content");
-    loggedEvents.forEach(function(event){
-      var testP = document.createElement("p");
-      testP.innerText = "logged!";
-      container.appendChild(testP);
-    });
+    container.innerHTML = "";
+    if (loggedEvents != null || loggedEvents != undefined){
+      loggedEvents.forEach(function(event){
+        var testP = document.createElement("p");
+        testP.innerText = event.eventText;
+        container.appendChild(testP);
+      });
+    }
   }
 
 }
