@@ -282,6 +282,14 @@ button#option2 {
   cursor: pointer;
 }
 
+#userInput {
+  border: 1px solid #7F5244;
+  height: auto;
+  outline-color: saddleBrown;
+  font-size: 15px;
+  font-family: "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
+}
+
 /*SPECIAL EVENT MODAL*/
 
 #special-event-invisible {
