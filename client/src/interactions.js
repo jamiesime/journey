@@ -179,8 +179,8 @@ var renderEventsSequence = function(eventQueue){
   if (eventQueue != null && eventQueue != undefined){
       var resultQueue = new ResultQueueRender(eventQueue);
     }
+    eventQueue.splice(0, eventQueue.length);
   }
-  eventQueue.splice(0, eventQueue.length);
 
 
 module.exports = Interactions;
