@@ -8,6 +8,10 @@ MarkerRender.prototype.moveLocation = function (location) {
     var newCoords ={lat: lat, lng: lng};
     mainMap.addMarker(newCoords);
     mainMap.repositionMap(newCoords, 7);
+    if(location.placeName === "Atlantic Ocean"){
+      mainMap.repositionMap(newCoords, 4);
+
+    }
 };
 
 module.exports = MarkerRender;
