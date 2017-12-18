@@ -78,7 +78,7 @@ db.locations.insert({
             { text: "Go to Quebec City",
               goto: [4, 0],
               moneyChange: { value: -25, source: "carriage ticket"},
-              memberHealthChange: {name: "Jonas", change: -20}
+              memberHealthChange: {name: "John", change: -20}
             }
           ]
       }]
@@ -97,7 +97,7 @@ db.locations.insert({
           choices:
           [
             { text: "Go to Halifax",
-              goto: [3, 0]},n
+              goto: [3, 0]},
               { text: "Go to Nova Scotia",
                 goto: [3, 0],
                 memberRemove: "Grace"}

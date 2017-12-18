@@ -95,8 +95,6 @@ var checkSpecialEvents = function(choice){
   if(choice.memberHealthChange != null && choice.memberHealthChange != undefined){
     changeMemberHealth(choice.memberHealthChange);
   }
-  console.log(eventQueue);
-  debugger;
   if (eventQueue.length > 0){
   renderEventsSequence(eventQueue);
   }
@@ -133,6 +131,7 @@ var changeMemberHealth = function(memberHealthChange){
     }
   }
   if(index != null){
+      console.log("trying");
     var health = family.members[index].health += memberHealthChange.change;
     if(health < 1){
       var gone = family.members.splice(index, 1);
