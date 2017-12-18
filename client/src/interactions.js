@@ -52,8 +52,6 @@ var determineLocation = function(locations){
 
   var familyBtn = document.getElementById("family-btn");
   familyBtn.addEventListener("click", function(){
-    console.log(locations[currentPosition]);
-
     familyInfo = new FamilyRender(family, locations[currentPosition]);
   });
   if (redrawRoute){
@@ -131,7 +129,6 @@ var changeMemberHealth = function(memberHealthChange){
     }
   }
   if(index != null){
-      console.log("trying");
     var health = family.members[index].health += memberHealthChange.change;
     if(health < 1){
       var gone = family.members.splice(index, 1);

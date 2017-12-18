@@ -71,7 +71,6 @@ var requestLocations = function(){
 }
 
 var determineLocation = function(locations){
-  console.log(locations);
   var location = new InfoView(locations[currentPosition])
   var currentlocation  = new MarkerRender(locations[currentPosition]);
   renderEventChoices(locations[currentPosition].events[currentEvent]);

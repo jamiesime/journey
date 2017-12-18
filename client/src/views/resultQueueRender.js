@@ -50,7 +50,6 @@ var renderMemberInfo = function(content, member, locations){
   var name = document.createElement("p");
   name.innerText = member.name;
   var age = document.createElement("p");
-  console.log(locations);
   age.innerText = "Age: " + (locations[currentPosition].events[currentEvent].date - member.born);
   var health = document.createElement("p");
   health.innerText = "Health: " + member.health;
