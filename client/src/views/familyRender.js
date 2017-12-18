@@ -30,13 +30,14 @@ FamilyRender.prototype = {
 var renderEachMember = function(family){
   family.members.forEach(function(member){
     memberFlex = document.createElement("div")
-    memberFlex.style.display = "flex";
-    memberFlex.style.flexDirection = "column";
+    memberFlex.classList += "member-container"
     memberFlex.style.alignItems = "center";
     memberBox = document.createElement("div");
     memberBox.classList += "member-box";
     var healthBarContainer = document.createElement("div");
+    healthBarContainer.id = "health-bar-container";
     var healthBar = document.createElement("div");
+    healthBar.id = "health-bar";
 
     healthBarContainer.style.position = "relative";
     healthBarContainer.style.backgroundColor = "#E68364";
