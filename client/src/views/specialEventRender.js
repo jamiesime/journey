@@ -1,25 +1,27 @@
-var SpecialEventRender = function(member, eventText, imgUrl){
-  this.render(member, eventText, imgUrl);
+var SpecialEventRender = function(eventQueue){
+  this.render(eventQueue);
 }
+
+var currentEvent = 0;
 
 SpecialEventRender.prototype = {
 
-  render: function(member, eventText, imgUrl){
+  render: function(eventQueue){
     var modal = document.getElementById("special-event-invisible");
     modal.innerHTML = "";
     modal.id = "special-event-display";
     var content = document.createElement("div");
     content.id = "special-event-content";
     modal.appendChild(content);
-    if(imgUrl != null || undefined){
-      renderImg(content, imgUrl);
+    if(eventQueue[currentEvent].imgUrl != null || undefined){
+      renderImg(content, eventQueue[currentEvent].imgUrl);
     }
-    if(member != null || undefined){
-      renderMemberInfo(content, member, eventText);
+    if(eventQueue[currentEvent].member != null || undefined){
+      renderMemberInfo(content, eventQueue[currentEvent].member);
     }
 
     var text = document.createElement("p");
-    text.innerText = eventText;
+    text.innerText = eventQueue[currentEvent].eventText;
     content.appendChild(text);
 
     var close = document.createElement("button");

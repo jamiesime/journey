@@ -166,4 +166,12 @@ var renderMemberHealthChange = function(memberHealthChange){
   var specialModal = new SpecialEventRender(memberObject, eventText, imgUrl);
 }
 
+var renderEventsSequence = function(eventQueue){
+  if (eventQueue != null || undefined){
+    eventQueue.forEach(function(event){
+      new SpecialEventRender(eventQueue);
+    });
+  }
+}
+
 module.exports = Interactions;
