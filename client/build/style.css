@@ -297,7 +297,14 @@ button#option2 {
 /*SPECIAL EVENT MODAL*/
 
 #special-event-invisible {
-  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  animation: deflateModal .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 }
 
 #special-event-display {
@@ -338,5 +345,14 @@ button#option2 {
   }
   100% {
     transform:scale(1);
+  }
+}
+
+@keyframes deflateModal {
+  0% {
+    transform:scale(1);
+  }
+  100% {
+    transform:scale(0);
   }
 }
