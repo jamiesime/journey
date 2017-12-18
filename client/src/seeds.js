@@ -70,13 +70,13 @@ db.locations.insert({
     description: "Halifax, the capital city of the Nova Scotia region, was considered one of the most important financial centres of the North Britsh America (and later Canada, when it was formed). It was originally inhabited by the Mi'Kmaq people. The first European settlers were French, who set up a collony called Acadia in the early 1600's. When the British settled in 1749, it sparked the Father Le Loutre's War, in which the British had to erect fortifications to defend the newly built Protestant settlement.",
     events:
       [{
-          date: "02-05-1830",
+          date: 1832,
           text: "You've arrived on this new land, shaky from the voyage. Eager for work, your family finds slim choice locally, but upon asking around word reaches you of employment prospects in nearby provinces. ",
           title: "Where to now?",
           choices:
           [
             { text: "Go to Quebec City",
-              goto: [1, 0],
+              goto: [4, 0],
               moneyChange: { value: -25, source: "carriage ticket"},
               memberHealthChange: {name: "Jonas", change: -20}
             }
@@ -88,20 +88,16 @@ db.locations.insert({
 db.locations.insert({
     placeName: "Quebec City, Quebec",
     Latlng: [ 46.813878, -71.207981],
-    description: "Many passenger ships travelled across the Atlantic to America and Canada",
+    description: "About 30,000 immigrants landed each year in Quebec City, the capital of Lower Canada.",
     events:
       [{
-          date: "14-02-1830",
-          text: "On the journey you talk to some other families.  After landing in Quebec its recommended you travel to either Halifax or Nova Scotia",
-          title: "Journey across the Atlantic",
+          date: 1834,
+          text: "There's rumours of a creation of a railway network that will eventually run from the Atlantic to the Pacific.  Construction begins in La Prairie next year.  Working on the railway will secure some good income for the family.",
           choices:
           [
-            { text: "Go to Halifax",
-              goto: [3, 0],
-              memberAdd: ["James", "4", 75]},
-              { text: "Go to Nova Scotia",
-                goto: [3, 0],
-                memberRemove: "Grace"}
+            { text: "Go to La Prairie",
+              goto: [5, 0],
+              moneyChange: {value: +150, source: "railway work"}
           ]
       }]
 });
