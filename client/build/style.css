@@ -194,10 +194,17 @@ h2 {
 
 #health-bar-container {
   position: relative;
-  background-color: "#E64364";
+  background-color: #E68364;
   height: 20px;
   border-radius: 10px;
   width: 110px;
+}
+
+#health-bar {
+  position: absolute;
+  background-color: #8DB255;
+  border-radius: 10px;
+  height: 20px;
 }
 
 .family-sprite{
