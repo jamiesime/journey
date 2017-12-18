@@ -1,6 +1,7 @@
 use journey;
 db.dropDatabase();
 
+// index 0 in array
 db.locations.insert({
     placeName: "Isle of Lewis",
     Latlng: [ 58.241575, -6.661592],
@@ -18,13 +19,14 @@ db.locations.insert({
       }]
 });
 
+// index 1 in array
 db.locations.insert({
     placeName: "Greenock",
     Latlng: [ 55.956476, -4.771983],
     description: "Greenock is a port town located in the west cental Lowlands of Scotland",
     events:
       [{
-          date: "12-02-1830",
+          date: "30-03-1830",
           text: "Due to the Highland Clearances, which were the evictions of a significant number of tenants in the Scottish Highlands mostly during the 18th and 19th centuries, a large number of the of the evictee’s travelled abroad.",
           title: "Leaving Scotland",
           choices:
@@ -36,6 +38,7 @@ db.locations.insert({
       }]
 });
 
+// index 2 in array
 db.locations.insert({
     placeName: "Atlantic Ocean",
     Latlng: [ 52.908902, -32.519531],
@@ -57,20 +60,43 @@ db.locations.insert({
       }]
 });
 
+// index 3 in array
 db.locations.insert({
     placeName: "Halifax, Nova Scotia",
     Latlng: [ 44.655537, -63.578568],
-    description: "Halifax, the capital city of the Nova Scotia region, was considered one of the most important financial centres of the North Britsh America (and later Canada, when it was formed). It was ",
+    description: "Halifax, the capital city of the Nova Scotia region, was considered one of the most important financial centres of the North Britsh America (and later Canada, when it was formed). ",
     events:
       [{
           date: "12-02-1830",
-          text: "Bla bla bla",
+          text: "You've arrived on new land, shaky from the 35 day voyage. Eager for work, your family finds slim choice locally, but upon asking around word reaches you of employment prospects in nearby provinces. ",
           title: "Where to now?",
           choices:
           [
-            { text: "Go to Greenock",
+            { text: "Go to Quebec City",
               goto: [1, 0],
               memberHealthChange: ["Jonas", -20]}
+          ]
+      }]
+});
+
+// index 4 in array
+db.locations.insert({
+    placeName: "Quebec City, Quebec",
+    Latlng: [ 52.908902, -32.519531],
+    description: "Many passenger ships travelled across the Atlantic to America and Canada",
+    events:
+      [{
+          date: "14-02-1830",
+          text: "On the journey you talk to some other families.  After landing in Quebec its recommended you travel to either Halifax or Nova Scotia",
+          title: "Journey across the Atlantic",
+          choices:
+          [
+            { text: "Go to Halifax",
+              goto: [3, 0],
+              memberAdd: ["James", "4", 75]},
+              { text: "Go to Nova Scotia",
+                goto: [3, 0],
+                memberRemove: "Grace"}
           ]
       }]
 });
