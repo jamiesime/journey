@@ -93,12 +93,11 @@ var checkSpecialEvents = function(choice){
   if(choice.memberHealthChange != null && choice.memberHealthChange != undefined){
     changeMemberHealth(choice.memberHealthChange);
   }
+  if (locations != null && locations != undefined){
+    randomDeathOfOldAge();
+  }
   if (eventQueue.length > 0){
   renderEventsSequence(eventQueue);
-  }
-  if (locations != null && locations != undefined){
-    console.log("trying random death");
-    randomDeathOfOldAge();
   }
 }
 
@@ -201,10 +200,10 @@ var renderEventsSequence = function(eventQueue){
 var randomDeathOfOldAge = function(){
   family.members.forEach(function(member){
     var age = (locations[currentPosition].events[currentEvent].date - member.born);
-    if( age > 5){
+    if( age > 45){
       var chance = getRandomInt();
       console.log(chance);
-      if(chance > 50){
+      if(chance > 90){
         removeFamilyMember(member.name);
       }
     }
