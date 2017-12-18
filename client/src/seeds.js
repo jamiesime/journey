@@ -31,7 +31,7 @@ db.locations.insert({
           [
             { text: "Get on the Boat",
               goto: [2, 0],
-              moneyChange: {value: 50, source: "Boat Ticket"} }
+              moneyChange: {value: -50, source: "Boat Ticket"} }
           ]
       }]
 });

@@ -84,6 +84,7 @@ var checkSpecialEvents = function(choice){
   }
   if(choice.memberHealthChange != null && choice.memberHealthChange != undefined){
     changeMemberHealth(choice.memberHealthChange);
+    renderMemberChange(choice.memberHealthChange);
   }
 }
 
@@ -140,13 +141,16 @@ var renderRemoveMember = function(removeMember){
 
 var renderMoneyChange = function(moneyChange){
   if (Math.sign(moneyChange.value) === 1){
-    var eventText = "positive number";
+    var eventText = "Money increased by " + moneyChange.value + " due to " + moneyChange.source;
   }
   else {
-    var eventText = "negative number";
+    var eventText = "Money decreased by " + moneyChange.value + " due to " + moneyChange.source;
   }
   specialModal = new SpecialEventRender(null, eventText, null);
 }
 
+var renderMemberHealthChange = function(member){
+
+}
 
 module.exports = Interactions;
