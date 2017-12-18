@@ -92,7 +92,7 @@ var changeMoney = function(value){
 }
 
 var addFamilyMember = function(memberToAdd){
-  family.members.push(new FamilyMember(memberToAdd[0], memberToAdd[1], memberToAdd[2]));
+  family.members.push(new FamilyMember(memberToAdd.name, memberToAdd.age, memberToAdd.health));
   renderNewMember(memberToAdd);
 }
 
@@ -113,12 +113,12 @@ var removeFamilyMember = function(memberToRemove){
 var changeMemberHealth = function(memberHealthChange){
   var index = null;
   for(var i = 0 ; i < family.members.length; i++){
-    if(family.members[i].name === memberHealthChange[0]){
+    if(family.members[i].name === memberHealthChange.name){
       index = i;
     }
   }
   if(index != null){
-    var health = family.members[index].health += memberHealthChange[1];
+    var health = family.members[index].health += memberHealthChange.change;
     if(health < 1){
       family.members.splice(index, 1);
     }
@@ -126,16 +126,16 @@ var changeMemberHealth = function(memberHealthChange){
 }
 
 var renderNewMember = function(newMember){
-  var eventText = newMember[0] + " has joined your family!";
-  var imgUrl = "./images/" + newMember[0] + ".png";
+  var eventText = newMember.name + " has joined your family!";
+  var imgUrl = "./images/" + newMember.name + ".png";
   specialModal = new SpecialEventRender(newMember, eventText, imgUrl);
 }
 
 var renderRemoveMember = function(removeMember){
-  var memberAsArray = Object.values(removeMember[0]);
-  var eventText = memberAsArray[0] + " has died!";
-  var imgUrl = "./images/" + memberAsArray[0] + ".png";
-  var specialModal = new SpecialEventRender(memberAsArray, eventText, imgUrl);
+  var memberObject = removeMember[0];
+  var eventText = memberObject.name + " has died!";
+  var imgUrl = "./images/" + memberObject.name + ".png";
+  var specialModal = new SpecialEventRender(memberObject, eventText, imgUrl);
 }
 
 var renderMoneyChange = function(moneyChange){
