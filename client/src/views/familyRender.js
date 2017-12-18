@@ -14,9 +14,12 @@ FamilyRender.prototype = {
     familyContainer.id = "family-container";
     container.appendChild(familyContainer);
     renderEachMember(family);
+    var distanceDiv = document.createElement('div');
+    distanceDiv.id = "distance-display"
     var distanceCovered = document.createElement("p");
     distanceCovered.innerText = `Distance Travelled: ${kmCovered}km`;
-    familyContainer.appendChild(distanceCovered)
+    distanceDiv.appendChild(distanceCovered);
+    container.appendChild(distanceDiv);
   }
 
 }
