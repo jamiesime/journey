@@ -42,20 +42,23 @@ db.locations.insert({
 db.locations.insert({
     placeName: "Atlantic Ocean",
     Latlng: [ 52.908902, -32.519531],
-    description: "Many passenger ships travelled across the Atlantic to America and Canada",
+    description: "Many passenger ships made the month long voyage across the Atlantic to America and Canada.",
     events:
       [{
-          date: "14-02-1830",
-          text: "On the journey you talk to some other families.  After landing in Quebec its recommended you travel to either Halifax or Nova Scotia",
+          date: "14-04-1830",
+          text: "On the journey over you hear tales of the new land to be. Fresh lands, not yet steeped in the heavy industries like back home, full of opportunities",
           title: "Journey across the Atlantic",
           choices:
           [
-            { text: "Go to Halifax",
+            { text: "Arrive to Halifax",
               goto: [3, 0],
               memberAdd: ["James", "4", 75]},
-              { text: "Go to Nova Scotia",
+              { text: "Play dice with the crew....",
                 goto: [3, 0],
-                memberRemove: "Grace"}
+                gambleDice: 10
+                // ,
+                // memberRemove: "Grace"
+            }
           ]
       }]
 });
@@ -67,13 +70,14 @@ db.locations.insert({
     description: "Halifax, the capital city of the Nova Scotia region, was considered one of the most important financial centres of the North Britsh America (and later Canada, when it was formed). ",
     events:
       [{
-          date: "12-02-1830",
-          text: "You've arrived on new land, shaky from the 35 day voyage. Eager for work, your family finds slim choice locally, but upon asking around word reaches you of employment prospects in nearby provinces. ",
+          date: "02-05-1830",
+          text: "You've arrived on new land, shaky from the voyage. Eager for work, your family finds slim choice locally, but upon asking around word reaches you of employment prospects in nearby provinces. ",
           title: "Where to now?",
           choices:
           [
             { text: "Go to Quebec City",
               goto: [1, 0],
+              moneyChange: -25,
               memberHealthChange: ["Jonas", -20]}
           ]
       }]
@@ -82,7 +86,7 @@ db.locations.insert({
 // index 4 in array
 db.locations.insert({
     placeName: "Quebec City, Quebec",
-    Latlng: [ 52.908902, -32.519531],
+    Latlng: [ 46.813878, -71.207981],
     description: "Many passenger ships travelled across the Atlantic to America and Canada",
     events:
       [{
