@@ -76,6 +76,10 @@ var determineLocation = function(locations){
     familyInfo = new FamilyRender(family, locations[currentPosition]);
   });
 
+  var logBtn = document.getElementById("log-btn");
+  logBtn.addEventListener("click", function(){
+    var logInfo = new LogRender();
+  })
 }
 
 var renderEventChoices = function(event){
