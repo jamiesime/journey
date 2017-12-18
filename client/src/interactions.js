@@ -103,6 +103,7 @@ var removeFamilyMember = function(memberToRemove){
   }
   if(index != null){
     var gone = family.members.splice(index, 1);
+    gone[0].health = 0;
     renderRemoveMember(gone);
   }
 }
