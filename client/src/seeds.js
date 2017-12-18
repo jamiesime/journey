@@ -58,14 +58,14 @@ db.locations.insert({
 });
 
 db.locations.insert({
-    placeName: "Halifax",
-    Latlng: [ 41.991213, -70.861985],
-    description: "Halifax Canida",
+    placeName: "Halifax, Nova Scotia",
+    Latlng: [ 44.655537, -63.578568],
+    description: "Halifax, the capital city of the Nova Scotia region, was considered one of the most important financial centres of the North Britsh America (and later Canada, when it was formed). It was ",
     events:
       [{
           date: "12-02-1830",
           text: "Bla bla bla",
-          title: "Go to Greenock",
+          title: "Where to now?",
           choices:
           [
             { text: "Go to Greenock",
