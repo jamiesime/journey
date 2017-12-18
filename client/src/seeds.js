@@ -88,23 +88,55 @@ db.locations.insert({
 db.locations.insert({
     placeName: "Quebec City, Quebec",
     Latlng: [ 46.813878, -71.207981],
-    description: "Many passenger ships travelled across the Atlantic to America and Canada",
+    description: "About 30,000 immigrants landed each year in Quebec City, the capital of Lower Canada.",
     events:
       [{
-          date: 1833,
-          text: "On the journey you talk to some other families.  After landing in Quebec its recommended you travel to either Halifax or Nova Scotia",
-          title: "Journey across the Atlantic",
+          date: 1834,
+          text: "There's rumours of a creation of a railway network that will eventually run from the Atlantic to the Pacific.  Construction begins in La Prairie next year.  Working on the railway will secure some good income for the family.",
           choices:
           [
-            { text: "Go to Halifax",
-              goto: [3, 0]},
-              { text: "Go to Nova Scotia",
-                goto: [3, 0],
-                memberRemove: "Grace"}
+            { text: "Go to La Prairie",
+              goto: [5, 0],
+              moneyChange: {value: +150, source: "railway work"}
+            }
           ]
       }]
 });
 
+// index 5 in array
+db.locations.insert({
+    placeName: "La Prairie, Quebec",
+    Latlng: [ 45.41678, -73.49917],
+    description: "July 21, 1836, a wood-burning steam locomotive chugged out of La Prairie, Quebec, pulling the first train on the first public railroad in Canada. Its first official run was held with great fanfare. The locomotive pulled two first-class coaches carrying thirty-two dignitaries, including Lord Gosford, the governor general of Lower Canada. A second train pulled by a team of horses followed close behind. Two hours later, the trains arrived in St. John to a rousing welcome.",
+    events:
+      [{
+          date: 1836,
+          text: "The railway served as a way for those travelling between Montreal and New York to avoid a bumpy stagecoach journey that bypassed a series of difficult rapids on the Richelieu. At Saint-Jean, passengers transferred to a steamer that carried them south to New York City via Lake Champlain and the Hudson River.",
+          choices:
+          [
+            { text: "Travel to New York",
+              goto: [6, 0]}
+
+          ]
+      }]
+});
+
+// index  in array
+db.locations.insert({
+    placeName: "New York City, New York",
+    Latlng: [ 40.712775, -74.005973],
+    description: " ",
+    events:
+      [{
+          date: 1836,
+          text: " ",
+          choices:
+          [
+            { text: "Travel to New York",
+              goto: [6, 0]}
+          ]
+      }]
+});
 
 
 
