@@ -282,6 +282,11 @@ button#option2 {
   cursor: pointer;
 }
 
+#userInput {
+  border: 1px solid #7F5244;
+
+}
+
 /*SPECIAL EVENT MODAL*/
 
 #special-event-invisible {
