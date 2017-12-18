@@ -8,7 +8,10 @@ FamilyRender.prototype = {
     container = document.getElementById("sidebar-info-content");
     container.innerHTML = "";
     var header = document.createElement("h2");
-    header.innerText = "Generic Family!";
+    header.innerText = document.getElementById('userInput').value;
+    if(document.getElementById('userInput').value.length === 0){
+      header.innerText = "Generic Family"
+    }
     container.appendChild(header);
     familyContainer = document.createElement("div");
     familyContainer.id = "family-container";

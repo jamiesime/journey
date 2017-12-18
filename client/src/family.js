@@ -1,4 +1,5 @@
-var Family = function(members){
+var Family = function(name, members){
+  this.name = name;
   this.members = members;
 }
 

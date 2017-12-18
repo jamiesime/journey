@@ -98,7 +98,8 @@ var initialFamilySetUp = function(){
   initialMembers.push(member1);
   initialMembers.push(member2);
   initialMembers.push(member3);
-  family = new Family(initialMembers);
+  familyName = document.getElementById('userInput').value
+  family = new Family(familyName, initialMembers);
 }
 
 window.addEventListener("load", app);
