@@ -330,7 +330,6 @@ MapWrapper.prototype.addMarker = function (coords) {
   var distanceCalculator = google.maps.geometry.spherical.computeLength(path.getPath());
 
   kmCovered = Math.round(distanceCalculator / 1000);
-  console.log(kmCovered);
 }
 
 MapWrapper.prototype.removeMarker = function () {
