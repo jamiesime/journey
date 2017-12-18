@@ -39,12 +39,8 @@ var renderEachMember = function(family){
     var healthBar = document.createElement("div");
     healthBar.id = "health-bar";
 
-    healthBarContainer.style.position = "relative";
-    healthBarContainer.style.backgroundColor = "#E68364";
     healthBar.style.position = "absolute";
     healthBar.style.backgroundColor = "#8DB255";
-    healthBarContainer.style.height = "20px";
-    healthBarContainer.style.borderRadius = "10px";
     healthBar.style.borderRadius = "10px";
 
     healthBar.style.height = "20px";

@@ -66,15 +66,15 @@ h2 {
 }
 
 .timeline-object[data-title]:hover::after {
-     content: attr(data-title);
-     padding: 4px 8px;
-     position: absolute;
-     left: 0;
-     top: 100%;
-     white-space: nowrap;
-     z-index: 2;
-     border: 2px solid saddleBrown;
-     background-image: url(http://api.thumbr.it/whitenoise-600x400.png?background=ECD7B4&noise=626262&density=25&opacity=11);
+  content: attr(data-title);
+  padding: 4px 8px;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  white-space: nowrap;
+  z-index: 2;
+  border: 2px solid saddleBrown;
+  background-image: url(http://api.thumbr.it/whitenoise-600x400.png?background=ECD7B4&noise=626262&density=25&opacity=11);
 }
 
 .joiner {
@@ -190,6 +190,14 @@ h2 {
 .member-container{
   display: flex;
   flex-direction: column;
+}
+
+#health-bar-container {
+  position: relative;
+  background-color: "#E64364";
+  height: 20px;
+  border-radius: 10px;
+  width: 110px;
 }
 
 .family-sprite{
