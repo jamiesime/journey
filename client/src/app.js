@@ -98,7 +98,7 @@ var renderNewMarker = function(locations){
 
 var initialFamilySetUp = function(){
   var member1 = new FamilyMember("Alice", 1805, 89);
-  var member2 = new FamilyMember("Jonas", 1804, 91);
+  var member2 = new FamilyMember("John", 1804, 91);
   var member3 = new FamilyMember("Grace", 1824, 50);
   initialMembers = [];
   initialMembers.push(member1);
