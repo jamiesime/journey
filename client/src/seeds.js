@@ -56,9 +56,8 @@ db.locations.insert({
             },
               { text: "Play dice with the crew....",
                 goto: [3, 0],
-                gambleDice: 10
-                // ,
-                // memberRemove: "Grace"
+                gambleDice: 10,
+                memberRemove: "Grace"
             }
           ]
       }]

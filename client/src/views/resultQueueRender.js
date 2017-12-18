@@ -2,7 +2,6 @@ var ResultQueueRender = function(eventQueue){
   this.render(eventQueue);
 }
 
-var currentEvent = 0;
 
 ResultQueueRender.prototype = {
 
@@ -23,7 +22,7 @@ ResultQueueRender.prototype = {
       }
 
       var text = document.createElement("p");
-      text.innerText = eventQueue[currentEvent].eventText;
+      text.innerText = thisEvent.eventText;
       content.appendChild(text);
 
     });
@@ -32,7 +31,7 @@ ResultQueueRender.prototype = {
     close.id = "special-event-close";
     close.innerText = "Ok";
     close.addEventListener("click", function(){
-      
+
       modal.id = "special-event-invisible";
       });
     content.appendChild(close);

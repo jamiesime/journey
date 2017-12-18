@@ -159,17 +159,18 @@ var renderMoneyChange = function(moneyChange){
 var renderMemberHealthChange = function(memberHealthChange){
   var index = null;
   var memberObject
+  var eventText;
   for(var i = 0 ; i < family.members.length; i++){
-    if(family.members[i].name === memberHealthChange[0]){
+    if(family.members[i].name === memberHealthChange.name){
       memberObject = family.members[i];
     }
   }
   var imgUrl = "./images/" + memberObject.name + ".png";
   if (Math.sign(memberHealthChange.change) === 1){
-      var eventText = memberObject.name + "'s health got better!";
+      eventText = memberObject.name + "'s health got better!";
   }
   else {
-    var eventText = memberObject.name + "'s health got worse!";
+    eventText = memberObject.name + "'s health got worse!";
   }
   var result = new Result(memberObject, eventText, imgUrl);
   eventQueue.push(result);
