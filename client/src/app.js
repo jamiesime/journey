@@ -75,6 +75,7 @@ var determineLocation = function(locations){
   familyBtn.addEventListener("click", function(){
     familyInfo = new FamilyRender(family, locations[currentPosition]);
   });
+
 }
 
 var renderEventChoices = function(event){
