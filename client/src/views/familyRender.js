@@ -51,6 +51,12 @@ var renderEachMember = function(family){
     var health = document.createElement("p");
     health.innerText = "Health: " + member.health;
 
+    if(member.health > 95) {
+      healthBar.style.borderRadius = "10px";
+    } else {
+      healthBar.style.borderRadius = "10px 0px 0px 10px";
+    }
+
     healthBarContainer.appendChild(healthBar);
     memberBox.appendChild(sprite);
     memberBox.appendChild(name);
