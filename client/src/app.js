@@ -14,6 +14,8 @@ previousPosition = 0;
 currentPosition = 0;
 currentEvent = 0;
 
+var loggedEvents = [];
+
 var app = function(){
   url = "http://localhost:3000/getlocations";
   makeRequest(url, requestLocations);
@@ -86,13 +88,13 @@ var renderEventChoices = function(event){
   var thisEvent = new ChoicesRender(event);
 }
 
-var changePosition = function(change){
-  currentPosition += change;
-}
-
-var changeEvent = function(change){
-  currentEvent += change;
-}
+// var changePosition = function(change){
+//   currentPosition += change;
+// }
+//
+// var changeEvent = function(change){
+//   currentEvent += change;
+// }
 
 var renderNewMarker = function(locations){
   var currentlocation  = new MarkerRender(locations[currentPosition]);
