@@ -49,11 +49,6 @@ var app = function(){
     makeRequest(url, requestLocations);
   });
 
-  // var familyBtn = document.getElementById("family-btn");
-  // familyBtn.addEventListener("click", function(){
-  //   familyInfo = new FamilyRender(family, locations[currentPosition]);
-  // });
-
 };
 
 var makeRequest = function(url, callback){
@@ -67,7 +62,8 @@ var requestLocations = function(){
   if(this.status!=200){return};
   var jsonString = this.responseText;
   var journeyInfo = JSON.parse(jsonString);
-  determineLocation(journeyInfo)
+  determineLocation(journeyInfo);
+  Interactions.locations = journeyInfo;
 }
 
 var determineLocation = function(locations){

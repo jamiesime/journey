@@ -7,7 +7,7 @@ var SubMenuRender = require('./views/submenuRender');
 var ResultQueueRender = require("./views/resultQueueRender");
 var Result = require("./result");
 
-var locations = {};
+var locations;
 var redrawRoute = false;
 var eventQueue = [];
 
@@ -92,6 +92,9 @@ var checkSpecialEvents = function(choice){
   }
   if(choice.memberHealthChange != null && choice.memberHealthChange != undefined){
     changeMemberHealth(choice.memberHealthChange);
+  }
+  if (locations != null && locations != undefined){
+    randomDeathOfOldAge();
   }
   if (eventQueue.length > 0){
   renderEventsSequence(eventQueue);
@@ -194,5 +197,23 @@ var renderEventsSequence = function(eventQueue){
     eventQueue.splice(0, eventQueue.length);
   }
 
+var randomDeathOfOldAge = function(){
+  family.members.forEach(function(member){
+    var age = (locations[currentPosition].events[currentEvent].date - member.born);
+    if( age > 45){
+      var chance = getRandomInt();
+      console.log(chance);
+      if(chance > 90){
+        removeFamilyMember(member.name);
+      }
+    }
+  });
+}
+
+var getRandomInt = function(){
+  min = Math.ceil(1);
+  max = Math.floor(100);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 
 module.exports = Interactions;
