@@ -4,9 +4,11 @@ var TimelineRender = require('./views/timelineRender');
 var FamilyMember = require("./familyMember");
 var FamilyRender = require("./views/familyRender");
 var SubMenuRender = require('./views/submenuRender');
-var SpecialEventRender = require("./views/specialEventRender");
+var ResultQueueRender = require("./views/resultQueueRender");
+var Result = require("./result");
 
 var redrawRoute = false;
+var eventQueue = [];
 
 var Interactions = {
   getSelectedChoice: function(choice){
@@ -85,6 +87,9 @@ var checkSpecialEvents = function(choice){
     changeMemberHealth(choice.memberHealthChange);
     renderMemberHealthChange(choice.memberHealthChange);
   }
+  if (eventQueue.length > 0){
+  renderEventsSequence(eventQueue);
+  }
 }
 
 var changeMoney = function(value){
@@ -92,7 +97,7 @@ var changeMoney = function(value){
 }
 
 var addFamilyMember = function(memberToAdd){
-  family.members.push(new FamilyMember(memberToAdd[0], memberToAdd[1], memberToAdd[2]));
+  family.members.push(new FamilyMember(memberToAdd.name, memberToAdd.age, memberToAdd.health));
   renderNewMember(memberToAdd);
 }
 
@@ -113,12 +118,12 @@ var removeFamilyMember = function(memberToRemove){
 var changeMemberHealth = function(memberHealthChange){
   var index = null;
   for(var i = 0 ; i < family.members.length; i++){
-    if(family.members[i].name === memberHealthChange[0]){
+    if(family.members[i].name === memberHealthChange.name){
       index = i;
     }
   }
   if(index != null){
-    var health = family.members[index].health += memberHealthChange[1];
+    var health = family.members[index].health += memberHealthChange.change;
     if(health < 1){
       family.members.splice(index, 1);
     }
@@ -126,16 +131,18 @@ var changeMemberHealth = function(memberHealthChange){
 }
 
 var renderNewMember = function(newMember){
-  var eventText = newMember[0] + " has joined your family!";
-  var imgUrl = "./images/" + newMember[0] + ".png";
-  specialModal = new SpecialEventRender(newMember, eventText, imgUrl);
+  var eventText = newMember.name + " has joined your family!";
+  var imgUrl = "./images/" + newMember.name + ".png";
+  var result = new Result(newMember, eventText, imgUrl);
+  eventQueue.push(result);
 }
 
 var renderRemoveMember = function(removeMember){
-  var memberAsArray = Object.values(removeMember[0]);
-  var eventText = memberAsArray[0] + " has died!";
-  var imgUrl = "./images/" + memberAsArray[0] + ".png";
-  var specialModal = new SpecialEventRender(memberAsArray, eventText, imgUrl);
+  var memberObject = removeMember[0];
+  var eventText = memberObject.name + " has died!";
+  var imgUrl = "./images/" + memberObject.name + ".png";
+  var result = new Result(memberObject, eventText, imgUrl);
+  eventQueue.push(result);
 }
 
 var renderMoneyChange = function(moneyChange){
@@ -145,26 +152,36 @@ var renderMoneyChange = function(moneyChange){
   else {
     var eventText = "Money decreased by " + moneyChange.value + " due to " + moneyChange.source;
   }
-  var specialModal = new SpecialEventRender(null, eventText, null);
+  var result = new Result(null, eventText, null);
+  eventQueue.push(result);
 }
 
 var renderMemberHealthChange = function(memberHealthChange){
   var index = null;
-  var memberAsArray;
+  var memberObject
+  var eventText;
   for(var i = 0 ; i < family.members.length; i++){
-    if(family.members[i].name === memberHealthChange[0]){
-      memberAsArray = Object.values(family.members[i]);
+    if(family.members[i].name === memberHealthChange.name){
+      memberObject = family.members[i];
     }
   }
-  var imgUrl = "./images/" + memberAsArray[0] + ".png";
-  if (Math.sign(memberHealthChange[1]) === 1){
-      var eventText = memberAsArray[0] + "'s health got better!";
+  var imgUrl = "./images/" + memberObject.name + ".png";
+  if (Math.sign(memberHealthChange.change) === 1){
+      eventText = memberObject.name + "'s health got better!";
   }
   else {
-    var eventText = memberAsArray[0] + "'s health got worse!";
+    eventText = memberObject.name + "'s health got worse!";
+  }
+  var result = new Result(memberObject, eventText, imgUrl);
+  eventQueue.push(result);
+}
+
+var renderEventsSequence = function(eventQueue){
+  if (eventQueue != null && eventQueue != undefined){
+      var resultQueue = new ResultQueueRender(eventQueue);
+    }
+    eventQueue.splice(0, eventQueue.length);
   }
 
-  var specialModal = new SpecialEventRender(memberAsArray, eventText, imgUrl);
-}
 
 module.exports = Interactions;
