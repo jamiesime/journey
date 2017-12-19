@@ -91,6 +91,12 @@ DiceGameRender.prototype = {
 
 var renderReelandHolds = function(container, reelId, holdId, diceNumber){
   for (var i = 0 ; i < 5 ; i++){
+    var flexDiv = document.createElement('div');
+    flexDiv.style.display = "flex";
+    flexDiv.style.justifyContent = "center";
+    flexDiv.style.flexDirection = "column";
+    flexDiv.style.alignItems = "center";
+
     var reel = document.createElement("p");
     reel.id = reelId + (i+1);
     reel.style.display = "none";
@@ -110,10 +116,12 @@ var renderReelandHolds = function(container, reelId, holdId, diceNumber){
     lock.style.height = "20px";
     lock.style.width = "20px";
 
+    flexDiv.appendChild(dice)
+    flexDiv.appendChild(lock)
+    container.appendChild(flexDiv)
+
     container.appendChild(reel);
     container.appendChild(checkbox);
-    container.appendChild(dice);
-    container.appendChild(lock);
   }
 }
 
