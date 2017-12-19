@@ -99,14 +99,21 @@ var renderReelandHolds = function(container, reelId, holdId, diceNumber){
     checkbox.type = "checkbox";
     checkbox.style.display = "none";
     dice = document.createElement("img");
-    dice.classList += "dice-face"
-    dice.id = diceNumber+(i+1)
+    dice.classList += "dice-face";
+    dice.id = diceNumber+(i+1);
     dice.src = "./images/" + "1" + ".png";
 
+    lock = document.createElement("img");
+    lock.classList += "lock";
+    lock.src = "./images/" + "locked" + ".png";
+    lock.style.display = "none";
+    lock.style.height = "20px";
+    lock.style.width = "20px";
 
     container.appendChild(reel);
     container.appendChild(checkbox);
     container.appendChild(dice);
+    container.appendChild(lock);
   }
 }
 
