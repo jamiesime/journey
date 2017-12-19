@@ -82,7 +82,7 @@ db.locations.insert({
 // index 3 in Array
 db.locations.insert({
     placeName: "Atlantic Ocean",
-    Latlng: [ 57.908902, -32.519531],
+    Latlng: [ 52.908902, -32.519531],
     description: "Test.",
     events:
       [{
@@ -170,7 +170,7 @@ db.locations.insert({
     events:
       [{
           date: 1836,
-          text: "The railway served as a way for those travelling between Montreal and New York to avoid a bumpy stagecoach journey that bypassed a series of difficult rapids on the Richelieu. At Saint-Jean, passengers transferred to a steamer that carried them south to New York City via Lake Champlain and the Hudson River.",
+          text: "The railway served as a way for those travelling between Montreal and New York to avoid a bumpy stagecoach journey that bypassed a series of difficult rapids on the Richelieu. At Saint-Jean, passengers transferred to a steamer that carried them south to New York City via Lake Champlain and the Hudson River. \n\nThe Lower Canada Rebellion, commonly referred to as The Patriots War by Qubecers is the name given to the armed conflict in 1837-1838 between the rebels of lower Canada and the British colonial power of the province.",
           choices:
           [
             { text: "Travel to New York",
@@ -183,7 +183,7 @@ db.locations.insert({
       },
       {
         date: 1837,
-        text: "The Lower Canada Rebellion, commonly referred to as The Patriots War by Qubecers is the name given to the armed conflict in 1837-1838 between the rebels of lower Canada and the British colonial power of the province.",
+        text: "The railway served as a way for those travelling between Montreal and New York to avoid a bumpy stagecoach journey that bypassed a series of difficult rapids on the Richelieu. At Saint-Jean, passengers transferred to a steamer that carried them south to New York City via Lake Champlain and the Hudson River.",
         choices:
         [
           { text: "Travel to New York",
