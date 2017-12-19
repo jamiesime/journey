@@ -230,6 +230,25 @@ db.locations.insert({
       }]
 });
 
+// index 9 in array
+db.locations.insert({
+    placeName: "Jackson, Mississippi",
+    Latlng: [ 32.298757, -90.184810],
+    description: "",
+    events:
+      [{
+          date: 1839,
+          text: "",
+          choices:
+          [
+            // { text: "Go to Uni",
+            //   goto: [8, 0]},
+            //   { text: "Move to Jackson",
+            //     goto: [9, 0]}
+          ]
+      }]
+});
+
 
 
 
