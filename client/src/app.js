@@ -9,12 +9,13 @@ var SubMenuRender = require("./views/submenuRender");
 var map = require("./mapWrapper");
 var MarkerRender = require('./views/markerRender.js')
 
+// these are global variables that need to be accessed in interactions and views to render
 family = [];
 money = 50;
-// previousPosition = 0;
 currentPosition = 0;
 currentEvent = 0;
 
+//follow runs on first load, subsequent turns run in interactions
 var app = function(){
   url = "http://localhost:3000/getlocations";
   makeRequest(url, requestLocations);
@@ -25,21 +26,17 @@ var app = function(){
   mainMap = new MapWrapper(container, coords, 6);
 
   var modal = document.getElementById('myModal');
-  var span = document.getElementById("modal-close");
-  modal.style.display = "block";
-  span.onclick = function() {
-    modal.className = "modal-click";
-    // modal.style.display = "none";
-    //Following sets up initial family - all users will start with this familyMember
-    initialFamilySetUp();
-  }
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.className = "modal-click";
-      //Following sets up initial family - all users will start with this familyMember
-      initialFamilySetUp();
+
+  //OPENING POPUPS
+  var nextBtn = document.getElementById("modal-next");
+  nextBtn.addEventListener('keypress', function(){
+    nextBtn.disabled = false;
+  });
+  nextBtn.addEventListener('click', function(){
+    if(!nextBtn.disabled){
+      renderInstructions(modal);
     }
-  }
+  });
 
   // SUBMENU BUTTONS
   // family is in determine locations
@@ -102,6 +99,24 @@ var initialFamilySetUp = function(){
   initialMembers.push(member5);
   familyName = document.getElementById('userInput').value;
   family = new Family(familyName, initialMembers);
+}
+
+var renderInstructions = function(modal){
+  var span = document.getElementById("modal-close");
+  modal.style.display = "block";
+  span.onclick = function() {
+    modal.className = "modal-click";
+    // modal.style.display = "none";
+    //Following sets up initial family - all users will start with this familyMember
+    initialFamilySetUp();
+  }
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.className = "modal-click";
+      //Following sets up initial family - all users will start with this familyMember
+      initialFamilySetUp();
+    }
+  }
 }
 
 window.addEventListener("load", app);
