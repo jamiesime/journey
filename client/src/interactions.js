@@ -16,7 +16,6 @@ var loggedEvents = [];
 
 var Interactions = {
   getSelectedChoice: function(choice){
-    checkSpecialEvents(choice);
     redrawRoute = true;
     currentPosition = choice.goto[0];
     currentEvent = choice.goto[1];
@@ -24,6 +23,7 @@ var Interactions = {
     makeRequest(url, requestLocations);
     var refreshMenu = new SubMenuRender();
     addSubMenuListeners();
+    checkSpecialEvents(choice);
   }
 }
 
@@ -92,6 +92,9 @@ var addSubMenuListeners = function(){
 }
 
 var checkSpecialEvents = function(choice){
+  if(choice.startDiceGame != null && choice.startDiceGame != undefined){
+    startDiceGame();
+  }
   if(choice.memberAdd != null && choice.memberAdd != undefined){
     addFamilyMember(choice.memberAdd);
   }
@@ -104,9 +107,6 @@ var checkSpecialEvents = function(choice){
   }
   if(choice.memberHealthChange != null && choice.memberHealthChange != undefined){
     changeMemberHealth(choice.memberHealthChange);
-  }
-  if(choice.startDiceGame != null && choice.startDiceGame != undefined){
-    startDiceGame();
   }
   if (locations != null && locations != undefined){
     randomDeathOfOldAge();

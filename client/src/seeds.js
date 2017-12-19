@@ -109,7 +109,6 @@ db.locations.insert({
           choices:
           [
             { text: "End game",
-              goto: [3, 0],
               goto: [4, 0],
               // memberAdd: {name: "James", born: 1828, health: 75}
             }
