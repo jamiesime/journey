@@ -310,9 +310,14 @@ button#option2 {
 
 /* event description text within info window */
 .evntDesc {
-    background-color: #8E8358;
+    background-color: #d8d1c3;
     padding: 5px;
     border: 5px solid #645853;
+    border-radius: 4px;
+}
+
+.evntDesc {
+  background-color: #e5e0d7;
 }
 
 #userInput {
@@ -376,8 +381,8 @@ button#option2 {
 }
 
 #event-sprite{
-  width: 64px;
-  height: 64px;
+  min-width: 64px;
+  min-height: 64px;
 }
 
 #event-text {

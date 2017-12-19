@@ -20,9 +20,16 @@ ResultQueueRender.prototype = {
       if(thisEvent.imgUrl != null || undefined){
         renderImg(subEventContent, thisEvent.imgUrl);
       }
+
+      if(thisEvent.extraImgUrl != null || undefined){
+        renderImg(subEventContent, thisEvent.extraImgUrl);
+      }
+
       if(thisEvent.member != null || undefined){
         renderMemberInfo(subEventContent, thisEvent.member, locations);
       }
+
+
       renderEventText(subEventContent, thisEvent.eventText);
       content.appendChild(subEventContent);
     });

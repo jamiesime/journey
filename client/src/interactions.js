@@ -181,7 +181,8 @@ var renderRemoveMember = function(removeMember, dbObject){
   var memberObject = removeMember[0];
   var eventText = memberObject.name + " has died of " + dbObject.source;
   var imgUrl = "./images/" + memberObject.name + ".png";
-  var result = new Result(memberObject, eventText, imgUrl);
+  var extraImgUrl = "./images/gravestone.png";
+  var result = new Result(memberObject, eventText, imgUrl, extraImgUrl);
   eventQueue.push(result);
 }
 
