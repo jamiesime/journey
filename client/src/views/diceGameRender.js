@@ -20,7 +20,7 @@ DiceGameRender.prototype = {
 
     renderReelandHolds(reelDisplay, "reel", "hold");
     renderReelandHolds(cpuReelDisplay, "cpu-reel", "cpu-hold");
-    
+
     var victoryDiv = document.createElement("div");
     victoryDiv.id = "victory-declared";
     var victoryP = document.createElement("p");
@@ -33,6 +33,7 @@ DiceGameRender.prototype = {
     var game = new DiceGame();
     rollBtn.addEventListener('click', function(){
       game.rollDice();
+      game.computerRollDice();
     });
   }
 
