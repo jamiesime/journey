@@ -192,7 +192,8 @@ var renderMoneyChange = function(moneyChange){
   else {
     var eventText = "Money decreased by " + moneyChange.value + " due to " + moneyChange.source;
   }
-  var result = new Result(null, eventText, null);
+  var imgUrl = "./images/money.png";
+  var result = new Result(null, eventText, imgUrl);
   eventQueue.push(result);
 }
 
