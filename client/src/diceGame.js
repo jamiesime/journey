@@ -68,7 +68,6 @@ DiceGame.prototype.computerRollDice = function(){
     var fiveLock = document.getElementById("lock-cpu-reel4");
     var fourLock = document.getElementById("lock-cpu-reel3");
 
-
     for (var number of resultsArray) {
       var sortedResult = document.getElementById("cpu-reel"+index).innerText = number;
       if (resultsArray[4] === 6 || (six) ) {
