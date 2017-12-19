@@ -125,9 +125,9 @@ db.locations.insert({
         text: "The Rebellion!",
         choices:
         [
-          {
-            text: "Travel to New York",
-            goto: [6, 0]
+          { text: "Travel to New York",
+            goto: [6, 0],
+            memberHealthChange: {name: "John", change: -20}
           }
         ]
       }
