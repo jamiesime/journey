@@ -12,10 +12,13 @@ DiceGameRender.prototype = {
     container.innerHTML = "";
     var rollBtn = document.createElement("button");
     rollBtn.id = "reelroll";
+    rollBtn.style.marginLeft = "35%";
+    rollBtn.style.marginRight = "35%";
+
     rollBtn.innerText = "Roll dice";
 
     var rules = document.createElement('p');
-    rules.innerText = "The rules of Ship Captain Crew: You roll 5 die, and try to get 6 (ship), 5 (captain) and 4 (crew). If these numbers appear in your roll, they will be banked and the number of dice you roll will reduce. "
+    rules.innerText = "The rules of Ship Captain Crew: You roll 5 die, and try to get 6 (ship), 5 (captain) and 4 (crew). If these numbers appear in your roll, they will be banked and the number of dice you roll will reduce. First player to get these win. If both players get the Ship, Captain and Crew, the sum of their remaining two die determines the victor."
 
     var playerName = document.createElement('h2');
     playerName.innerText = "Your dice"
@@ -98,6 +101,8 @@ var renderReelandHolds = function(container, reelId, holdId, diceNumber){
     dice = document.createElement("img");
     dice.classList += "dice-face"
     dice.id = diceNumber+(i+1)
+    dice.src = "./images/" + "1" + ".png";
+
 
     container.appendChild(reel);
     container.appendChild(checkbox);
