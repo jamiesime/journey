@@ -187,7 +187,7 @@ db.locations.insert({
         choices:
         [
           { text: "Travel to New York",
-            goto: [6, 0]
+            goto: [7, 0]
           }
         ]
       }
