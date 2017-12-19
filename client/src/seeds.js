@@ -96,6 +96,7 @@ db.locations.insert({
               memberAdd: {name: "James", born: 1828, health: 75}
             },
               { text: "Play dice with the crew....",
+                goto: [2, 1],
                 goto: [3, 1],
                 startDiceGame: "start"
             }
@@ -108,6 +109,7 @@ db.locations.insert({
           choices:
           [
             { text: "End game",
+              goto: [3, 0],
               goto: [4, 0],
               // memberAdd: {name: "James", born: 1828, health: 75}
             }
