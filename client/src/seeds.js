@@ -220,6 +220,7 @@ db.locations.insert({
       }]
 });
 
+
 // index 9 in array
 db.locations.insert({
     placeName: "Rancho de Carricitos, Texas",
@@ -233,60 +234,66 @@ db.locations.insert({
           [
             { text: "Leave for California",
               goto: [10, 0],
-              memberRemove: {name: "Pierre", source: "Captured by Mexican Troops"}
+              memberRemove: {name: "Pierre", source: "Captured by Mexican Troops"}}
           ]
       }]
 });
 
-
-
-
+//Index 10 in Array
 db.locations.insert({
     placeName: "California",
     Latlng: [ 36.778261, -119.417932],
-    description: "California, a western U.S. state, stretches from the Mexican border along the Pacific for nearly 900 miles",
+    description: "California, a western U.S. state, stretches from the Mexican border along the Pacific for nearly 900 miles.\n\nOn January 24, 1848, gold was discovered by James W. Marshall at Sutter's Mill in Coloma, California.",
     events:
       [{
-          date: "24-01-1848",
-          text: "The California Gold Rush began on January 24, 1848, when gold was found by James W. Marshall at Sutter's Mill in Coloma, California. The news of gold brought some 300,000 people to California from the rest of the United States and abroad.",
+          date: 1848,
+          text: "The news of gold brought some 300,000 people to California from the rest of the United States and abroad.",
           title: "California Gold Rush",
           choices:
           [
             { text: "Find Gold",
-              goto: [0, 1] },
-            { text: "Go to xxx",
-              goto: [2, 0]}
+              goto: [10, 1],
+            moneyChange: {value: +10000, source: "GOLD GOLD GOLD"} },
           ]
-      }]
-});
-
-db.locations.insert({
-    placeName: "Washington DC",
-    Latlng: [ 38.907192, -77.036871],
-    description: "Washington DC is the capital of the US.  It’s defined by imposing neoclassical monuments and buildings – including the iconic ones that house the federal government’s 3 branches: the Capitol, White House and Supreme Court.",
-    events:
-      [{
-          date: "22-07-1862",
-          text: "President Lincoln read the first draft of the Emancipation Proclamation to his Cabinet members on July 22, 1862. After some changes, he issued the preliminary version on September 22, which specified that the final document would take effect January 1, 1863. Slaves in Confederate states which were not back in the Union by then would be free, but slaves in the Border States were not affected.",
-          title: "Emancipation Proclamation",
+      },{
+          date: 1849,
+          text: "You're rich!  Well done, you win!",
           choices:
           [
-            { text: "Lincoln Assasination",
-              goto: [0, 2] },
-            { text: "Go to xxx",
-              goto: [2, 0]}
-          ]
-      },
-      {
-          date: "14-04-1865",
-          text: "Abraham Lincoln, the 16th President of the United States, was assassinated by well-known stage actor John Wilkes Booth on April 14, 1865, while attending the play Our American Cousin at Ford's Theatre",
-          title: "Lincoln Assassination",
-          choices:
-          [
-            { text: "Leave DC",
-              goto: [2, 0]}
+            { text: "End",
+              }
           ]
       }
-
     ]
 });
+
+// db.locations.insert({
+//     placeName: "Washington DC",
+//     Latlng: [ 38.907192, -77.036871],
+//     description: "Washington DC is the capital of the US.  It’s defined by imposing neoclassical monuments and buildings – including the iconic ones that house the federal government’s 3 branches: the Capitol, White House and Supreme Court.",
+//     events:
+//       [{
+//           date: "22-07-1862",
+//           text: "President Lincoln read the first draft of the Emancipation Proclamation to his Cabinet members on July 22, 1862. After some changes, he issued the preliminary version on September 22, which specified that the final document would take effect January 1, 1863. Slaves in Confederate states which were not back in the Union by then would be free, but slaves in the Border States were not affected.",
+//           title: "Emancipation Proclamation",
+//           choices:
+//           [
+//             { text: "Lincoln Assasination",
+//               goto: [0, 2] },
+//             { text: "Go to xxx",
+//               goto: [2, 0]}
+//           ]
+//       },
+//       {
+//           date: "14-04-1865",
+//           text: "Abraham Lincoln, the 16th President of the United States, was assassinated by well-known stage actor John Wilkes Booth on April 14, 1865, while attending the play Our American Cousin at Ford's Theatre",
+//           title: "Lincoln Assassination",
+//           choices:
+//           [
+//             { text: "Leave DC",
+//               goto: [2, 0]}
+//           ]
+//       }
+//
+//     ]
+// });
