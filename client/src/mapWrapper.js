@@ -294,16 +294,33 @@ MapWrapper = function(container, coords, zoom){
 };
 
 MapWrapper.prototype.addMarker = function (coords) {
+  console.log(coords.lat);
+    var boatImage = {
+      url: "https://imgur.com/a/63rWT",
+      scaledSize: new google.maps.Size(50, 50),
+      origin: new google.maps.Point(0,0),
+    };
+
   var markerImage = {
     url: "https://i.imgur.com/BDkqWAw.png",
     scaledSize: new google.maps.Size(50, 50),
     origin: new google.maps.Point(0,0),
   };
+
+  if(coords.lat == 52.908902){
+    markerImage.url = "https://imgur.com/a/63rWT"
+  }
+  
+  console.log(markerImage.url);
   var marker = new google.maps.Marker({
     position: coords,
     map: this.googleMap,
     icon: markerImage
   });
+
+
+  console.log(markerImage.url);
+
 
   this.markers.push(marker.position)
 
