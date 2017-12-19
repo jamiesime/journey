@@ -17,6 +17,7 @@ var inDiceGame = false;
 
 var Interactions = {
   getSelectedChoice: function(choice){
+    checkMoney();
     checkSpecialEvents(choice);
     redrawRoute = true;
     currentPosition = choice.goto[0];
@@ -243,6 +244,12 @@ var getRandomInt = function(){
 
 var startDiceGame = function(){
   var diceGame = new DiceGameRender();
+}
+
+var checkMoney = function(){
+  if (money < 1){
+    console.log("game over");
+  }
 }
 
 module.exports = Interactions;
