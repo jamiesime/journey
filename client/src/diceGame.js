@@ -38,13 +38,18 @@ DiceGame.prototype.rollDice = function(){
             var btn = document.getElementById('reelroll');
             btn.disabled = true;
             var victory = document.getElementById('victory');
-            victory.innerText = "Player wins!"
+            victory.innerText = "You win!"
+            playerVictory();
           }
         }
       }
       index++;
     }
   }
+}
+
+var playerVictory = function(){
+  money += 10;
 }
 
 DiceGame.prototype.computerRollDice = function(){
@@ -83,7 +88,6 @@ DiceGame.prototype.computerRollDice = function(){
             btn.disabled = true;
             var victory = document.getElementById('victory');
             victory.innerText = "Computer wins!"
-
           }
         }
       }
@@ -91,6 +95,5 @@ DiceGame.prototype.computerRollDice = function(){
     }
   }
 }
-
 
 module.exports = DiceGame;
