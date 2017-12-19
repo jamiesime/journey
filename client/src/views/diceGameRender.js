@@ -31,6 +31,7 @@ DiceGameRender.prototype = {
     container.appendChild(reelDisplay);
     container.appendChild(cpuReelDisplay);
     container.appendChild(victoryDiv);
+
     var game = new DiceGame();
     rollBtn.addEventListener('click', function(){
       game.rollDice();
@@ -71,7 +72,6 @@ DiceGameRender.prototype = {
       cpudice5.src = "./images/" + cpureel5.innerText + ".png";
     });
   }
-
 }
 
 var renderReelandHolds = function(container, reelId, holdId, diceNumber){
@@ -85,15 +85,10 @@ var renderReelandHolds = function(container, reelId, holdId, diceNumber){
     dice.classList += "dice-face"
     dice.id = diceNumber+(i+1)
 
-    // cpuDice = document.createElement("img");
-    // cpuDice.classList += "dice-face"
-    // cpuDice.id = "cpu-dice"+((i+1)+5)
-
     container.appendChild(reel);
     container.appendChild(checkbox);
     container.appendChild(dice);
   }
 }
-
 
 module.exports = DiceGameRender;
