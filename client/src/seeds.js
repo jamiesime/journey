@@ -3,124 +3,109 @@ db.dropDatabase();
 
 // index 0 in array
 db.locations.insert({
-    placeName: "Scottish Highlands",
-    Latlng: [ 57.394109, -4.899902],
-    description: "The Highlands are a vast landscape of differing rural topographies. It is the year 1830, and over the past few decades the land owners have implemented the Highland Clearances; the forced eviction of inhabitants of the Highlands and western islands of Scotland. Woken in the late of night by a gang of armed men, hired by the local landowner, you're family is forced out your home. Told never to return, you're left with no other option than to head south in hope of opportunity.",
-    events:
-      [{
-          date: 1830,
-          text: "Upon reaching the nearest town, you hear about the conditions of the cities. Edinburgh rife with over population and crammed housing conditions, horrible working conditions for adults and children in the mills. But a fated meeting in a tavern one night brings hope. A sailor speaks of his coming voyage, to sail from Greenock and cross the western ocean and reach the Empires collonies in Canada where war has past and the land is thirving with opportunity. Seeing no better fortune arising, the family reailises the only path before them.",
-          title: "Go to Greenock",
-          choices:
-          [
-            { text: "Go to Greenock",
-              goto: [1, 0]}
-          ]
-      }]
+  placeName: "Scottish Highlands",
+  Latlng: [ 57.394109, -4.899902],
+  description: "It is the year 1830, and over the past few decades the land owners have implemented the Highland Clearances; the forced eviction of inhabitants of the Highlands and western islands of Scotland in order to allow the introduction of sheep pastoralism.",
+  events:
+  [{
+    date: 1830,
+    text: "Woken in the late of night by a gang of armed men, hired by the local landowner, you're family is forced out your home. Told never to return, you're left with no other option than to head south in hope of opportunity. \nUpon reaching the nearest town, you hear about the conditions of the cities. Edinburgh is rife with over population and crammed housing conditions, horrible working conditions for adults and children in the mills. But a fated meeting in a tavern one night brings hope. A sailor speaks of his coming voyage, to sail from Greenock and cross the western ocean and reach the Empires collonies in Canada where war has past and the land is thirving with opportunity. \n\nSeeing no better fortune arising, the family reailises the only path before them.",
+    title: "Go to Greenock",
+    choices:
+    [
+      { text: "Travel to Greenock",
+      goto: [1, 0]}
+    ]
+  }]
 });
 
 // index 1 in array
 db.locations.insert({
-    placeName: "Greenock",
-    Latlng: [ 55.956476, -4.771983],
-    description: "Greenock became a centre of industry, with water power being used to process imported goods. In 1827 Loch Thom was constructed as a reservoir with The Cut aqueduct, bringing water to two lines of falls for water mills to power a paper mill, cotton and woollen mills, sugar refineries and shipbuilding. This made the port one of the most economically viable ports in Scotland at this time.",
-    events:
-      [{
-          date: 1831,
-          text: "The Family arrives to a busy bustling town. Greenock itself is full of fisherman and sailors from the canal and ocean, with tales from far and wide. Your guide, the fortuitously met sailor, leads you strait to the vessel he is to travel on and you negotiate passage for the voyage ahead. Getting yourself settled into the available cabins on board, you spot a few other families who are travelling the same brave path as your own. Upon high tide, the call from the captain comes to cast off, and as the ship pulls out of dock your family says farewell the home they thought they'd never leave.",
-          title: "Leaving Scotland",
-          choices:
-          [
-            { text: "Get on the Boat",
-              goto: [2, 0],
-              moneyChange: {value: -50, source: "Boat Ticket"} }
-          ]
-      }]
+  placeName: "Greenock",
+  Latlng: [ 55.956476, -4.771983],
+  description: "Greenock became a centre of industry, with water power being used to process imported goods. In 1827 Loch Thom was constructed as a reservoir with The Cut aqueduct, bringing water to two lines of falls for water mills to power a paper mill, cotton and woollen mills, sugar refineries and shipbuilding. This made the port one of the most economically viable ports in Scotland at this time.",
+  events:
+  [{
+    date: 1831,
+    text: "You arrive to a busy bustling town. Greenock itself is full of fisherman and sailors from the canal and ocean, with tales from far and wide. Your guide, the fortuitously met sailor, leads you straight to the vessel he is to travel on and you negotiate passage for the voyage ahead. ",
+    title: "Leaving Scotland",
+    choices:
+    [
+      { text: "Buy a ticket for the Voyage to Canada",
+      goto: [2, 0],
+      moneyChange: {value: -50, source: "Purchase of Boat Ticket"} }
+    ]
+  }]
 });
 
 // index 2 in array
 db.locations.insert({
-    placeName: "Atlantic Ocean",
-    Latlng: [ 52.908902, -32.519531],
-    description: "Many passenger ships made the month long voyage across the Atlantic to America and Canada.",
-    events:
-      [{
-          date: 1832,
-          text: "On the journey over you hear tales of the new land to be. Fresh lands, not yet steeped in the heavy industries like back home, full of opportunities",
-          title: "Journey across the Atlantic",
-          choices:
-          [
-            { text: "Arrive to Halifax",
-              goto: [4, 0],
-              memberAdd: {name: "James", born: 1828, health: 75}
-            },
-              { text: "Play dice with the crew....",
-                goto: [3, 1],
-                diceGame: "start"
-            }
-          ]
-      },
-      {
-          date: 1832,
-          text: "test",
-          title: "Dice Game",
-          choices:
-          [
-            { text: "End game",
-              goto: [3, 0],
-              diceGame: "end"
-              // memberAdd: {name: "James", born: 1828, health: 75}
-            }
-            //   { text: "Play dice with the crew....",
-            //     goto: [2, 1],
-            //     startDiceGame: "start"
-            // }
-          ]
-      }
-    ]
+  placeName: "Atlantic Ocean",
+  Latlng: [ 52.908902, -32.519531],
+  description: "Many passenger ships made the month long voyage across the Atlantic to America and Canada.",
+  events:
+  [{
+    date: 1832,
+    text: "Getting yourself settled into the available cabins on board, you spot a few other families who are travelling the same brave path as your own. Upon high tide, the call from the captain comes to cast off, and as the ship pulls out of dock your family says farewell the home they thought they'd never leave.\n\nOn the journey over you hear tales of the new land to be. Fresh lands, not yet steeped in the heavy industries like back home, full of opportunities \n\nThe journey takes months and as means to pass time you master the game of 'Ship Captain Crew'",
+    title: "Journey across the Atlantic",
+    choices:
+    [
+      { text: "Arrive in Halifax",
+      goto: [4, 0],
+      memberAdd: {name: "James", born: 1832, health: 75},
+      memberHealthChange: {name: "Alice", change: -5, source: "Child birth"}
+
+    },
+    { text: "Play dice with the crew....",
+    goto: [3, 1],
+    diceGame: "start"
+  }
+]
+}
+]
 });
 
 // index 3 in Array
 db.locations.insert({
-    placeName: "Atlantic Ocean",
-    Latlng: [ 52.908902, -32.519531],
-    description: "Test.",
-    events:
-      [{
-          date: 1832,
-          text: "super test",
-          title: "Journey across the Atlantic",
-          choices:
-          [
-            { text: "Arrive to Halifax",
-              goto: [4, 0],
-              memberAdd: {name: "James", born: 1828, health: 75}
-            },
-              { text: "Play dice with the crew....",
-                goto: [2, 1],
-                goto: [3, 1],
-                startDiceGame: "start"
-            }
-          ]
-      },
-      {
-          date: 1832,
-          text: "test",
-          title: "Dice Game",
-          choices:
-          [
-            { text: "End game",
-              goto: [4, 0],
-              diceGame: "end"
-              // memberAdd: {name: "James", born: 1828, health: 75}
-            }
-            //   { text: "Play dice with the crew....",
-            //     goto: [2, 1],
-            //     startDiceGame: "start"
-            // }
-          ]
-      }
-    ]
+  placeName: "Atlantic Ocean",
+  Latlng: [ 52.908902, -32.519531],
+  description: "Test.",
+  events:
+  [{
+    date: 1832,
+    text: "super test",
+    title: "Journey across the Atlantic",
+    choices:
+    [
+      { text: "Arrive to Halifax",
+      goto: [4, 0],
+      memberAdd: {name: "James", born: 1828, health: 75}
+    },
+    { text: "Play dice with the crew....",
+    goto: [2, 1],
+    goto: [3, 1],
+    startDiceGame: "start"
+  }
+]
+},
+{
+  date: 1832,
+  text: "test",
+  title: "Dice Game",
+  choices:
+  [
+    { text: "End game",
+    goto: [4, 0],
+    diceGame: "end"
+    // memberAdd: {name: "James", born: 1828, health: 75}
+  }
+  //   { text: "Play dice with the crew....",
+  //     goto: [2, 1],
+  //     startDiceGame: "start"
+  // }
+]
+}
+]
 });
 
 // index 4 in array
@@ -238,7 +223,7 @@ db.locations.insert({
     description: "",
     events:
       [{
-          date: 1839,
+          date: 1844,
           text: "",
           choices:
           [
