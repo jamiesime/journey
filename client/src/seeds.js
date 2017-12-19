@@ -162,15 +162,15 @@ db.locations.insert({
 db.locations.insert({
     placeName: "New York City, New York",
     Latlng: [ 40.712775, -74.005973],
-    description: "New York in the early 1830s brimmed with energy. The harbor had been a thriving port since the 1700s, but the completion of the Erie Canal in 1825 linking the city with the vast agricultural resources in the nation’s interior solidified New York’s centrality to the national economy. By the 1830s, nearly 250,000 people lived in New York City. Traders, bankers, speculators, shipbuilders, craftsmen, canal diggers, cart-pullers, and workers in the city's early manufacturing trades peopled an island.",
+    description: "New York in the early 1830s brimmed with energy. The harbor had been a thriving port since the 1700s, but the completion of the Erie Canal in 1825 linking the city with the vast agricultural resources in the nation’s interior solidified New York’s centrality to the national economy.\n\nBy the 1830s, nearly 250,000 people lived in New York City. Traders, bankers, speculators, shipbuilders, craftsmen, canal diggers, cart-pullers, and workers in the city's early manufacturing trades peopled an island.",
     events:
       [{
           date: 1838,
-          text: "Things happening with Cholera",
+          text: "You pick up work as a laborer on the ship yard. The pay is low and the mood around town is glum due to The Panic of 1837.\n\nThere is no reason to stay here and you decide to move on.",
           choices:
           [
-            { text: "Get out of New York",
-              goto: [8, 0]}
+            { text: "Flee the pessimism of New York",
+              goto: [7, 0]}
           ]
       }]
 });
