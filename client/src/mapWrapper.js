@@ -304,17 +304,12 @@ MapWrapper.prototype.addMarker = function (coords) {
   if(coords.lat == 52.908902){
     markerImage.url = "http://moziru.com/images/drawn-sailing-ship-transparent-20.gif"
   }
-
-  console.log(markerImage.url);
+  
   var marker = new google.maps.Marker({
     position: coords,
     map: this.googleMap,
     icon: markerImage
   });
-
-
-  console.log(markerImage.url);
-
 
   this.markers.push(marker.position)
 
