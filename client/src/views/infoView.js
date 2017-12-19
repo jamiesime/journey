@@ -14,7 +14,7 @@ InfoView.prototype = {
 
     locationName.innerText = location.placeName;
     description.innerText = location.description;
-    eventDesc.innerText = location.events[0].text;
+    eventDesc.innerText = location.events[currentEvent].text;
 
 
     content.appendChild(locationName);
