@@ -56,7 +56,7 @@ db.locations.insert({
             },
               { text: "Play dice with the crew....",
                 goto: [3, 1],
-                startDiceGame: "start"
+                diceGame: "start"
             }
           ]
       },
@@ -68,6 +68,7 @@ db.locations.insert({
           [
             { text: "End game",
               goto: [3, 0],
+              diceGame: "end"
               // memberAdd: {name: "James", born: 1828, health: 75}
             }
             //   { text: "Play dice with the crew....",
