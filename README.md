@@ -8,7 +8,7 @@ The result of 6 days work is Yore - an in-browser historical game that puts the 
 
 ## Screenshots
 
-<img src="https://i.imgur.com/i8FD5rX.jpg" alt="Front splash page" width="750" />
+<img src="https://i.imgur.com/i8FD5rX.jpg" alt="Front splash page" width="100%" />
 
 <img src="https://i.imgur.com/Xwh0nvJ.png" alt="Family page" width="100%" />
 
