@@ -14,7 +14,6 @@ DiceGameRender.prototype = {
     rollBtn.id = "reelroll";
     rollBtn.style.marginLeft = "35%";
     rollBtn.style.marginRight = "35%";
-
     rollBtn.innerText = "Roll dice";
 
     var rules = document.createElement('p');
@@ -91,6 +90,12 @@ DiceGameRender.prototype = {
 
 var renderReelandHolds = function(container, reelId, holdId, diceNumber){
   for (var i = 0 ; i < 5 ; i++){
+    var flexDiv = document.createElement('div');
+    flexDiv.style.display = "flex";
+    flexDiv.style.justifyContent = "center";
+    flexDiv.style.flexDirection = "column";
+    flexDiv.style.alignItems = "center";
+
     var reel = document.createElement("p");
     reel.id = reelId + (i+1);
     reel.style.display = "none";
@@ -99,14 +104,24 @@ var renderReelandHolds = function(container, reelId, holdId, diceNumber){
     checkbox.type = "checkbox";
     checkbox.style.display = "none";
     dice = document.createElement("img");
-    dice.classList += "dice-face"
-    dice.id = diceNumber+(i+1)
+    dice.classList += "dice-face";
+    dice.id = diceNumber+(i+1);
     dice.src = "./images/" + "1" + ".png";
 
+    lock = document.createElement("img");
+    lock.classList += "lock";
+    lock.src = "./images/" + "locked" + ".png";
+    lock.style.display = "none";
+    lock.style.height = "20px";
+    lock.style.width = "20px";
+    lock.id = "lock-" + reelId + (i+1);
+
+    flexDiv.appendChild(dice)
+    flexDiv.appendChild(lock)
+    container.appendChild(flexDiv)
 
     container.appendChild(reel);
     container.appendChild(checkbox);
-    container.appendChild(dice);
   }
 }
 
