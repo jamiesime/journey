@@ -83,11 +83,11 @@ db.locations.insert({
 db.locations.insert({
     placeName: "Halifax, Nova Scotia",
     Latlng: [ 44.655537, -63.578568],
-    description: "Halifax, the capital city of the Nova Scotia region, was considered one of the most important financial centres of the North Britsh America (and later Canada, when it was formed). It was originally inhabited by the Mi'Kmaq people. The first European settlers were French, who set up a collony called Acadia in the early 1600's. When the British settled in 1749, it sparked the Father Le Loutre's War, in which the British had to erect fortifications to defend the newly built Protestant settlement.",
+    description: "Halifax, the capital city of the Nova Scotia region, was considered one of the most important financial centres of the North Britsh America (and later Canada, when it was formed). \nIt was originally inhabited by the Mi'Kmaq people. The first European settlers were French, who set up a collony called Acadia in the early 1600's. When the British settled in 1749, it sparked the Father Le Loutre's War, in which the British had to erect fortifications to defend the newly built Protestant settlement.",
     events:
       [{
           date: 1832,
-          text: "You've arrived on this new land, shaky from the voyage. Eager for work, your family finds slim choice locally, but upon asking around word reaches you of employment prospects in nearby provinces. ",
+          text: "You've arrived on this new land, shaky from the voyage. Eager for work, your family finds slim choice locally, but upon asking around word reaches you of employment prospects in nearby provinces.",
           title: "Where to now?",
           choices:
           [
@@ -100,26 +100,32 @@ db.locations.insert({
       }]
 });
 
-// index 5 in array
+// index 4 in array
 db.locations.insert({
     placeName: "Quebec City, Quebec",
     Latlng: [ 46.813878, -71.207981],
     description: "About 30,000 immigrants landed each year in Quebec City, the capital of Lower Canada.",
     events:
       [{
-          date: 1834,
-          text: "There's rumours of a creation of a railway network that will eventually run from the Atlantic to the Pacific.  Construction begins in La Prairie next year.  Working on the railway will secure some good income for the family.",
+          date: 1832,
+          text: "There's rumours of a creation of a railway network that will eventually run from the Atlantic to the Pacific.  Construction begins in La Prairie next year.  Working on the railway will secure some good income for the family.\n\n In Quebec City there are opportunities to work in the logging industry, however due to the influx of immigrants there has been a cholera outbreak.",
           choices:
           [
             { text: "Go to La Prairie",
-              goto: [6, 0],
-              moneyChange: {value: +150, source: "railway work"}
+              goto: [5, 0],
+              moneyChange: {value: +150, source: "Railway Work"}
+            },
+            { text: "Stay in Quebec City to Work",
+              goto: [4, 0],
+              moneyChange: {value: +50, source: "Logging Work"},
+              memberHealthChange: {name: "Grammy", change: -20, source: "Cholera"},
+              memberHealthChange: {name: "Grace", change: -10, source: "Cholera"}
             }
           ]
       }]
 });
 
-// index 6 in array
+// index 5 in array
 db.locations.insert({
     placeName: "La Prairie, Quebec",
     Latlng: [ 45.41678, -73.49917],
@@ -151,7 +157,7 @@ db.locations.insert({
     ]
 });
 
-// index 7 in array
+// index 6 in array
 db.locations.insert({
     placeName: "New York City, New York",
     Latlng: [ 40.712775, -74.005973],
@@ -168,7 +174,7 @@ db.locations.insert({
       }]
 });
 
-// index 8 in array
+// index 7 in array
 db.locations.insert({
     placeName: "Columbia, Missouri",
     Latlng: [ 37.964253, -91.831833],
@@ -187,7 +193,7 @@ db.locations.insert({
       }]
 });
 
-// index 9 in array
+// index 8 in array
 db.locations.insert({
     placeName: "Jackson, Mississippi",
     Latlng: [ 32.298757, -90.184810],
