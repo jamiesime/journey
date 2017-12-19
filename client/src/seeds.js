@@ -5,11 +5,11 @@ db.dropDatabase();
 db.locations.insert({
     placeName: "Scottish Highlands",
     Latlng: [ 57.394109, -4.899902],
-    description: "The Highlands are a vast landscape of differing rural topographies. It is the year 1830, and over the past few decades the land owners have implemented the Highland Clearances; the forced eviction of inhabitants of the Highlands and western islands of Scotland. Woken in the late of night by a gang of armed men, hired by the local landowner, you're family is forced out your home. Told never to return, you're left with no other option than to head south in hope of opportunity.",
+    description: "It is the year 1830, and over the past few decades the land owners have implemented the Highland Clearances; the forced eviction of inhabitants of the Highlands and western islands of Scotland in order to allow the introduction of sheep pastoralism.",
     events:
       [{
           date: 1830,
-          text: "Upon reaching the nearest town, you hear about the conditions of the cities. Edinburgh rife with over population and crammed housing conditions, horrible working conditions for adults and children in the mills. But a fated meeting in a tavern one night brings hope. A sailor speaks of his coming voyage, to sail from Greenock and cross the western ocean and reach the Empires collonies in Canada where war has past and the land is thirving with opportunity. Seeing no better fortune arising, the family reailises the only path before them.",
+          text: "Woken in the late of night by a gang of armed men, hired by the local landowner, you're family is forced out your home. Told never to return, you're left with no other option than to head south in hope of opportunity. \nUpon reaching the nearest town, you hear about the conditions of the cities. Edinburgh is rife with over population and crammed housing conditions, horrible working conditions for adults and children in the mills. But a fated meeting in a tavern one night brings hope. A sailor speaks of his coming voyage, to sail from Greenock and cross the western ocean and reach the Empires collonies in Canada where war has past and the land is thirving with opportunity. \n\nSeeing no better fortune arising, the family reailises the only path before them.",
           title: "Go to Greenock",
           choices:
           [
@@ -238,7 +238,7 @@ db.locations.insert({
     description: "",
     events:
       [{
-          date: 1839,
+          date: 1844,
           text: "",
           choices:
           [
