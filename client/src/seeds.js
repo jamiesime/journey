@@ -43,11 +43,11 @@ db.locations.insert({
 
   placeName: "Atlantic Ocean",
   Latlng: [ 52.908902, -32.519531],
-  description: "Many passenger ships made the month long voyage across the Atlantic to America and Canada.",
+  description: "Many passenger ships made the month long voyage across the Atlantic to America and Canada.\n\nGetting yourself settled into the available cabins on board, you spot a few other families who are travelling the same brave path as your own. Upon high tide, the call from the captain comes to cast off, and as the ship pulls out of dock your family says farewell the home they thought they'd never leave.",
   events:
   [{
     date: 1832,
-    text: "Getting yourself settled into the available cabins on board, you spot a few other families who are travelling the same brave path as your own. Upon high tide, the call from the captain comes to cast off, and as the ship pulls out of dock your family says farewell the home they thought they'd never leave.\n\nOn the journey over you hear tales of the new land to be. Fresh lands, not yet steeped in the heavy industries like back home, full of opportunities \n\nThe journey takes months and as means to pass time you master the game of 'Ship Captain Crew'",
+    text: "On the journey over you hear tales of the new land to be. Fresh lands, not yet steeped in the heavy industries like back home, full of opportunities. Halifax Nova Scotia (New Scotland) will be the landing point. \n\nThe journey takes months and as means to pass time you master the game of 'Ship Captain Crew'.",
     title: "Journey across the Atlantic",
     choices:
     [
@@ -58,36 +58,10 @@ db.locations.insert({
 
     },
     { text: "Play dice with the crew....",
-    goto: [3, 1],
+    goto: [2, 1],
     diceGame: "start"
   }
-]
-}
-]
-});
-
-// index 3 in Array
-db.locations.insert({
-  placeName: "Atlantic Ocean",
-  Latlng: [ 52.908902, -32.519531],
-  description: "Test.",
-  events:
-  [{
-    date: 1832,
-    text: "super test",
-    title: "Journey across the Atlantic",
-    choices:
-    [
-      { text: "Arrive to Halifax",
-      goto: [4, 0],
-      memberAdd: {name: "James", born: 1828, health: 75}
-    },
-    { text: "Play dice with the crew....",
-    goto: [2, 1],
-    goto: [3, 1],
-    startDiceGame: "start"
-  }
-]
+  ]
 },
 {
   date: 1832,
@@ -96,20 +70,16 @@ db.locations.insert({
   choices:
   [
     { text: "End game",
-    goto: [4, 0],
+    goto: [3, 0],
     diceGame: "end"
-    // memberAdd: {name: "James", born: 1828, health: 75}
   }
-  //   { text: "Play dice with the crew....",
-  //     goto: [2, 1],
-  //     startDiceGame: "start"
-  // }
+
 ]
 }
 ]
 });
 
-// index 4 in array
+// index 3 in Array
 db.locations.insert({
     placeName: "Halifax, Nova Scotia",
     Latlng: [ 44.655537, -63.578568],
