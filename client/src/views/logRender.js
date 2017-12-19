@@ -15,7 +15,9 @@ LogRender.prototype = {
       loggedEvents.forEach(function(event){
         var testP = document.createElement("p");
         testP.innerText = event.eventText;
+        var hr = document.createElement('hr');
         container.appendChild(testP);
+        container.appendChild(hr);
       });
     }
   }
