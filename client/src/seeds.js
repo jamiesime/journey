@@ -220,6 +220,24 @@ db.locations.insert({
       }]
 });
 
+// index 9 in array
+db.locations.insert({
+    placeName: "Rancho de Carricitos, Texas",
+    Latlng: [ 26.061912, -97.784176],
+    description: "The Thornton Affair, also known as the Thornton Skirmish, Thornton's Defeat, or Rancho Carricitos was a battle in 1846 between the military forces of the United States and Mexico\nMexican forces attacked an American Army outpost in the occupied territory, killing 12 U.S. soldiers and capturing 52.",
+    events:
+      [{
+          date: 1846,
+          text: "The war has no sight of end and you're fed up of the blood shed.  You flee the war and travel further West to California.",
+          choices:
+          [
+            { text: "Leave for California",
+              goto: [10, 0],
+              memberRemove: {name: "Pierre", source: "Captured by Mexican Troops"}
+          ]
+      }]
+});
+
 
 
 
