@@ -14,14 +14,19 @@ ResultQueueRender.prototype = {
     modal.appendChild(content);
 
     eventQueue.forEach(function(thisEvent){
+      subEventContent = document.createElement("div");
+      subEventContent.id = "sub-event-content";
+
       if(thisEvent.imgUrl != null || undefined){
-        renderImg(content, thisEvent.imgUrl);
+        renderImg(subEventContent, thisEvent.imgUrl);
       }
       if(thisEvent.member != null || undefined){
-        renderMemberInfo(content, thisEvent.member, locations);
+        renderMemberInfo(subEventContent, thisEvent.member, locations);
       }
-      renderEventText(content, thisEvent.eventText);
+      renderEventText(subEventContent, thisEvent.eventText);
+      content.appendChild(subEventContent);
     });
+
 
     var close = document.createElement("button");
     close.id = "special-event-close";
@@ -57,7 +62,7 @@ var renderMemberInfo = function(content, member, locations){
 var renderEventText = function(content, eventText){
   var text = document.createElement("p");
   text.innerText = eventText;
-  text.id = "#event-text";
+  text.id = "event-text";
   content.appendChild(text);
 }
 

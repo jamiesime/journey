@@ -348,7 +348,7 @@ button#option2 {
   animation: blowUpModal .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
@@ -358,13 +358,23 @@ button#option2 {
   background-image: url(http://api.thumbr.it/whitenoise-600x400.png?background=ECD7B4&noise=626262&density=25&opacity=11);
 }
 
+#sub-event-content{
+  margin: 5px;
+  background-color: #b5ae9d;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 250px;
+}
+
 #special-event-content p {
   margin: 0;
 }
 
 #event-text {
+  display: block;
   margin-top: 20px;
-  color: white;
 }
 
 /*DICE GAME*/
