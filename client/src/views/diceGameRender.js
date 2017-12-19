@@ -18,8 +18,8 @@ DiceGameRender.prototype = {
     var cpuReelDisplay = document.createElement("div");
     cpuReelDisplay.id = "cpu-reel-display";
 
-    renderReelandHolds(reelDisplay, "reel", "hold");
-    renderReelandHolds(cpuReelDisplay, "cpu-reel", "cpu-hold");
+    renderReelandHolds(reelDisplay, "reel", "hold", "dice");
+    renderReelandHolds(cpuReelDisplay, "cpu-reel", "cpu-hold", "cpuDice");
 
     var victoryDiv = document.createElement("div");
     victoryDiv.id = "victory-declared";
@@ -57,6 +57,17 @@ DiceGameRender.prototype = {
       var dice5 = document.getElementById('dice5')
       dice5.src = "./images/" + reel5.innerText + ".png";
 
+      var cpudice1 = document.getElementById('cpuDice1')
+      cpudice1.src = "./images/" + cpureel1.innerText + ".png";
+      var cpudice2 = document.getElementById('cpuDice2')
+      cpudice2.src = "./images/" + cpureel2.innerText + ".png";
+      var cpudice3 = document.getElementById('cpuDice3')
+      cpudice3.src = "./images/" + cpureel3.innerText + ".png";
+      var cpudice4 = document.getElementById('cpuDice4')
+      cpudice4.src = "./images/" + cpureel4.innerText + ".png";
+      var cpudice5 = document.getElementById('cpuDice5')
+      cpudice5.src = "./images/" + cpureel5.innerText + ".png";
+
 
 
     });
@@ -64,7 +75,7 @@ DiceGameRender.prototype = {
 
 }
 
-var renderReelandHolds = function(container, reelId, holdId){
+var renderReelandHolds = function(container, reelId, holdId, diceNumber){
   for (var i = 0 ; i < 5 ; i++){
     var reel = document.createElement("p");
     reel.id = reelId + (i+1);
@@ -73,8 +84,11 @@ var renderReelandHolds = function(container, reelId, holdId){
     checkbox.type = "checkbox";
     dice = document.createElement("img");
     dice.classList += "dice-face"
-    dice.id = "dice"+(i+1)
+    dice.id = diceNumber+(i+1)
 
+    // cpuDice = document.createElement("img");
+    // cpuDice.classList += "dice-face"
+    // cpuDice.id = "cpu-dice"+((i+1)+5)
 
     container.appendChild(reel);
     container.appendChild(checkbox);
