@@ -115,13 +115,43 @@ db.locations.insert({
           choices:
           [
             { text: "Travel to New York",
-              goto: [6, 0]}
+              goto: [6, 0]},
+              {text: "Join the Rebellion",
+               goto: [5, 1]}
+          ]
+      },
+      {
+        date: 1837,
+        text: "The Rebellion!",
+        choices:
+        [
+          {
+            text: "Travel to New York",
+            goto: [6, 0]
+          }
+        ]
+      }
+    ]
+});
 
+// index 6 in array
+db.locations.insert({
+    placeName: "New York City, New York",
+    Latlng: [ 40.712775, -74.005973],
+    description: " ",
+    events:
+      [{
+          date: 1838,
+          text: "The railway served as a way for those travelling between Montreal and New York to avoid a bumpy stagecoach journey that bypassed a series of difficult rapids on the Richelieu. At Saint-Jean, passengers transferred to a steamer that carried them south to New York City via Lake Champlain and the Hudson River.",
+          choices:
+          [
+            { text: "Travel to New York",
+              goto: [7, 0]}
           ]
       }]
 });
 
-// index  in array
+// index 7 in array
 db.locations.insert({
     placeName: "New York City, New York",
     Latlng: [ 40.712775, -74.005973],
