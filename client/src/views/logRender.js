@@ -13,10 +13,10 @@ LogRender.prototype = {
     container.appendChild(header);
     if (loggedEvents != null || loggedEvents != undefined){
       loggedEvents.forEach(function(event){
-        var testP = document.createElement("p");
-        testP.innerText = event.eventText;
+        var logItem = document.createElement("p");
+        logItem.innerText = event.eventText;
         var hr = document.createElement('hr');
-        container.appendChild(testP);
+        container.appendChild(logItem);
         container.appendChild(hr);
       });
     }
