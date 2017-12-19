@@ -15,7 +15,6 @@ previousPosition = 0;
 currentPosition = 0;
 currentEvent = 0;
 
-
 var app = function(){
   url = "http://localhost:3000/getlocations";
   makeRequest(url, requestLocations);
@@ -40,7 +39,6 @@ var app = function(){
       modal.className = "modal-click";
     }
   }
-
 
   // SUBMENU BUTTONS
   // family is in determine locations
@@ -83,14 +81,6 @@ var determineLocation = function(locations){
 var renderEventChoices = function(event){
   var thisEvent = new ChoicesRender(event);
 }
-
-// var changePosition = function(change){
-//   currentPosition += change;
-// }
-//
-// var changeEvent = function(change){
-//   currentEvent += change;
-// }
 
 var renderNewMarker = function(locations){
   var currentlocation  = new MarkerRender(locations[currentPosition]);

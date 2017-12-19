@@ -10,7 +10,6 @@ MarkerRender.prototype.moveLocation = function (location) {
     mainMap.repositionMap(newCoords, 7);
     if(location.placeName === "Atlantic Ocean"){
       mainMap.repositionMap(newCoords, 4);
-
     }
 };
 

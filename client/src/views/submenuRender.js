@@ -1,4 +1,3 @@
-
 var SubMenuRender = function(){
   this.render();
 }
