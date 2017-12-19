@@ -40,3 +40,5 @@ DiceGame.prototype.rollDice = function(){
     }
   }
 }
+
+module.exports = DiceGame;

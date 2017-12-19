@@ -13,6 +13,7 @@ var locations;
 var redrawRoute = false;
 var eventQueue = [];
 var loggedEvents = [];
+var inDiceGame = false;
 
 var Interactions = {
   getSelectedChoice: function(choice){
@@ -55,7 +56,9 @@ var reloadInfoWindow = function(){
 }
 
 var determineLocation = function(locations){
-  var location = new InfoView(locations[currentPosition]);
+  if (!inDiceGame){
+    var location = new InfoView(locations[currentPosition]);
+  }
 
   var familyBtn = document.getElementById("family-btn");
   familyBtn.addEventListener("click", function(){
@@ -92,6 +95,17 @@ var addSubMenuListeners = function(){
 }
 
 var checkSpecialEvents = function(choice){
+  if(choice.diceGame != null && choice.diceGame != undefined){
+    if(choice.diceGame === "start"){
+      startDiceGame();
+      inDiceGame = true;
+    }
+    if(choice.diceGame === "end"){
+      console.log("ending game");
+      inDiceGame = false;
+      var location = new InfoView(locations[currentPosition]);
+    }
+  }
   if(choice.memberAdd != null && choice.memberAdd != undefined){
     addFamilyMember(choice.memberAdd);
   }
@@ -104,9 +118,6 @@ var checkSpecialEvents = function(choice){
   }
   if(choice.memberHealthChange != null && choice.memberHealthChange != undefined){
     changeMemberHealth(choice.memberHealthChange);
-  }
-  if(choice.startDiceGame != null && choice.startDiceGame != undefined){
-    startDiceGame();
   }
   if (locations != null && locations != undefined){
     randomDeathOfOldAge();
