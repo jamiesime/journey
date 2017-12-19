@@ -170,7 +170,11 @@ db.locations.insert({
           choices:
           [
             { text: "Flee the pessimism of New York",
-              goto: [7, 0]}
+              goto: [7, 0],
+              moneyChange: {value: +50, source: "Labouring"},
+              memberAdd: {name: "Hamish", born: 1838, health: 90},
+              memberRemove: {name: "John", source: "war wounds"}
+            }
           ]
       }]
 });
@@ -179,17 +183,21 @@ db.locations.insert({
 db.locations.insert({
     placeName: "Columbia, Missouri",
     Latlng: [ 37.964253, -91.831833],
-    description: "",
+    description: "In 1839 The first university west of the Mississippi River is established, the University of Missouri.  You've moved here with the hope of building a better future for your family.\n\nBoone County Missouri was the location for many settlers who brought slaves and slave-holding with them.  The settlers started cultivating hemp and tobacco.",
     events:
       [{
-          date: 1839,
-          text: "The first university west of the Mississippi River is established, the University of Missouri.\n\n In Jackson, Mississippi, the first state law allowing women to own property is passed.",
+          date: 1841,
+          text: "Sending your children to university will be a large financial outlay, however it will lead to a prosperous future.\n\n Meanwhile in Jackson, Mississippi south of the river the first state law allowing women to own property is passed.",
           choices:
           [
             { text: "Go to Uni",
-              goto: [8, 0]},
+              goto: [7, 0],
+              moneyChange: {value: -100, source: "university fees"}
+          },
               { text: "Move to Jackson",
-                goto: [9, 0]}
+                goto: [8, 0],
+                moneyChange: {value: -150, source: "you bought a house!"}
+              }
           ]
       }]
 });
