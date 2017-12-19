@@ -20,8 +20,13 @@ SubMenuRender.prototype = {
     logBtn.classList += "menu-btn";
     logBtn.id = "log-btn";
     logBtn.innerText = "Log";
-    moneyDisplay = document.createElement("p");
-    moneyDisplay.innerText = "Money: " + money;
+    moneyDisplay = document.createElement("div");
+    moneyCount = document.createElement("p");
+    moneyIcon = document.createElement("img");
+    moneyIcon.src = "./images/money.png";
+    moneyCount.innerText = money;
+    moneyDisplay.appendChild(moneyIcon);
+    moneyDisplay.appendChild(moneyCount);
     moneyDisplay.id = "money-display";
     container.appendChild(eventBtn);
     container.appendChild(familyBtn);
