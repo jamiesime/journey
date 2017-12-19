@@ -19,9 +19,6 @@ var app = function(){
   url = "http://localhost:3000/getlocations";
   makeRequest(url, requestLocations);
 
-  //Following sets up initial family - all users will start with this familyMember
-  initialFamilySetUp();
-
   //Following displays map on load:
   var container = document.getElementById('map-container');
   var coords = [56.4907, -4.2026];
@@ -33,10 +30,14 @@ var app = function(){
   span.onclick = function() {
     modal.className = "modal-click";
     // modal.style.display = "none";
+    //Following sets up initial family - all users will start with this familyMember
+    initialFamilySetUp();
   }
   window.onclick = function(event) {
     if (event.target == modal) {
       modal.className = "modal-click";
+      //Following sets up initial family - all users will start with this familyMember
+      initialFamilySetUp();
     }
   }
 
@@ -75,6 +76,7 @@ var determineLocation = function(locations){
   var familyBtn = document.getElementById("family-btn");
   familyBtn.addEventListener("click", function(){
     familyInfo = new FamilyRender(family, locations[currentPosition]);
+
   });
 }
 
@@ -98,7 +100,7 @@ var initialFamilySetUp = function(){
   initialMembers.push(member3);
   initialMembers.push(member4);
   initialMembers.push(member5);
-  familyName = document.getElementById('userInput').value
+  familyName = document.getElementById('userInput').value;
   family = new Family(familyName, initialMembers);
 }
 
