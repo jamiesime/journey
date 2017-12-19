@@ -172,8 +172,7 @@ db.locations.insert({
             { text: "Flee the pessimism of New York",
               goto: [7, 0],
               moneyChange: {value: +50, source: "Labouring"},
-              memberAdd: {name: "Hamish", born: 1838, health: 90},
-              memberRemove: {name: "John", source: "war wounds"}
+              memberAdd: {name: "Hamish", born: 1838, health: 90}
             }
           ]
       }]
@@ -196,7 +195,7 @@ db.locations.insert({
           },
               { text: "Move to Jackson",
                 goto: [8, 0],
-                moneyChange: {value: -150, source: "you bought a house!"}
+                moneyChange: {value: -150, source: "you bought some land to build a house!"}
               }
           ]
       }]
@@ -206,17 +205,17 @@ db.locations.insert({
 db.locations.insert({
     placeName: "Jackson, Mississippi",
     Latlng: [ 32.298757, -90.184810],
-    description: "",
+    description: "The Panic of 1837 inspired attempts to limit the impact of such an economic crisis by protecting family assets. Mississippi initiated the trend in 1839 with its Married Women's Property Act that allowed married women to own property.\nAny attempt to collect debt from her husband could not reach property only she owned. She had the right to refuse to sell the property, but could not manage that property or sell it without her husband's consent.  ",
     events:
       [{
-          date: 1844,
-          text: "",
+          date: 1845,
+          text: "News begins to reach Mississippi of unrest in Texas following the annexation of the independant Republic of Texas.\n\nNewly elected President Polk moved US Troops south into the disputed territory and soon war was declared between Mexico and America.",
           choices:
           [
-            // { text: "Go to Uni",
-            //   goto: [8, 0]},
-            //   { text: "Move to Jackson",
-            //     goto: [9, 0]}
+            { text: "Support Polk, Fight the Mexicans",
+              goto: [9, 0],
+              memberHealthChange: {name: "John", change: -40, source: "fighting in the Mexican-American War"},
+              memberHealthChange: {name: "Pierre", change: -40, source: "fighting in the Mexican-American War"}},
           ]
       }]
 });
