@@ -9,13 +9,16 @@ LogRender.prototype = {
     container = document.getElementById("sidebar-info-content");
     container.innerHTML = "";
     header = document.createElement("h2");
-    header.innerText = "Recent Events";
+    header.innerText = "Diary";
     container.appendChild(header);
     if (loggedEvents != null || loggedEvents != undefined){
       loggedEvents.forEach(function(event){
-        var testP = document.createElement("p");
-        testP.innerText = event.eventText;
-        container.appendChild(testP);
+        var logItem = document.createElement("p");
+        logItem.innerText = event.eventText;
+        logItem.style.fontFamily = "Coronetscript, cursive"
+        var hr = document.createElement('hr');
+        container.appendChild(logItem);
+        container.appendChild(hr);
       });
     }
   }
