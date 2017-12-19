@@ -52,7 +52,8 @@ db.locations.insert({
           [
             { text: "Arrive to Halifax",
               goto: [4, 0],
-              memberAdd: {name: "James", born: 1828, health: 75}
+              memberAdd: {name: "James", born: 1828, health: 75},
+              memberRemove: {name: "Grace", source: "infection"}
             },
               { text: "Play dice with the crew....",
                 goto: [3, 1],
@@ -138,7 +139,7 @@ db.locations.insert({
             { text: "Go to Quebec City",
               goto: [5, 0],
               moneyChange: { value: -25, source: "carriage ticket"},
-              memberHealthChange: {name: "John", change: -20}
+              memberHealthChange: {name: "John", change: -20, source: "exhaustion"}
             }
           ]
       }]
@@ -178,7 +179,7 @@ db.locations.insert({
               goto: [7, 0]},
               { text: "Join the Rebellion",
                goto: [6, 1],
-               memberHealthChange: {name: "John", change: -40}
+               memberHealthChange: {name: "John", change: -40, source: "fighting in Rebellion"}
            }
           ]
       },

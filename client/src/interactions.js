@@ -207,10 +207,10 @@ var renderMemberHealthChange = function(memberHealthChange){
   }
   var imgUrl = "./images/" + memberObject.name + ".png";
   if (Math.sign(memberHealthChange.change) === 1){
-    eventText = memberObject.name + "'s health improved due to " + memberHealthChange.cause;
+    eventText = memberObject.name + "'s health improved due to " + memberHealthChange.source;
   }
   else {
-    eventText = memberObject.name + "'s health got worse due to " memberHealthChange.cause;
+    eventText = memberObject.name + "'s health got worse due to " + memberHealthChange.source;
   }
   var result = new Result(memberObject, eventText, imgUrl);
   eventQueue.push(result);
@@ -232,7 +232,7 @@ var randomDeathOfOldAge = function(){
     if( age > 45){
       var chance = getRandomInt();
       if(chance > 90){
-        removeFamilyMember(member.name);
+        removeFamilyMember({member.name, source: "natural causes");
       }
     }
   });
