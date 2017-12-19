@@ -146,7 +146,7 @@ var removeFamilyMember = function(memberToRemove){
   if(index != null){
     var gone = family.members.splice(index, 1);
     gone[0].health = 0;
-    renderRemoveMember(gone);
+    renderRemoveMember(gone, memberToRemove);
   }
 }
 
@@ -162,7 +162,7 @@ var changeMemberHealth = function(memberHealthChange){
     if(health < 1){
       var gone = family.members.splice(index, 1);
       gone[0].health = 0;
-      renderRemoveMember(gone);
+      renderRemoveMember(gone, memberHealthChange);
     }
     else{
       renderMemberHealthChange(memberHealthChange);
@@ -177,9 +177,9 @@ var renderNewMember = function(newMember){
   eventQueue.push(result);
 }
 
-var renderRemoveMember = function(removeMember){
+var renderRemoveMember = function(removeMember, dbObject){
   var memberObject = removeMember[0];
-  var eventText = memberObject.name + " has died!";
+  var eventText = memberObject.name + " has died of " + dbObject.source;
   var imgUrl = "./images/" + memberObject.name + ".png";
   var result = new Result(memberObject, eventText, imgUrl);
   eventQueue.push(result);
@@ -207,10 +207,10 @@ var renderMemberHealthChange = function(memberHealthChange){
   }
   var imgUrl = "./images/" + memberObject.name + ".png";
   if (Math.sign(memberHealthChange.change) === 1){
-    eventText = memberObject.name + "'s health got better!";
+    eventText = memberObject.name + "'s health improved due to " + memberHealthChange.cause;
   }
   else {
-    eventText = memberObject.name + "'s health got worse!";
+    eventText = memberObject.name + "'s health got worse due to " memberHealthChange.cause;
   }
   var result = new Result(memberObject, eventText, imgUrl);
   eventQueue.push(result);
