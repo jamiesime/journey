@@ -20,16 +20,21 @@ DiceGame.prototype.rollDice = function(){
     var six = document.getElementById("hold5").checked;
     var five = document.getElementById("hold4").checked;
     var four = document.getElementById("hold3").checked;
-
+    var sixLock = document.getElementById("lock-reel5");
+    var fiveLock = document.getElementById("lock-reel4");
+    var fourLock = document.getElementById("lock-reel3");
 
     for (var number of resultsArray) {
       var sortedResult = document.getElementById("reel"+index).innerText = number;
       if (resultsArray[4] === 6 || (six) ) {
         document.getElementById("hold5").checked = true;
+        sixLock.style.display = "block";
         if (resultsArray[3] === 5 || (five)) {
           document.getElementById("hold4").checked = true;
+          fiveLock.style.display = "block";
           if (resultsArray[2] === 4) {
             document.getElementById("hold3").checked = true;
+            fourLock.style.display = "block";
             var btn = document.getElementById('reelroll');
             btn.disabled = true;
             var victory = document.getElementById('victory');
@@ -59,15 +64,22 @@ DiceGame.prototype.computerRollDice = function(){
     var six = document.getElementById("cpu-hold5").checked;
     var five = document.getElementById("cpu-hold4").checked;
     var four = document.getElementById("cpu-hold3").checked;
+    var sixLock = document.getElementById("lock-cpu-reel5");
+    var fiveLock = document.getElementById("lock-cpu-reel4");
+    var fourLock = document.getElementById("lock-cpu-reel3");
+
 
     for (var number of resultsArray) {
       var sortedResult = document.getElementById("cpu-reel"+index).innerText = number;
       if (resultsArray[4] === 6 || (six) ) {
         document.getElementById("cpu-hold5").checked = true;
+        sixLock.style.display = "block";
         if (resultsArray[3] === 5 || (five)) {
           document.getElementById("cpu-hold4").checked = true;
+          fiveLock.style.display = "block";
           if (resultsArray[2] === 4) {
             document.getElementById("cpu-hold3").checked = true;
+            fourLock.style.display = "block";
             var btn = document.getElementById('reelroll');
             btn.disabled = true;
             var victory = document.getElementById('victory');

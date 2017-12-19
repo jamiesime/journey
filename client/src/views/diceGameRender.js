@@ -115,6 +115,7 @@ var renderReelandHolds = function(container, reelId, holdId, diceNumber){
     lock.style.display = "none";
     lock.style.height = "20px";
     lock.style.width = "20px";
+    lock.id = "lock-" + reelId + (i+1);
 
     flexDiv.appendChild(dice)
     flexDiv.appendChild(lock)
