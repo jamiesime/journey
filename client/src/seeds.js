@@ -116,18 +116,19 @@ db.locations.insert({
           [
             { text: "Travel to New York",
               goto: [6, 0]},
-              {text: "Join the Rebellion",
-               goto: [5, 1]}
+              { text: "Join the Rebellion",
+               goto: [5, 1],
+               memberHealthChange: {name: "John", change: -40}
+           }
           ]
       },
       {
         date: 1837,
-        text: "The Rebellion!",
+        text: "The Lower Canada Rebellion, commonly referred to as The Patriots War by Qubecers is the name given to the armed conflict in 1837-1838 between the rebels of lower Canada and the British colonial power of the province.",
         choices:
         [
           { text: "Travel to New York",
-            goto: [6, 0],
-            memberHealthChange: {name: "John", change: -20}
+            goto: [6, 0]
           }
         ]
       }
