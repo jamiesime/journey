@@ -294,12 +294,6 @@ MapWrapper = function(container, coords, zoom){
 };
 
 MapWrapper.prototype.addMarker = function (coords) {
-  console.log(coords.lat);
-    var boatImage = {
-      url: "https://imgur.com/a/63rWT",
-      scaledSize: new google.maps.Size(50, 50),
-      origin: new google.maps.Point(0,0),
-    };
 
   var markerImage = {
     url: "https://i.imgur.com/BDkqWAw.png",
@@ -308,9 +302,9 @@ MapWrapper.prototype.addMarker = function (coords) {
   };
 
   if(coords.lat == 52.908902){
-    markerImage.url = "https://imgur.com/a/63rWT"
+    markerImage.url = "http://moziru.com/images/drawn-sailing-ship-transparent-20.gif"
   }
-  
+
   console.log(markerImage.url);
   var marker = new google.maps.Marker({
     position: coords,
