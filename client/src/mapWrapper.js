@@ -294,11 +294,17 @@ MapWrapper = function(container, coords, zoom){
 };
 
 MapWrapper.prototype.addMarker = function (coords) {
+
   var markerImage = {
     url: "https://i.imgur.com/BDkqWAw.png",
     scaledSize: new google.maps.Size(50, 50),
     origin: new google.maps.Point(0,0),
   };
+
+  if(coords.lat == 52.908902){
+    markerImage.url = "http://moziru.com/images/drawn-sailing-ship-transparent-20.gif"
+  }
+  
   var marker = new google.maps.Marker({
     position: coords,
     map: this.googleMap,
