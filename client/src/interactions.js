@@ -139,14 +139,14 @@ var addFamilyMember = function(memberToAdd){
 var removeFamilyMember = function(memberToRemove){
   var index = null;
   for(var i = 0 ; i < family.members.length; i++){
-    if(family.members[i].name === memberToRemove){
+    if(family.members[i].name === memberToRemove.name){
       index = i;
     }
   }
   if(index != null){
     var gone = family.members.splice(index, 1);
     gone[0].health = 0;
-    renderRemoveMember(gone);
+    renderRemoveMember(gone, memberToRemove);
   }
 }
 
@@ -162,7 +162,7 @@ var changeMemberHealth = function(memberHealthChange){
     if(health < 1){
       var gone = family.members.splice(index, 1);
       gone[0].health = 0;
-      renderRemoveMember(gone);
+      renderRemoveMember(gone, memberHealthChange);
     }
     else{
       renderMemberHealthChange(memberHealthChange);
@@ -177,9 +177,9 @@ var renderNewMember = function(newMember){
   eventQueue.push(result);
 }
 
-var renderRemoveMember = function(removeMember){
+var renderRemoveMember = function(removeMember, dbObject){
   var memberObject = removeMember[0];
-  var eventText = memberObject.name + " has died!";
+  var eventText = memberObject.name + " has died of " + dbObject.source;
   var imgUrl = "./images/" + memberObject.name + ".png";
   var result = new Result(memberObject, eventText, imgUrl);
   eventQueue.push(result);
@@ -207,10 +207,10 @@ var renderMemberHealthChange = function(memberHealthChange){
   }
   var imgUrl = "./images/" + memberObject.name + ".png";
   if (Math.sign(memberHealthChange.change) === 1){
-    eventText = memberObject.name + "'s health got better!";
+    eventText = memberObject.name + "'s health improved due to " + memberHealthChange.source;
   }
   else {
-    eventText = memberObject.name + "'s health got worse!";
+    eventText = memberObject.name + "'s health got worse due to " + memberHealthChange.source;
   }
   var result = new Result(memberObject, eventText, imgUrl);
   eventQueue.push(result);
@@ -232,7 +232,8 @@ var randomDeathOfOldAge = function(){
     if( age > 45){
       var chance = getRandomInt();
       if(chance > 90){
-        removeFamilyMember(member.name);
+        console.log(chance);
+        removeFamilyMember({name: member.name, source: "natural causes"});
       }
     }
   });

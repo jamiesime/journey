@@ -40,6 +40,7 @@ db.locations.insert({
 
 // index 2 in array
 db.locations.insert({
+
   placeName: "Atlantic Ocean",
   Latlng: [ 52.908902, -32.519531],
   description: "Many passenger ships made the month long voyage across the Atlantic to America and Canada.",
@@ -123,7 +124,7 @@ db.locations.insert({
             { text: "Go to Quebec City",
               goto: [5, 0],
               moneyChange: { value: -25, source: "carriage ticket"},
-              memberHealthChange: {name: "John", change: -20}
+              memberHealthChange: {name: "John", change: -20, source: "exhaustion"}
             }
           ]
       }]
@@ -163,7 +164,7 @@ db.locations.insert({
               goto: [7, 0]},
               { text: "Join the Rebellion",
                goto: [6, 1],
-               memberHealthChange: {name: "John", change: -40}
+               memberHealthChange: {name: "John", change: -40, source: "fighting in Rebellion"}
            }
           ]
       },
