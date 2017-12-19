@@ -22,7 +22,6 @@ LogRender.prototype = {
       });
     }
   }
-
 }
 
 
