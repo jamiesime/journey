@@ -301,8 +301,11 @@ button#option2 {
   animation: deflateModal .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 }
 
+/* event description text within info window */
 .evntDesc {
-    background-color: red;
+    background-color: #8E8358;
+    padding: 5px;
+    border: 5px solid #645853;
 }
 
 #userInput {
