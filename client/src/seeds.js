@@ -51,19 +51,76 @@ db.locations.insert({
           choices:
           [
             { text: "Arrive to Halifax",
-              goto: [3, 0],
+              goto: [4, 0],
               memberAdd: {name: "James", born: 1828, health: 75}
             },
               { text: "Play dice with the crew....",
-                goto: [3, 0],
-                gambleDice: 10,
-                memberRemove: "Grace"
+                goto: [3, 1],
+                startDiceGame: "start"
             }
           ]
-      }]
+      },
+      {
+          date: 1832,
+          text: "test",
+          title: "Dice Game",
+          choices:
+          [
+            { text: "End game",
+              goto: [3, 0],
+              // memberAdd: {name: "James", born: 1828, health: 75}
+            }
+            //   { text: "Play dice with the crew....",
+            //     goto: [2, 1],
+            //     startDiceGame: "start"
+            // }
+          ]
+      }
+    ]
 });
 
-// index 3 in array
+// index 3 in Array
+db.locations.insert({
+    placeName: "Atlantic Ocean",
+    Latlng: [ 57.908902, -32.519531],
+    description: "Test.",
+    events:
+      [{
+          date: 1832,
+          text: "super test",
+          title: "Journey across the Atlantic",
+          choices:
+          [
+            { text: "Arrive to Halifax",
+              goto: [4, 0],
+              memberAdd: {name: "James", born: 1828, health: 75}
+            },
+              { text: "Play dice with the crew....",
+                goto: [3, 1],
+                startDiceGame: "start"
+            }
+          ]
+      },
+      {
+          date: 1832,
+          text: "test",
+          title: "Dice Game",
+          choices:
+          [
+            { text: "End game",
+              goto: [4, 0],
+              // memberAdd: {name: "James", born: 1828, health: 75}
+            }
+            //   { text: "Play dice with the crew....",
+            //     goto: [2, 1],
+            //     startDiceGame: "start"
+            // }
+          ]
+      }
+    ]
+});
+
+// index 4 in array
 db.locations.insert({
     placeName: "Halifax, Nova Scotia",
     Latlng: [ 44.655537, -63.578568],
@@ -76,7 +133,7 @@ db.locations.insert({
           choices:
           [
             { text: "Go to Quebec City",
-              goto: [4, 0],
+              goto: [5, 0],
               moneyChange: { value: -25, source: "carriage ticket"},
               memberHealthChange: {name: "John", change: -20}
             }
@@ -84,7 +141,7 @@ db.locations.insert({
       }]
 });
 
-// index 4 in array
+// index 5 in array
 db.locations.insert({
     placeName: "Quebec City, Quebec",
     Latlng: [ 46.813878, -71.207981],
@@ -96,14 +153,14 @@ db.locations.insert({
           choices:
           [
             { text: "Go to La Prairie",
-              goto: [5, 0],
+              goto: [6, 0],
               moneyChange: {value: +150, source: "railway work"}
             }
           ]
       }]
 });
 
-// index 5 in array
+// index 6 in array
 db.locations.insert({
     placeName: "La Prairie, Quebec",
     Latlng: [ 45.41678, -73.49917],
@@ -115,9 +172,9 @@ db.locations.insert({
           choices:
           [
             { text: "Travel to New York",
-              goto: [6, 0]},
+              goto: [7, 0]},
               { text: "Join the Rebellion",
-               goto: [5, 1],
+               goto: [6, 1],
                memberHealthChange: {name: "John", change: -40}
            }
           ]
@@ -135,7 +192,7 @@ db.locations.insert({
     ]
 });
 
-// index 6 in array
+// index 7 in array
 db.locations.insert({
     placeName: "New York City, New York",
     Latlng: [ 40.712775, -74.005973],
@@ -143,7 +200,7 @@ db.locations.insert({
     events:
       [{
           date: 1838,
-          text: "The railway served as a way for those travelling between Montreal and New York to avoid a bumpy stagecoach journey that bypassed a series of difficult rapids on the Richelieu. At Saint-Jean, passengers transferred to a steamer that carried them south to New York City via Lake Champlain and the Hudson River.",
+          text: "",
           choices:
           [
             { text: "Travel to New York",
@@ -152,7 +209,7 @@ db.locations.insert({
       }]
 });
 
-// index 7 in array
+// index 8 in array
 db.locations.insert({
     placeName: "New York City, New York",
     Latlng: [ 40.712775, -74.005973],
