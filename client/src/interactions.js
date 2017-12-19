@@ -176,7 +176,8 @@ var renderRemoveMember = function(removeMember, dbObject){
   var memberObject = removeMember[0];
   var eventText = memberObject.name + " has died of " + dbObject.source;
   var imgUrl = "./images/" + memberObject.name + ".png";
-  var result = new Result(memberObject, eventText, imgUrl);
+  var extraImgUrl = "./images/gravestone.png";
+  var result = new Result(memberObject, eventText, imgUrl, extraImgUrl);
   eventQueue.push(result);
 }
 
@@ -187,7 +188,8 @@ var renderMoneyChange = function(moneyChange){
   else {
     var eventText = "Money decreased by " + moneyChange.value + " due to " + moneyChange.source;
   }
-  var result = new Result(null, eventText, null);
+  var imgUrl = "./images/money.png";
+  var result = new Result(null, eventText, imgUrl);
   eventQueue.push(result);
 }
 

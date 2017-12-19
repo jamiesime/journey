@@ -14,6 +14,7 @@ button {
   font-family: "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
   font-size: 20px;
   text-align: center;
+  margin-top: 10px;
   margin-left: 40%;
   margin-right: 40%;
   box-shadow: 2px 4px;
@@ -152,15 +153,19 @@ h2 {
 }
 
 #money-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #DDC7AA;
   transition: all 0.5s ease;
   color: #805243;
   border: 2px solid saddleBrown;
   font-family: "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
-  font-size: 20px;
+  font-size: 15px;
   text-align: center;
   padding: 5px;
   border-radius: 5px;
+  max-height: 30px;
 }
 
 /*FAMILY MENU*/
@@ -305,9 +310,14 @@ button#option2 {
 
 /* event description text within info window */
 .evntDesc {
-    background-color: #8E8358;
+    background-color: #d8d1c3;
     padding: 5px;
     border: 5px solid #645853;
+    border-radius: 4px;
+}
+
+.evntDesc {
+  background-color: #e5e0d7;
 }
 
 #userInput {
@@ -354,8 +364,29 @@ button#option2 {
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 4px solid #7F5244;
-  width: 50%; /* Could be more or less, depending on screen size */
+  max-width: 40%; /* Could be more or less, depending on screen size */
   background-image: url(http://api.thumbr.it/whitenoise-600x400.png?background=ECD7B4&noise=626262&density=25&opacity=11);
+}
+
+#sub-event-content{
+  margin: 5px;
+  background-color: #e5ddc7;
+  border-radius: 5px;
+  border: 4px solid #7F5244;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%;
+}
+
+#event-sprite{
+  min-width: 64px;
+  min-height: 64px;
+}
+
+#event-text {
+  margin-left: 20px;
 }
 
 /*DICE GAME*/
@@ -377,6 +408,13 @@ button#option2 {
   width: 50px;
   padding-left: 2px;
   padding-right: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+img.lock {
+	height: 15px;
+	width: 15px;
 }
 
 /*ANIMATIONS*/
