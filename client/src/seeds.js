@@ -51,19 +51,76 @@ db.locations.insert({
           choices:
           [
             { text: "Arrive to Halifax",
-              goto: [3, 0],
+              goto: [4, 0],
               memberAdd: {name: "James", born: 1828, health: 75}
             },
               { text: "Play dice with the crew....",
-                goto: [3, 0],
-                gambleDice: 10,
-                memberRemove: "Grace"
+                goto: [3, 1],
+                startDiceGame: "start"
             }
           ]
-      }]
+      },
+      {
+          date: 1832,
+          text: "test",
+          title: "Dice Game",
+          choices:
+          [
+            { text: "End game",
+              goto: [3, 0],
+              // memberAdd: {name: "James", born: 1828, health: 75}
+            }
+            //   { text: "Play dice with the crew....",
+            //     goto: [2, 1],
+            //     startDiceGame: "start"
+            // }
+          ]
+      }
+    ]
 });
 
-// index 3 in array
+// index 3 in Array
+db.locations.insert({
+    placeName: "Atlantic Ocean",
+    Latlng: [ 57.908902, -32.519531],
+    description: "Test.",
+    events:
+      [{
+          date: 1832,
+          text: "super test",
+          title: "Journey across the Atlantic",
+          choices:
+          [
+            { text: "Arrive to Halifax",
+              goto: [4, 0],
+              memberAdd: {name: "James", born: 1828, health: 75}
+            },
+              { text: "Play dice with the crew....",
+                goto: [3, 1],
+                startDiceGame: "start"
+            }
+          ]
+      },
+      {
+          date: 1832,
+          text: "test",
+          title: "Dice Game",
+          choices:
+          [
+            { text: "End game",
+              goto: [4, 0],
+              // memberAdd: {name: "James", born: 1828, health: 75}
+            }
+            //   { text: "Play dice with the crew....",
+            //     goto: [2, 1],
+            //     startDiceGame: "start"
+            // }
+          ]
+      }
+    ]
+});
+
+// index 4 in array
 db.locations.insert({
     placeName: "Halifax, Nova Scotia",
     Latlng: [ 44.655537, -63.578568],
@@ -76,7 +133,7 @@ db.locations.insert({
           choices:
           [
             { text: "Go to Quebec City",
-              goto: [4, 0],
+              goto: [5, 0],
               moneyChange: { value: -25, source: "carriage ticket"},
               memberHealthChange: {name: "John", change: -20}
             }
@@ -84,7 +141,7 @@ db.locations.insert({
       }]
 });
 
-// index 4 in array
+// index 5 in array
 db.locations.insert({
     placeName: "Quebec City, Quebec",
     Latlng: [ 46.813878, -71.207981],
@@ -96,14 +153,14 @@ db.locations.insert({
           choices:
           [
             { text: "Go to La Prairie",
-              goto: [5, 0],
+              goto: [6, 0],
               moneyChange: {value: +150, source: "railway work"}
             }
           ]
       }]
 });
 
-// index 5 in array
+// index 6 in array
 db.locations.insert({
     placeName: "La Prairie, Quebec",
     Latlng: [ 45.41678, -73.49917],
@@ -115,13 +172,44 @@ db.locations.insert({
           choices:
           [
             { text: "Travel to New York",
-              goto: [6, 0]}
+              goto: [7, 0]},
+              { text: "Join the Rebellion",
+               goto: [6, 1],
+               memberHealthChange: {name: "John", change: -40}
+           }
+          ]
+      },
+      {
+        date: 1837,
+        text: "The Lower Canada Rebellion, commonly referred to as The Patriots War by Qubecers is the name given to the armed conflict in 1837-1838 between the rebels of lower Canada and the British colonial power of the province.",
+        choices:
+        [
+          { text: "Travel to New York",
+            goto: [6, 0]
+          }
+        ]
+      }
+    ]
+});
 
+// index 7 in array
+db.locations.insert({
+    placeName: "New York City, New York",
+    Latlng: [ 40.712775, -74.005973],
+    description: " ",
+    events:
+      [{
+          date: 1838,
+          text: "",
+          choices:
+          [
+            { text: "Travel to New York",
+              goto: [7, 0]}
           ]
       }]
 });
 
-// index  in array
+// index 8 in array
 db.locations.insert({
     placeName: "New York City, New York",
     Latlng: [ 40.712775, -74.005973],
