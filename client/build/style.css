@@ -358,6 +358,15 @@ button#option2 {
   background-image: url(http://api.thumbr.it/whitenoise-600x400.png?background=ECD7B4&noise=626262&density=25&opacity=11);
 }
 
+#special-event-content p {
+  margin: 0;
+}
+
+#event-text {
+  margin-top: 20px;
+  color: white;
+}
+
 /*DICE GAME*/
 
 #reel-display {
