@@ -55,12 +55,28 @@ db.locations.insert({
               memberAdd: {name: "James", born: 1828, health: 75}
             },
               { text: "Play dice with the crew....",
-                goto: [3, 0],
-                gambleDice: 10,
-                memberRemove: "Grace"
+                goto: [2, 1],
+                startDiceGame: "start"
             }
           ]
-      }]
+      },
+      {
+          date: 1832,
+          text: "test",
+          title: "Dice Game",
+          choices:
+          [
+            { text: "End game",
+              goto: [3, 0],
+              // memberAdd: {name: "James", born: 1828, health: 75}
+            }
+            //   { text: "Play dice with the crew....",
+            //     goto: [2, 1],
+            //     startDiceGame: "start"
+            // }
+          ]
+      }
+    ]
 });
 
 // index 3 in array
