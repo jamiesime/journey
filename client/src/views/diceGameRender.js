@@ -12,7 +12,16 @@ DiceGameRender.prototype = {
     container.innerHTML = "";
     var rollBtn = document.createElement("button");
     rollBtn.id = "reelroll";
-    rollBtn.innerText = "Roll";
+    rollBtn.innerText = "Roll dice";
+
+    var rules = document.createElement('p');
+    rules.innerText = "The rules of Ship Captain Crew: You roll 5 die, and try to get 6 (ship), 5 (captain) and 4 (crew). If these numbers appear in your roll, they will be banked and the number of dice you roll will reduce. "
+
+    var playerName = document.createElement('h2');
+    playerName.innerText = "Your dice"
+    var computerName = document.createElement('h2')
+    computerName.innerText = "Salty Jack's dice";
+
     var reelDisplay = document.createElement("div");
     reelDisplay.id = "reel-display";
     var cpuReelDisplay = document.createElement("div");
@@ -27,10 +36,13 @@ DiceGameRender.prototype = {
     victoryP.id = "victory";
 
     victoryDiv.appendChild(victoryP);
-    container.appendChild(rollBtn);
+    container.appendChild(rules);
+    container.appendChild(playerName)
     container.appendChild(reelDisplay);
+    container.appendChild(computerName)
     container.appendChild(cpuReelDisplay);
     container.appendChild(victoryDiv);
+    container.appendChild(rollBtn);
 
     var game = new DiceGame();
     rollBtn.addEventListener('click', function(){

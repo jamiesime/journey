@@ -1,9 +1,6 @@
 /*GENERAL STYLING*/
 
-.dice-face {
-  height: 30px;
-  width: 30px;
-}
+
 
 body {
   margin: 0 auto;
@@ -358,10 +355,21 @@ button#option2 {
 
 #reel-display {
   display: flex;
+  justify-content: center;
+  margin: 5%;
 }
 
 #cpu-reel-display {
   display: flex;
+  justify-content: center;
+  margin: 5%;
+}
+
+.dice-face {
+  height: 50px;
+  width: 50px;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 
