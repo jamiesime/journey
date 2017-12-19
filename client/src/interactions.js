@@ -88,10 +88,6 @@ var addSubMenuListeners = function(){
     var logInfo = new LogRender(loggedEvents);
   });
 
-  // var familyBtn = document.getElementById("family-btn");
-  // familyBtn.addEventListener("click", function(){
-  //   familyInfo = new FamilyRender(family, locations[currentPosition]);
-  // });
 }
 
 var checkSpecialEvents = function(choice){
@@ -101,7 +97,6 @@ var checkSpecialEvents = function(choice){
       inDiceGame = true;
     }
     if(choice.diceGame === "end"){
-      console.log("ending game");
       inDiceGame = false;
       var location = new InfoView(locations[currentPosition]);
     }
@@ -232,7 +227,6 @@ var randomDeathOfOldAge = function(){
     if( age > 45){
       var chance = getRandomInt();
       if(chance > 90){
-        console.log(chance);
         removeFamilyMember({name: member.name, source: "natural causes"});
       }
     }
