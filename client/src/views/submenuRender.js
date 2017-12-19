@@ -16,11 +16,16 @@ SubMenuRender.prototype = {
     familyBtn.classList += "menu-btn";
     familyBtn.id = "family-btn";
     familyBtn.innerText = "Family";
+    logBtn = document.createElement("button");
+    logBtn.classList += "menu-btn";
+    logBtn.id = "log-btn";
+    logBtn.innerText = "Log";
     moneyDisplay = document.createElement("p");
     moneyDisplay.innerText = "Money: " + money;
     moneyDisplay.id = "money-display";
     container.appendChild(eventBtn);
     container.appendChild(familyBtn);
+    container.appendChild(logBtn);
     container.appendChild(moneyDisplay);
   }
 

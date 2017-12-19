@@ -4,6 +4,7 @@ var Interactions = require("./interactions");
 var Family = require("./family");
 var FamilyMember = require("./familyMember");
 var FamilyRender = require("./views/familyRender");
+var LogRender = require("./views/logRender");
 var SubMenuRender = require("./views/submenuRender");
 var map = require("./mapWrapper");
 var MarkerRender = require('./views/markerRender.js')
@@ -13,6 +14,7 @@ money = 500;
 previousPosition = 0;
 currentPosition = 0;
 currentEvent = 0;
+
 
 var app = function(){
   url = "http://localhost:3000/getlocations";
@@ -41,6 +43,7 @@ var app = function(){
 
 
   // SUBMENU BUTTONS
+  // family is in determine locations
 
   var renderSubMenu = new SubMenuRender();
 
@@ -81,13 +84,13 @@ var renderEventChoices = function(event){
   var thisEvent = new ChoicesRender(event);
 }
 
-var changePosition = function(change){
-  currentPosition += change;
-}
-
-var changeEvent = function(change){
-  currentEvent += change;
-}
+// var changePosition = function(change){
+//   currentPosition += change;
+// }
+//
+// var changeEvent = function(change){
+//   currentEvent += change;
+// }
 
 var renderNewMarker = function(locations){
   var currentlocation  = new MarkerRender(locations[currentPosition]);

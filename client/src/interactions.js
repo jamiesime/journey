@@ -6,10 +6,12 @@ var FamilyRender = require("./views/familyRender");
 var SubMenuRender = require('./views/submenuRender');
 var ResultQueueRender = require("./views/resultQueueRender");
 var Result = require("./result");
+var LogRender = require("./views/logRender");
 
 var locations;
 var redrawRoute = false;
 var eventQueue = [];
+var loggedEvents = [];
 
 var Interactions = {
   getSelectedChoice: function(choice){
@@ -22,6 +24,10 @@ var Interactions = {
     var refreshMenu = new SubMenuRender();
     addSubMenuListeners();
   }
+}
+
+var getLoggedEvents = function(){
+  return loggedEvents;
 }
 
 var makeRequest = function(url, callback){
@@ -71,6 +77,11 @@ var addSubMenuListeners = function(){
   var eventBtn = document.getElementById("event-btn");
   eventBtn.addEventListener("click", function(){
     makeRequest(url, reloadInfoWindow);
+  });
+
+  var logBtn = document.getElementById("log-btn");
+  logBtn.addEventListener("click", function(){
+    var logInfo = new LogRender(loggedEvents);
   });
 
   // var familyBtn = document.getElementById("family-btn");
@@ -193,6 +204,9 @@ var renderMemberHealthChange = function(memberHealthChange){
 var renderEventsSequence = function(eventQueue){
   if (eventQueue != null && eventQueue != undefined){
       var resultQueue = new ResultQueueRender(eventQueue, locations);
+      eventQueue.forEach(function(event){
+        loggedEvents.push(event);
+      });
     }
     eventQueue.splice(0, eventQueue.length);
   }
