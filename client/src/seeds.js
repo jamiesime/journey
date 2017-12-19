@@ -82,7 +82,7 @@ db.locations.insert({
 // index 3 in Array
 db.locations.insert({
     placeName: "Atlantic Ocean",
-    Latlng: [ 57.908902, -32.519531],
+    Latlng: [ 52.908902, -32.519531],
     description: "Test.",
     events:
       [{
@@ -170,7 +170,7 @@ db.locations.insert({
     events:
       [{
           date: 1836,
-          text: "The railway served as a way for those travelling between Montreal and New York to avoid a bumpy stagecoach journey that bypassed a series of difficult rapids on the Richelieu. At Saint-Jean, passengers transferred to a steamer that carried them south to New York City via Lake Champlain and the Hudson River.",
+          text: "The railway served as a way for those travelling between Montreal and New York to avoid a bumpy stagecoach journey that bypassed a series of difficult rapids on the Richelieu. At Saint-Jean, passengers transferred to a steamer that carried them south to New York City via Lake Champlain and the Hudson River. \n\nThe Lower Canada Rebellion, commonly referred to as The Patriots War by Qubecers is the name given to the armed conflict in 1837-1838 between the rebels of lower Canada and the British colonial power of the province.",
           choices:
           [
             { text: "Travel to New York",
@@ -183,11 +183,11 @@ db.locations.insert({
       },
       {
         date: 1837,
-        text: "The Lower Canada Rebellion, commonly referred to as The Patriots War by Qubecers is the name given to the armed conflict in 1837-1838 between the rebels of lower Canada and the British colonial power of the province.",
+        text: "The railway served as a way for those travelling between Montreal and New York to avoid a bumpy stagecoach journey that bypassed a series of difficult rapids on the Richelieu. At Saint-Jean, passengers transferred to a steamer that carried them south to New York City via Lake Champlain and the Hudson River.",
         choices:
         [
           { text: "Travel to New York",
-            goto: [6, 0]
+            goto: [7, 0]
           }
         ]
       }
@@ -198,32 +198,53 @@ db.locations.insert({
 db.locations.insert({
     placeName: "New York City, New York",
     Latlng: [ 40.712775, -74.005973],
-    description: " ",
+    description: "New York in the early 1830s brimmed with energy. The harbor had been a thriving port since the 1700s, but the completion of the Erie Canal in 1825 linking the city with the vast agricultural resources in the nation’s interior solidified New York’s centrality to the national economy. By the 1830s, nearly 250,000 people lived in New York City. Traders, bankers, speculators, shipbuilders, craftsmen, canal diggers, cart-pullers, and workers in the city's early manufacturing trades peopled an island.",
     events:
       [{
           date: 1838,
-          text: "",
+          text: "Things happening with Cholera",
           choices:
           [
-            { text: "Travel to New York",
-              goto: [7, 0]}
+            { text: "Get out of New York",
+              goto: [8, 0]}
           ]
       }]
 });
 
 // index 8 in array
 db.locations.insert({
-    placeName: "New York City, New York",
-    Latlng: [ 40.712775, -74.005973],
-    description: " ",
+    placeName: "Columbia, Missouri",
+    Latlng: [ 37.964253, -91.831833],
+    description: "",
     events:
       [{
-          date: 1836,
-          text: " ",
+          date: 1839,
+          text: "The first university west of the Mississippi River is established, the University of Missouri.\n\n In Jackson, Mississippi, the first state law allowing women to own property is passed.",
           choices:
           [
-            { text: "Travel to New York",
-              goto: [6, 0]}
+            { text: "Go to Uni",
+              goto: [8, 0]},
+              { text: "Move to Jackson",
+                goto: [9, 0]}
+          ]
+      }]
+});
+
+// index 9 in array
+db.locations.insert({
+    placeName: "Jackson, Mississippi",
+    Latlng: [ 32.298757, -90.184810],
+    description: "",
+    events:
+      [{
+          date: 1839,
+          text: "",
+          choices:
+          [
+            // { text: "Go to Uni",
+            //   goto: [8, 0]},
+            //   { text: "Move to Jackson",
+            //     goto: [9, 0]}
           ]
       }]
 });
