@@ -111,6 +111,7 @@ db.locations.insert({
           [
             { text: "End game",
               goto: [4, 0],
+              diceGame: "end"
               // memberAdd: {name: "James", born: 1828, health: 75}
             }
             //   { text: "Play dice with the crew....",
