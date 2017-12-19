@@ -14,7 +14,6 @@ DiceGameRender.prototype = {
     rollBtn.id = "reelroll";
     rollBtn.style.marginLeft = "35%";
     rollBtn.style.marginRight = "35%";
-
     rollBtn.innerText = "Roll dice";
 
     var rules = document.createElement('p');
