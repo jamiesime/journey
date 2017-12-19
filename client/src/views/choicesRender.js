@@ -14,7 +14,6 @@ ChoicesRender.prototype = {
       renderChoiceButton(choice);
     });
   }
-
 }
 
 renderChoiceButton = function(choice){

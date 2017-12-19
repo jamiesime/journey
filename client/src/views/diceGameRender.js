@@ -7,7 +7,6 @@ var DiceGameRender = function(){
 DiceGameRender.prototype = {
 
   render: function(){
-    console.log("trying dice game");
     var container = document.getElementById("sidebar-info-content");
     container.innerHTML = "";
     var rollBtn = document.createElement("button");

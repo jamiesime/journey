@@ -17,14 +17,11 @@ InfoView.prototype = {
     description.innerText = location.description;
     eventDesc.innerText = location.events[currentEvent].text;
 
-
     content.appendChild(locationName);
     content.appendChild(description);
     content.appendChild(eventDesc);
     section.appendChild(content);
   }
 }
-
-
 
 module.exports = InfoView;
