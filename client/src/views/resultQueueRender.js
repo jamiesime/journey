@@ -34,7 +34,7 @@ ResultQueueRender.prototype = {
         close.innerText = "Ok";
         window.onkeypress = function(e){
             var pressedKey = e.keyCode;
-            if (pressedKey == 13){
+            if (pressedKey == 13 || pressedKey == 32){
                 modal.id = "special-event-invisible";
             }
         };
