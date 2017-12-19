@@ -249,6 +249,10 @@ var startDiceGame = function(){
 var checkMoney = function(){
   if (money < 1){
     console.log("game over");
+    var eventText = "You have run of out money! \n\n With no way to support themselves, the family perish."
+    var gameOver = new Result(null, eventText, null, null);
+    eventQueue.push(gameOver);
+    new ResultQueueRender(eventQueue, locations);
   }
 }
 
