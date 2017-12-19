@@ -1,5 +1,10 @@
 /*GENERAL STYLING*/
 
+.dice-face {
+  height: 30px;
+  width: 30px;
+}
+
 body {
   margin: 0 auto;
 }

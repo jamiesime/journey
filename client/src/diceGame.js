@@ -14,6 +14,7 @@ DiceGame.prototype.rollDice = function(){
       resultsArray.sort();
       counter++;
     }
+
     var index = 1;
 
     var six = document.getElementById("hold5").checked;
