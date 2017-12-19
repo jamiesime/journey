@@ -43,11 +43,11 @@ db.locations.insert({
 
   placeName: "Atlantic Ocean",
   Latlng: [ 52.908902, -32.519531],
-  description: "Many passenger ships made the month long voyage across the Atlantic to America and Canada.",
+  description: "Many passenger ships made the month long voyage across the Atlantic to America and Canada.\n\nGetting yourself settled into the available cabins on board, you spot a few other families who are travelling the same brave path as your own. Upon high tide, the call from the captain comes to cast off, and as the ship pulls out of dock your family says farewell the home they thought they'd never leave.",
   events:
   [{
     date: 1832,
-    text: "Getting yourself settled into the available cabins on board, you spot a few other families who are travelling the same brave path as your own. Upon high tide, the call from the captain comes to cast off, and as the ship pulls out of dock your family says farewell the home they thought they'd never leave.\n\nOn the journey over you hear tales of the new land to be. Fresh lands, not yet steeped in the heavy industries like back home, full of opportunities \n\nThe journey takes months and as means to pass time you master the game of 'Ship Captain Crew'",
+    text: "On the journey over you hear tales of the new land to be. Fresh lands, not yet steeped in the heavy industries like back home, full of opportunities. Halifax Nova Scotia (New Scotland) will be the landing point. \n\nThe journey takes months and as means to pass time you master the game of 'Ship Captain Crew'.",
     title: "Journey across the Atlantic",
     choices:
     [
@@ -58,36 +58,10 @@ db.locations.insert({
 
     },
     { text: "Play dice with the crew....",
-    goto: [3, 1],
+    goto: [2, 1],
     diceGame: "start"
   }
-]
-}
-]
-});
-
-// index 3 in Array
-db.locations.insert({
-  placeName: "Atlantic Ocean",
-  Latlng: [ 52.908902, -32.519531],
-  description: "Test.",
-  events:
-  [{
-    date: 1832,
-    text: "super test",
-    title: "Journey across the Atlantic",
-    choices:
-    [
-      { text: "Arrive to Halifax",
-      goto: [4, 0],
-      memberAdd: {name: "James", born: 1828, health: 75}
-    },
-    { text: "Play dice with the crew....",
-    goto: [2, 1],
-    goto: [3, 1],
-    startDiceGame: "start"
-  }
-]
+  ]
 },
 {
   date: 1832,
@@ -96,28 +70,24 @@ db.locations.insert({
   choices:
   [
     { text: "End game",
-    goto: [4, 0],
+    goto: [3, 0],
     diceGame: "end"
-    // memberAdd: {name: "James", born: 1828, health: 75}
   }
-  //   { text: "Play dice with the crew....",
-  //     goto: [2, 1],
-  //     startDiceGame: "start"
-  // }
+
 ]
 }
 ]
 });
 
-// index 4 in array
+// index 3 in Array
 db.locations.insert({
     placeName: "Halifax, Nova Scotia",
     Latlng: [ 44.655537, -63.578568],
-    description: "Halifax, the capital city of the Nova Scotia region, was considered one of the most important financial centres of the North Britsh America (and later Canada, when it was formed). It was originally inhabited by the Mi'Kmaq people. The first European settlers were French, who set up a collony called Acadia in the early 1600's. When the British settled in 1749, it sparked the Father Le Loutre's War, in which the British had to erect fortifications to defend the newly built Protestant settlement.",
+    description: "Halifax, the capital city of the Nova Scotia region, was considered one of the most important financial centres of the North Britsh America (and later Canada, when it was formed). \nIt was originally inhabited by the Mi'Kmaq people. The first European settlers were French, who set up a collony called Acadia in the early 1600's. When the British settled in 1749, it sparked the Father Le Loutre's War, in which the British had to erect fortifications to defend the newly built Protestant settlement.",
     events:
       [{
           date: 1832,
-          text: "You've arrived on this new land, shaky from the voyage. Eager for work, your family finds slim choice locally, but upon asking around word reaches you of employment prospects in nearby provinces. ",
+          text: "You've arrived on this new land, shaky from the voyage. Eager for work, your family finds slim choice locally, but upon asking around word reaches you of employment prospects in nearby provinces.",
           title: "Where to now?",
           choices:
           [
@@ -130,161 +100,200 @@ db.locations.insert({
       }]
 });
 
-// index 5 in array
+// index 4 in array
 db.locations.insert({
     placeName: "Quebec City, Quebec",
     Latlng: [ 46.813878, -71.207981],
     description: "About 30,000 immigrants landed each year in Quebec City, the capital of Lower Canada.",
     events:
       [{
-          date: 1834,
-          text: "There's rumours of a creation of a railway network that will eventually run from the Atlantic to the Pacific.  Construction begins in La Prairie next year.  Working on the railway will secure some good income for the family.",
+          date: 1832,
+          text: "There's rumours of a creation of a railway network that will eventually run from the Atlantic to the Pacific.  Construction begins in La Prairie next year.  Working on the railway will secure some good income for the family.\n\n In Quebec City there are opportunities to work in the logging industry, however due to the influx of immigrants there has been a cholera outbreak.",
           choices:
           [
             { text: "Go to La Prairie",
-              goto: [6, 0],
-              moneyChange: {value: +150, source: "railway work"}
+              goto: [5, 0],
+              moneyChange: {value: +150, source: "Railway Work"}
+            },
+            { text: "Stay in Quebec City to Work",
+              goto: [4, 0],
+              moneyChange: {value: +50, source: "Logging Work"},
+              memberHealthChange: {name: "Grammy", change: -20, source: "Cholera"},
+              memberHealthChange: {name: "Grace", change: -10, source: "Cholera"}
             }
           ]
       }]
 });
 
-// index 6 in array
+// index 5 in array
 db.locations.insert({
     placeName: "La Prairie, Quebec",
     Latlng: [ 45.41678, -73.49917],
-    description: "July 21, 1836, a wood-burning steam locomotive chugged out of La Prairie, Quebec, pulling the first train on the first public railroad in Canada. Its first official run was held with great fanfare. The locomotive pulled two first-class coaches carrying thirty-two dignitaries, including Lord Gosford, the governor general of Lower Canada. A second train pulled by a team of horses followed close behind. Two hours later, the trains arrived in St. John to a rousing welcome.",
+    description: "July 21, 1836, a wood-burning steam locomotive chugged out of La Prairie, Quebec, pulling the first train on the first public railroad in Canada. Its first official run was held with great fanfare. \nThe locomotive pulled two first-class coaches carrying thirty-two dignitaries, including Lord Gosford, the governor general of Lower Canada. \nA second train pulled by a team of horses followed close behind. Two hours later, the trains arrived in St. John to a rousing welcome.",
     events:
       [{
           date: 1836,
-          text: "The railway served as a way for those travelling between Montreal and New York to avoid a bumpy stagecoach journey that bypassed a series of difficult rapids on the Richelieu. At Saint-Jean, passengers transferred to a steamer that carried them south to New York City via Lake Champlain and the Hudson River. \n\nThe Lower Canada Rebellion, commonly referred to as The Patriots War by Qubecers is the name given to the armed conflict in 1837-1838 between the rebels of lower Canada and the British colonial power of the province.",
+          text: "The railway served as a way for those travelling between Montreal and New York to avoid a bumpy stagecoach journey that bypassed a series of difficult rapids on the Richelieu. At Saint-Jean, passengers transferred to a steamer that carried them south to New York City via Lake Champlain and the Hudson River. \n\nThe Lower Canada Rebellion, commonly referred to as The Patriots War by Qubecers is the name given to the armed conflict in 1837-1838 between the rebels of lower Canada and the British colonial power of the province. \n\nA fellow railway worker Pierre asks you to join him in fighting with the Rebels.",
           choices:
           [
             { text: "Travel to New York",
-              goto: [7, 0]},
+              goto: [6, 0]},
               { text: "Join the Rebellion",
-               goto: [6, 1],
-               memberHealthChange: {name: "John", change: -40, source: "fighting in Rebellion"}
+               goto: [5, 1],
+               memberHealthChange: {name: "John", change: -40, source: "fighting in Rebellion"},
+               memberAdd: {name: "Pierre", born: 1810, health: 70}
            }
           ]
       },
       {
         date: 1837,
-        text: "The railway served as a way for those travelling between Montreal and New York to avoid a bumpy stagecoach journey that bypassed a series of difficult rapids on the Richelieu. At Saint-Jean, passengers transferred to a steamer that carried them south to New York City via Lake Champlain and the Hudson River.",
+        text: "\n\nThe railway served as a way for those travelling between Montreal and New York to avoid a bumpy stagecoach journey that bypassed a series of difficult rapids on the Richelieu. At Saint-Jean, passengers transferred to a steamer that carried them south to New York City via Lake Champlain and the Hudson River.\n\nThe British Colonial fire power was proving too much for the Rebels with bodies dropping on a daily basis.\n In the interest of your families safety you decide to flee to New York.",
         choices:
         [
           { text: "Travel to New York",
-            goto: [7, 0]
+            goto: [6, 0]
           }
         ]
       }
     ]
 });
 
-// index 7 in array
+// index 6 in array
 db.locations.insert({
     placeName: "New York City, New York",
     Latlng: [ 40.712775, -74.005973],
-    description: "New York in the early 1830s brimmed with energy. The harbor had been a thriving port since the 1700s, but the completion of the Erie Canal in 1825 linking the city with the vast agricultural resources in the nation’s interior solidified New York’s centrality to the national economy. By the 1830s, nearly 250,000 people lived in New York City. Traders, bankers, speculators, shipbuilders, craftsmen, canal diggers, cart-pullers, and workers in the city's early manufacturing trades peopled an island.",
+    description: "New York in the early 1830s brimmed with energy. The harbor had been a thriving port since the 1700s, but the completion of the Erie Canal in 1825 linking the city with the vast agricultural resources in the nation’s interior solidified New York’s centrality to the national economy.\n\nBy the 1830s, nearly 250,000 people lived in New York City. Traders, bankers, speculators, shipbuilders, craftsmen, canal diggers, cart-pullers, and workers in the city's early manufacturing trades peopled an island.",
     events:
       [{
           date: 1838,
-          text: "Things happening with Cholera",
+          text: "You pick up work as a laborer on the ship yard. The pay is low and the mood around town is glum due to The Panic of 1837.\n\nThere is no reason to stay here and you decide to move on.",
           choices:
           [
-            { text: "Get out of New York",
-              goto: [8, 0]}
+            { text: "Flee the pessimism of New York",
+              goto: [7, 0],
+              moneyChange: {value: +50, source: "Labouring"},
+              memberAdd: {name: "Hamish", born: 1838, health: 90}
+            }
+          ]
+      }]
+});
+
+// index 7 in array
+db.locations.insert({
+    placeName: "Columbia, Missouri",
+    Latlng: [ 37.964253, -91.831833],
+    description: "In 1839 The first university west of the Mississippi River is established, the University of Missouri.  You've moved here with the hope of building a better future for your family.\n\nBoone County Missouri was the location for many settlers who brought slaves and slave-holding with them.  The settlers started cultivating hemp and tobacco.",
+    events:
+      [{
+          date: 1841,
+          text: "Sending your children to university will be a large financial outlay, however it will lead to a prosperous future.\n\n Meanwhile in Jackson, Mississippi south of the river the first state law allowing women to own property is passed.",
+          choices:
+          [
+            { text: "Go to Uni",
+              goto: [7, 0],
+              moneyChange: {value: -100, source: "university fees"}
+          },
+              { text: "Move to Jackson",
+                goto: [8, 0],
+                moneyChange: {value: -150, source: "you bought some land to build a house!"}
+              }
           ]
       }]
 });
 
 // index 8 in array
 db.locations.insert({
-    placeName: "Columbia, Missouri",
-    Latlng: [ 37.964253, -91.831833],
-    description: "",
+    placeName: "Jackson, Mississippi",
+    Latlng: [ 32.298757, -90.184810],
+    description: "The Panic of 1837 inspired attempts to limit the impact of such an economic crisis by protecting family assets. Mississippi initiated the trend in 1839 with its Married Women's Property Act that allowed married women to own property.\nAny attempt to collect debt from her husband could not reach property only she owned. She had the right to refuse to sell the property, but could not manage that property or sell it without her husband's consent.  ",
     events:
       [{
-          date: 1839,
-          text: "The first university west of the Mississippi River is established, the University of Missouri.\n\n In Jackson, Mississippi, the first state law allowing women to own property is passed.",
+          date: 1845,
+          text: "News begins to reach Mississippi of unrest in Texas following the annexation of the independant Republic of Texas.\n\nNewly elected President Polk moved US Troops south into the disputed territory and soon war was declared between Mexico and America.",
           choices:
           [
-            { text: "Go to Uni",
-              goto: [8, 0]},
-              { text: "Move to Jackson",
-                goto: [9, 0]}
+            { text: "Support Polk, Fight the Mexicans",
+              goto: [9, 0],
+              memberHealthChange: {name: "John", change: -40, source: "fighting in the Mexican-American War"},
+              memberHealthChange: {name: "Pierre", change: -40, source: "fighting in the Mexican-American War"}},
           ]
       }]
 });
+
 
 // index 9 in array
 db.locations.insert({
-    placeName: "Jackson, Mississippi",
-    Latlng: [ 32.298757, -90.184810],
-    description: "",
+    placeName: "Rancho de Carricitos, Texas",
+    Latlng: [ 26.061912, -97.784176],
+    description: "The Thornton Affair, also known as the Thornton Skirmish, Thornton's Defeat, or Rancho Carricitos was a battle in 1846 between the military forces of the United States and Mexico\nMexican forces attacked an American Army outpost in the occupied territory, killing 12 U.S. soldiers and capturing 52.",
     events:
       [{
-          date: 1844,
-          text: "",
+          date: 1846,
+          text: "The war has no sight of end and you're fed up of the blood shed.  You flee the war and travel further West to California.",
           choices:
           [
-            // { text: "Go to Uni",
-            //   goto: [8, 0]},
-            //   { text: "Move to Jackson",
-            //     goto: [9, 0]}
+            { text: "Leave for California",
+              goto: [10, 0],
+              memberRemove: {name: "Pierre", source: "Captured by Mexican Troops"}}
           ]
       }]
 });
 
-
-
-
+//Index 10 in Array
 db.locations.insert({
     placeName: "California",
     Latlng: [ 36.778261, -119.417932],
-    description: "California, a western U.S. state, stretches from the Mexican border along the Pacific for nearly 900 miles",
+    description: "California, a western U.S. state, stretches from the Mexican border along the Pacific for nearly 900 miles.\n\nOn January 24, 1848, gold was discovered by James W. Marshall at Sutter's Mill in Coloma, California.",
     events:
       [{
-          date: "24-01-1848",
-          text: "The California Gold Rush began on January 24, 1848, when gold was found by James W. Marshall at Sutter's Mill in Coloma, California. The news of gold brought some 300,000 people to California from the rest of the United States and abroad.",
+          date: 1848,
+          text: "The news of gold brought some 300,000 people to California from the rest of the United States and abroad.",
           title: "California Gold Rush",
           choices:
           [
             { text: "Find Gold",
-              goto: [0, 1] },
-            { text: "Go to xxx",
-              goto: [2, 0]}
+              goto: [10, 1],
+            moneyChange: {value: +10000, source: "GOLD GOLD GOLD"} },
           ]
-      }]
-});
-
-db.locations.insert({
-    placeName: "Washington DC",
-    Latlng: [ 38.907192, -77.036871],
-    description: "Washington DC is the capital of the US.  It’s defined by imposing neoclassical monuments and buildings – including the iconic ones that house the federal government’s 3 branches: the Capitol, White House and Supreme Court.",
-    events:
-      [{
-          date: "22-07-1862",
-          text: "President Lincoln read the first draft of the Emancipation Proclamation to his Cabinet members on July 22, 1862. After some changes, he issued the preliminary version on September 22, which specified that the final document would take effect January 1, 1863. Slaves in Confederate states which were not back in the Union by then would be free, but slaves in the Border States were not affected.",
-          title: "Emancipation Proclamation",
+      },{
+          date: 1849,
+          text: "You're rich!  Well done, you win!",
           choices:
           [
-            { text: "Lincoln Assasination",
-              goto: [0, 2] },
-            { text: "Go to xxx",
-              goto: [2, 0]}
-          ]
-      },
-      {
-          date: "14-04-1865",
-          text: "Abraham Lincoln, the 16th President of the United States, was assassinated by well-known stage actor John Wilkes Booth on April 14, 1865, while attending the play Our American Cousin at Ford's Theatre",
-          title: "Lincoln Assassination",
-          choices:
-          [
-            { text: "Leave DC",
-              goto: [2, 0]}
+            { text: "End",
+              }
           ]
       }
-
     ]
 });
+
+// db.locations.insert({
+//     placeName: "Washington DC",
+//     Latlng: [ 38.907192, -77.036871],
+//     description: "Washington DC is the capital of the US.  It’s defined by imposing neoclassical monuments and buildings – including the iconic ones that house the federal government’s 3 branches: the Capitol, White House and Supreme Court.",
+//     events:
+//       [{
+//           date: "22-07-1862",
+//           text: "President Lincoln read the first draft of the Emancipation Proclamation to his Cabinet members on July 22, 1862. After some changes, he issued the preliminary version on September 22, which specified that the final document would take effect January 1, 1863. Slaves in Confederate states which were not back in the Union by then would be free, but slaves in the Border States were not affected.",
+//           title: "Emancipation Proclamation",
+//           choices:
+//           [
+//             { text: "Lincoln Assasination",
+//               goto: [0, 2] },
+//             { text: "Go to xxx",
+//               goto: [2, 0]}
+//           ]
+//       },
+//       {
+//           date: "14-04-1865",
+//           text: "Abraham Lincoln, the 16th President of the United States, was assassinated by well-known stage actor John Wilkes Booth on April 14, 1865, while attending the play Our American Cousin at Ford's Theatre",
+//           title: "Lincoln Assassination",
+//           choices:
+//           [
+//             { text: "Leave DC",
+//               goto: [2, 0]}
+//           ]
+//       }
+//
+//     ]
+// });
