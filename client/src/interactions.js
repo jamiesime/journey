@@ -13,6 +13,7 @@ var locations;
 var redrawRoute = false;
 var eventQueue = [];
 var loggedEvents = [];
+var inDiceGame = false;
 
 var Interactions = {
   getSelectedChoice: function(choice){
@@ -55,7 +56,9 @@ var reloadInfoWindow = function(){
 }
 
 var determineLocation = function(locations){
-  var location = new InfoView(locations[currentPosition]);
+  if (!inDiceGame){
+    var location = new InfoView(locations[currentPosition]);
+  }
 
   var familyBtn = document.getElementById("family-btn");
   familyBtn.addEventListener("click", function(){
@@ -94,6 +97,7 @@ var addSubMenuListeners = function(){
 var checkSpecialEvents = function(choice){
   if(choice.startDiceGame != null && choice.startDiceGame != undefined){
     startDiceGame();
+    inDiceGame = true;
   }
   if(choice.memberAdd != null && choice.memberAdd != undefined){
     addFamilyMember(choice.memberAdd);
