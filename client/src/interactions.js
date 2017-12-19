@@ -14,19 +14,23 @@ var redrawRoute = false;
 var eventQueue = [];
 var loggedEvents = [];
 var inDiceGame = false;
+var gameOver = false;
 
 var Interactions = {
   getSelectedChoice: function(choice){
     checkMoney();
-    checkSpecialEvents(choice);
-    redrawRoute = true;
-    currentPosition = choice.goto[0];
-    currentEvent = choice.goto[1];
-    url = "http://localhost:3000/getlocations";
-    makeRequest(url, requestLocations);
+    if (!gameOver){
+      checkSpecialEvents(choice);
+      redrawRoute = true;
+      currentPosition = choice.goto[0];
+      currentEvent = choice.goto[1];
+      url = "http://localhost:3000/getlocations";
+      makeRequest(url, requestLocations);
+      addSubMenuListeners();
+    }
     var refreshMenu = new SubMenuRender();
-    addSubMenuListeners();
   }
+
 }
 
 var getLoggedEvents = function(){
@@ -175,7 +179,13 @@ var renderNewMember = function(newMember){
 
 var renderRemoveMember = function(removeMember, dbObject){
   var memberObject = removeMember[0];
-  var eventText = memberObject.name + " has died of " + dbObject.source;
+  var eventText;
+  if(dbObject.source != undefined || null){
+    eventText = memberObject.name + " has died of " + dbObject.source;
+  }
+  else {
+    eventText = memberObject.name + " has died of starvation";
+  }
   var imgUrl = "./images/" + memberObject.name + ".png";
   var extraImgUrl = "./images/gravestone.png";
   var result = new Result(memberObject, eventText, imgUrl, extraImgUrl);
@@ -248,11 +258,14 @@ var startDiceGame = function(){
 
 var checkMoney = function(){
   if (money < 1){
+    gameOver = true;
     console.log("game over");
     var eventText = "You have run of out money! \n\n With no way to support themselves, the family perish."
     var gameOver = new Result(null, eventText, null, null);
     eventQueue.push(gameOver);
-    new ResultQueueRender(eventQueue, locations);
+    family.members.forEach(function(member){
+      removeFamilyMember(member);
+    });
   }
 }
 

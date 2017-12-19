@@ -2,6 +2,7 @@ var ResultQueueRender = function(eventQueue, locations){
   this.render(eventQueue, locations);
 }
 
+
 ResultQueueRender.prototype = {
 
   render: function(eventQueue, locations){
@@ -41,26 +42,16 @@ ResultQueueRender.prototype = {
 
       modal.id = "special-event-invisible";
       });
-
     content.appendChild(close);
   }
 
 }
-
 
 var renderImg = function(content, imgUrl){
   eventImg = document.createElement("img");
   eventImg.src = imgUrl;
   // eventImg.classList += "family-sprite";
   eventImg.id = "event-sprite";
-
-function enterKeyHandler(e){
-  var keyCode = e.keyCode;
-  if(keyCode == 13){
-    console.log("you pressed Enter!");
-  };
-};
-
   content.appendChild(eventImg);
 }
 
