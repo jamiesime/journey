@@ -139,7 +139,7 @@ var addFamilyMember = function(memberToAdd){
 var removeFamilyMember = function(memberToRemove){
   var index = null;
   for(var i = 0 ; i < family.members.length; i++){
-    if(family.members[i].name === memberToRemove){
+    if(family.members[i].name === memberToRemove.name){
       index = i;
     }
   }
@@ -232,7 +232,8 @@ var randomDeathOfOldAge = function(){
     if( age > 45){
       var chance = getRandomInt();
       if(chance > 90){
-        removeFamilyMember({member.name, source: "natural causes");
+        console.log(chance);
+        removeFamilyMember({name: member.name, source: "natural causes"});
       }
     }
   });
