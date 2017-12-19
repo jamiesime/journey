@@ -13,7 +13,7 @@ db.locations.insert({
           title: "Go to Greenock",
           choices:
           [
-            { text: "Go to Greenock",
+            { text: "Travel to Greenock",
               goto: [1, 0]}
           ]
       }]
@@ -27,13 +27,13 @@ db.locations.insert({
     events:
       [{
           date: 1831,
-          text: "The Family arrives to a busy bustling town. Greenock itself is full of fisherman and sailors from the canal and ocean, with tales from far and wide. Your guide, the fortuitously met sailor, leads you strait to the vessel he is to travel on and you negotiate passage for the voyage ahead. Getting yourself settled into the available cabins on board, you spot a few other families who are travelling the same brave path as your own. Upon high tide, the call from the captain comes to cast off, and as the ship pulls out of dock your family says farewell the home they thought they'd never leave.",
+          text: "You arrive to a busy bustling town. Greenock itself is full of fisherman and sailors from the canal and ocean, with tales from far and wide. Your guide, the fortuitously met sailor, leads you straight to the vessel he is to travel on and you negotiate passage for the voyage ahead. ",
           title: "Leaving Scotland",
           choices:
           [
-            { text: "Get on the Boat",
+            { text: "Buy a ticket for the Voyage to Canada",
               goto: [2, 0],
-              moneyChange: {value: -50, source: "Boat Ticket"} }
+              moneyChange: {value: -50, source: "Purchase of Boat Ticket"} }
           ]
       }]
 });
@@ -46,13 +46,15 @@ db.locations.insert({
     events:
       [{
           date: 1832,
-          text: "On the journey over you hear tales of the new land to be. Fresh lands, not yet steeped in the heavy industries like back home, full of opportunities",
+          text: "Getting yourself settled into the available cabins on board, you spot a few other families who are travelling the same brave path as your own. Upon high tide, the call from the captain comes to cast off, and as the ship pulls out of dock your family says farewell the home they thought they'd never leave.\n\nOn the journey over you hear tales of the new land to be. Fresh lands, not yet steeped in the heavy industries like back home, full of opportunities",
           title: "Journey across the Atlantic",
           choices:
           [
-            { text: "Arrive to Halifax",
+            { text: "Arrive in Halifax",
               goto: [4, 0],
-              memberAdd: {name: "James", born: 1828, health: 75}
+              memberAdd: {name: "James", born: 1832, health: 75},
+              memberHealthChange: {name: "Alice", change: -5, source: "Child birth"}
+
             },
               { text: "Play dice with the crew....",
                 goto: [3, 1],
