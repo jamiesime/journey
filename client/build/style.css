@@ -349,6 +349,17 @@ button#option2 {
   background-image: url(http://api.thumbr.it/whitenoise-600x400.png?background=ECD7B4&noise=626262&density=25&opacity=11);
 }
 
+/*DICE GAME*/
+
+#reel-display {
+  display: flex;
+}
+
+#cpu-reel-display {
+  display: flex;
+}
+
+
 /*ANIMATIONS*/
 
 @keyframes blowUpModal {
