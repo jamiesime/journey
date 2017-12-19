@@ -35,11 +35,13 @@ DiceGameRender.prototype = {
     rollBtn.addEventListener('click', function(){
       game.rollDice();
       game.computerRollDice();
+
       var reel1 = document.getElementById('reel1');
       var reel2 = document.getElementById('reel2');
       var reel3 = document.getElementById('reel3');
       var reel4 = document.getElementById('reel4');
       var reel5 = document.getElementById('reel5');
+
       var cpureel1 = document.getElementById('cpu-reel1');
       var cpureel2 = document.getElementById('cpu-reel2');
       var cpureel3 = document.getElementById('cpu-reel3');
@@ -67,9 +69,6 @@ DiceGameRender.prototype = {
       cpudice4.src = "./images/" + cpureel4.innerText + ".png";
       var cpudice5 = document.getElementById('cpuDice5')
       cpudice5.src = "./images/" + cpureel5.innerText + ".png";
-
-
-
     });
   }
 
