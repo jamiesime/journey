@@ -3,7 +3,7 @@ MapWrapper = function(container, coords, zoom){
     center: {lat: coords[0], lng: coords[1]},
     zoom: zoom,
     mapTypeControl: false,
-    draggable: false,
+    draggable: true,
     scaleControl: true,
     scrollwheel: false,
     navigationControl: false,
@@ -304,7 +304,7 @@ MapWrapper.prototype.addMarker = function (coords) {
   if(coords.lat == 52.908902){
     markerImage.url = "http://moziru.com/images/drawn-sailing-ship-transparent-20.gif"
   }
-  
+
   var marker = new google.maps.Marker({
     position: coords,
     map: this.googleMap,
