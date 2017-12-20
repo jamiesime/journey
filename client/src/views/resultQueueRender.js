@@ -34,8 +34,11 @@ ResultQueueRender.prototype = {
     close.id = "special-event-close";
     close.innerText = "Ok";
     close.addEventListener("click", function(){
-
       modal.id = "special-event-invisible";
+      });
+      document.addEventListener('keypress', (event) => {
+        const keyName = event.key;
+        modal.id = "special-event-invisible";
       });
     content.appendChild(close);
   }
