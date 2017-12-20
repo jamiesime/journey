@@ -136,6 +136,11 @@ var checkSpecialEvents = function(choice){
       var location = new InfoView(locations[currentPosition]);
     }
   }
+  if(choice.endGame != null && choice.endGame != undefined){
+    eventText = "This is where we leave the story of the " + family.name + " family, at least for now. \n\n Maybe there will be more to this journey in the future...until then, thanks for playing, bye bye!";
+    imgUrl = "";
+    var endGame = new EndGameRender(eventText, imgUrl);
+  }
   if(choice.memberAdd != null && choice.memberAdd != undefined){
     addFamilyMember(choice.memberAdd);
   }
