@@ -8,17 +8,19 @@ var ResultQueueRender = require("./views/resultQueueRender");
 var Result = require("./result");
 var LogRender = require("./views/logRender");
 var DiceGameRender = require("./views/diceGameRender");
+var EndGameRender = require("./views/endGameRender");
 
 var locations;
 var redrawRoute = false;
 var eventQueue = [];
 var loggedEvents = [];
 var inDiceGame = false;
+var gameOver = false;
 
 var Interactions = {
   getSelectedChoice: function(choice){
-    var gameOver = false;
-    checkMoneyAndFamily(gameOver);
+    console.log(gameOver);
+    gameOver = checkMoneyAndFamily(gameOver);
     console.log(gameOver);
     if (gameOver == false){
       checkSpecialEvents(choice);
@@ -28,6 +30,9 @@ var Interactions = {
       url = "http://localhost:3000/getlocations";
       makeRequest(url, requestLocations);
       // addSubMenuListeners();
+    }
+    else {
+      endTheGame();
     }
     var refreshMenu = new SubMenuRender();
   }
@@ -283,21 +288,24 @@ var startDiceGame = function(){
 
 var checkMoneyAndFamily = function(gameOver){
   if (money < 1){
-    gameOver = true;
-    var eventText = "The " + family.name + " family have run of out money! \n\n With no way to support themselves, the family perish."
-    var gameOver = new Result(null, eventText, null, null);
-    eventQueue.splice(0, eventQueue.length);
-    eventQueue.push(gameOver);
-    // family.members.forEach(function(member){
-    //   removeFamilyMember(member);
-    // });
+    return true;
   }
   if(family.members.length === 0){
-    gameOver = true;
+    return true;
+  }
+  return false;
+}
+
+var endTheGame = function(){
+  if (money < 1){
+    var eventText = "The " + family.name + " family have run of out money! \n\n With no way to support themselves, the family perish."
+    var imgUrl = "";
+    var endGame = new EndGameRender(eventText, imgUrl);
+  }
+  if(family.members.length === 0){
     var eventText = "Every member of the " + family.name + " has died. \n\n The journey has reached it's conclusion.";
-    var gameOver = new Result(null, eventText, null, null);
-    eventQueue.splice(0, eventQueue.length);
-    eventQueue.push(gameOver);
+    var imgUrl = "";
+    var endGame = new EndGameRender(eventText, imgUrl);
   }
 }
 
