@@ -14,12 +14,13 @@ var redrawRoute = false;
 var eventQueue = [];
 var loggedEvents = [];
 var inDiceGame = false;
-var gameOver = false;
 
 var Interactions = {
   getSelectedChoice: function(choice){
-    checkMoneyAndFamily();
-    if (!gameOver){
+    var gameOver = false;
+    checkMoneyAndFamily(gameOver);
+    console.log(gameOver);
+    if (gameOver == false){
       checkSpecialEvents(choice);
       redrawRoute = true;
       currentPosition = choice.goto[0];
@@ -32,10 +33,6 @@ var Interactions = {
   }
 
 }
-
-// var getLoggedEvents = function(){
-//   return loggedEvents;
-// }
 
 var makeRequest = function(url, callback){
   request = new XMLHttpRequest();
@@ -284,18 +281,16 @@ var startDiceGame = function(){
   var diceGame = new DiceGameRender();
 }
 
-var checkMoneyAndFamily = function(){
+var checkMoneyAndFamily = function(gameOver){
   if (money < 1){
     gameOver = true;
-    console.log("game over");
-    console.log(family.name);
     var eventText = "The " + family.name + " family have run of out money! \n\n With no way to support themselves, the family perish."
     var gameOver = new Result(null, eventText, null, null);
     eventQueue.splice(0, eventQueue.length);
     eventQueue.push(gameOver);
-    family.members.forEach(function(member){
-      removeFamilyMember(member);
-    });
+    // family.members.forEach(function(member){
+    //   removeFamilyMember(member);
+    // });
   }
   if(family.members.length === 0){
     gameOver = true;

@@ -40,10 +40,17 @@ var renderEachMember = function(family, location){
     healthBarContainer.id = "health-bar-container";
     var healthBar = document.createElement("div");
     healthBar.id = "health-bar";
-
     healthBar.style.width = member.health + "%";
 
-
+    var sprite = document.createElement("img");
+    sprite.src = "./images/" + member.name + ".png";
+    sprite.classList += "family-sprite";
+    var name = document.createElement("p");
+    name.innerText = member.name;
+    var age = document.createElement("p");
+    age.innerText = "Age: " + (location.events[0].date - member.born);
+    var health = document.createElement("p");
+    health.innerText = "Health: ";
 
     if(member.health > 95) {
       healthBar.style.borderRadius = "10px";
@@ -63,15 +70,7 @@ var renderEachMember = function(family, location){
 }
 
 var renderMemberDetails = function(){
-  var sprite = document.createElement("img");
-  sprite.src = "./images/" + member.name + ".png";
-  sprite.classList += "family-sprite";
-  var name = document.createElement("p");
-  name.innerText = member.name;
-  var age = document.createElement("p");
-  age.innerText = "Age: " + (location.events[0].date - member.born);
-  var health = document.createElement("p");
-  health.innerText = "Health: ";
+
 }
 
 module.exports = FamilyRender;
