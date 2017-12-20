@@ -37,6 +37,11 @@ var renderButton = function(content){
   reloadBtn.addEventListener("click", function(){
     window.location.reload();
   });
+  document.addEventListener('keypress', (event) => {
+    const keyName = event.key;
+    window.location.reload();
+  });
+
   content.appendChild(reloadBtn);
 }
 

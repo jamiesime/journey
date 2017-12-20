@@ -474,6 +474,11 @@ button#option2 {
   margin-right: 5px;
 }
 
+#victory-declared{
+  text-align: center;
+  font-size: 24px;
+}
+
 img.lock {
 	height: 15px;
 	width: 15px;
