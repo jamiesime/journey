@@ -2,6 +2,7 @@ var ResultQueueRender = function(eventQueue, locations){
   this.render(eventQueue, locations);
 }
 
+
 ResultQueueRender.prototype = {
 
   render: function(eventQueue, locations){
@@ -15,65 +16,27 @@ ResultQueueRender.prototype = {
     eventQueue.forEach(function(thisEvent){
       subEventContent = document.createElement("div");
       subEventContent.id = "sub-event-content";
-
       if(thisEvent.imgUrl != null || undefined){
         renderImg(subEventContent, thisEvent.imgUrl);
       }
-
       if(thisEvent.extraImgUrl != null || undefined){
         renderImg(subEventContent, thisEvent.extraImgUrl);
       }
-
-      if(thisEvent.member != null || undefined){
-        renderMemberInfo(subEventContent, thisEvent.member, locations);
-      }
-
-
       renderEventText(subEventContent, thisEvent.eventText);
       content.appendChild(subEventContent);
     });
 
-
-    var close = document.createElement("button");
-    close.id = "special-event-close";
-    close.innerText = "Ok";
-    close.addEventListener("click", function(){
-
-      modal.id = "special-event-invisible";
-      });
-
-    content.appendChild(close);
+    renderButton(content, modal);
   }
 
 }
-
 
 var renderImg = function(content, imgUrl){
   eventImg = document.createElement("img");
   eventImg.src = imgUrl;
   // eventImg.classList += "family-sprite";
   eventImg.id = "event-sprite";
-
-function enterKeyHandler(e){
-  var keyCode = e.keyCode;
-  if(keyCode == 13){
-    console.log("you pressed Enter!");
-  };
-};
-
   content.appendChild(eventImg);
-}
-
-var renderMemberInfo = function(content, member, locations){
-  // var name = document.createElement("p");
-  // name.innerText = member.name;
-  // var age = document.createElement("p");
-  // age.innerText = "Age: " + (locations[currentPosition].events[currentEvent].date - member.born);
-  // var health = document.createElement("p");
-  // health.innerText = "Health: " + member.health;
-  // content.appendChild(name);
-  // content.appendChild(age);
-  // content.appendChild(health);
 }
 
 var renderEventText = function(content, eventText){
@@ -81,6 +44,27 @@ var renderEventText = function(content, eventText){
   text.innerText = eventText;
   text.id = "event-text";
   content.appendChild(text);
+}
+
+var renderButton = function(content, modal){
+  var close = document.createElement("button");
+  close.id = "special-event-close";
+  close.innerText = "Ok";
+  close.addEventListener("click", function(){
+    modal.id = "special-event-invisible";
+  });
+  document.addEventListener('keypress', (event) => {
+    const keyName = event.key;
+    modal.id = "special-event-invisible";
+  });
+  //
+  // if (gameOver == true) {
+  //   close.innerText = "Restart Game";
+  //   close.addEventListener("click", function(){
+  //     window.location.reload;
+  //   });
+  // }
+  content.appendChild(close);
 }
 
 module.exports = ResultQueueRender;

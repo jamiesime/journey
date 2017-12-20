@@ -8,23 +8,25 @@ FamilyRender.prototype = {
     container = document.getElementById("sidebar-info-content");
     container.innerHTML = "";
     var header = document.createElement("h2");
-    header.innerText = document.getElementById('userInput').value + " family";
-    if(document.getElementById('userInput').value.length === 0){
-      header.innerText = "Generic Family"
-    }
+    header.innerText = "The " + family.name + " Family";
     container.appendChild(header);
     familyContainer = document.createElement("div");
     familyContainer.id = "family-container";
     container.appendChild(familyContainer);
+
     renderEachMember(family, location);
-    var distanceDiv = document.createElement('div');
-    distanceDiv.id = "distance-display"
-    var distanceCovered = document.createElement("p");
-    distanceCovered.innerText = `Distance Travelled: ${kmCovered}km`;
-    distanceDiv.appendChild(distanceCovered);
-    container.appendChild(distanceDiv);
+    renderDistance(container)
   }
 
+}
+
+var renderDistance = function(container){
+  var distanceDiv = document.createElement('div');
+  distanceDiv.id = "distance-display"
+  var distanceCovered = document.createElement("p");
+  distanceCovered.innerText = `Distance Travelled: ${kmCovered}km`;
+  distanceDiv.appendChild(distanceCovered);
+  container.appendChild(distanceDiv);
 }
 
 var renderEachMember = function(family, location){
@@ -38,7 +40,6 @@ var renderEachMember = function(family, location){
     healthBarContainer.id = "health-bar-container";
     var healthBar = document.createElement("div");
     healthBar.id = "health-bar";
-
     healthBar.style.width = member.health + "%";
 
     var sprite = document.createElement("img");
@@ -49,7 +50,7 @@ var renderEachMember = function(family, location){
     var age = document.createElement("p");
     age.innerText = "Age: " + (location.events[0].date - member.born);
     var health = document.createElement("p");
-    health.innerText = "Health: " + member.health;
+    health.innerText = "Health: ";
 
     if(member.health > 95) {
       healthBar.style.borderRadius = "10px";
@@ -62,10 +63,14 @@ var renderEachMember = function(family, location){
     memberBox.appendChild(name);
     memberBox.appendChild(age);
     memberBox.appendChild(health);
+    memberBox.appendChild(healthBarContainer);
     memberFlex.appendChild(memberBox);
-    memberFlex.appendChild(healthBarContainer);
     familyContainer.appendChild(memberFlex);
   })
+}
+
+var renderMemberDetails = function(){
+
 }
 
 module.exports = FamilyRender;

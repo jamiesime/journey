@@ -8,28 +8,35 @@ var ResultQueueRender = require("./views/resultQueueRender");
 var Result = require("./result");
 var LogRender = require("./views/logRender");
 var DiceGameRender = require("./views/diceGameRender");
+var EndGameRender = require("./views/endGameRender");
 
 var locations;
 var redrawRoute = false;
 var eventQueue = [];
 var loggedEvents = [];
 var inDiceGame = false;
+var gameOver = false;
 
 var Interactions = {
   getSelectedChoice: function(choice){
-    checkSpecialEvents(choice);
-    redrawRoute = true;
-    currentPosition = choice.goto[0];
-    currentEvent = choice.goto[1];
-    url = "http://localhost:3000/getlocations";
-    makeRequest(url, requestLocations);
+    console.log(gameOver);
+    gameOver = checkMoneyAndFamily(gameOver);
+    console.log(gameOver);
+    if (gameOver == false){
+      checkSpecialEvents(choice);
+      redrawRoute = true;
+      currentPosition = choice.goto[0];
+      currentEvent = choice.goto[1];
+      url = "http://localhost:3000/getlocations";
+      makeRequest(url, requestLocations);
+      // addSubMenuListeners();
+    }
+    else {
+      endTheGame();
+    }
     var refreshMenu = new SubMenuRender();
-    addSubMenuListeners();
   }
-}
 
-var getLoggedEvents = function(){
-  return loggedEvents;
 }
 
 var makeRequest = function(url, callback){
@@ -62,8 +69,12 @@ var determineLocation = function(locations){
 
   var familyBtn = document.getElementById("family-btn");
   familyBtn.addEventListener("click", function(){
+    setHighlightedButton(this);
     familyInfo = new FamilyRender(family, locations[currentPosition]);
   });
+
+  addSubMenuListeners();
+
   if (redrawRoute){
     var currentlocation  = new MarkerRender(locations[currentPosition]);
     var thisEvent = new TimelineRender(locations[currentPosition]);
@@ -80,15 +91,39 @@ var renderEventChoices = function(event){
 var addSubMenuListeners = function(){
   var eventBtn = document.getElementById("event-btn");
   eventBtn.addEventListener("click", function(){
+    setHighlightedButton(this);
     makeRequest(url, reloadInfoWindow);
   });
 
   var logBtn = document.getElementById("log-btn");
   logBtn.addEventListener("click", function(){
+    setHighlightedButton(this);
     var logInfo = new LogRender(loggedEvents);
   });
 
 }
+
+var setHighlightedButton = function(activeButton){
+  var logBtn = document.getElementById("log-btn");
+  var eventBtn = document.getElementById("event-btn");
+  var familyBtn = document.getElementById("family-btn");
+  var buttons = [];
+  buttons.push(logBtn);
+  buttons.push(eventBtn);
+  buttons.push(familyBtn);
+  buttons.forEach(function(button){
+    if(button.id == activeButton.id){
+      button.classList.add("button-highlight");
+    }
+    else {
+      button.classList.remove("button-highlight");
+    }
+  });
+}
+
+
+
+//ALL RESULT RELATED FUNCTIONS BELOW
 
 var checkSpecialEvents = function(choice){
   if(choice.diceGame != null && choice.diceGame != undefined){
@@ -100,6 +135,11 @@ var checkSpecialEvents = function(choice){
       inDiceGame = false;
       var location = new InfoView(locations[currentPosition]);
     }
+  }
+  if(choice.endGame != null && choice.endGame != undefined){
+    eventText = "This is where we leave the story of the " + family.name + " family, at least for now. \n\n Maybe there will be more to this journey in the future...until then, thanks for playing, bye bye!";
+    header = "THE END";
+    var endGame = new EndGameRender(eventText, header);
   }
   if(choice.memberAdd != null && choice.memberAdd != undefined){
     addFamilyMember(choice.memberAdd);
@@ -174,7 +214,13 @@ var renderNewMember = function(newMember){
 
 var renderRemoveMember = function(removeMember, dbObject){
   var memberObject = removeMember[0];
-  var eventText = memberObject.name + " has died of " + dbObject.source;
+  var eventText;
+  if(dbObject.source != undefined || null){
+    eventText = memberObject.name + " has died of " + dbObject.source;
+  }
+  else {
+    eventText = memberObject.name + " has died of starvation";
+  }
   var imgUrl = "./images/" + memberObject.name + ".png";
   var extraImgUrl = "./images/gravestone.png";
   var result = new Result(memberObject, eventText, imgUrl, extraImgUrl);
@@ -243,6 +289,29 @@ var getRandomInt = function(){
 
 var startDiceGame = function(){
   var diceGame = new DiceGameRender();
+}
+
+var checkMoneyAndFamily = function(gameOver){
+  if (money < 1){
+    return true;
+  }
+  if(family.members.length === 0){
+    return true;
+  }
+  return false;
+}
+
+var endTheGame = function(){
+  if (money < 1){
+    var eventText = "The " + family.name + " family have run of out money! \n\n With no way to support themselves, the family perish."
+    var header = "GAME OVER";
+    var endGame = new EndGameRender(eventText, header);
+  }
+  if(family.members.length === 0){
+    var eventText = "Every member of the " + family.name + " has died. \n\n The journey has reached it's conclusion.";
+    var header = "GAME OVER";
+    var endGame = new EndGameRender(eventText, header);
+  }
 }
 
 module.exports = Interactions;

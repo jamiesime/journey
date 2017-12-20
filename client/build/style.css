@@ -31,6 +31,28 @@ button:active {
   box-shadow: 0px 0px;
 }
 
+.button-highlight{
+  background-color: #f4eadc;
+  box-shadow: 0px 0px;
+}
+
+.button-disabled{
+  color: #232323;
+  background-color: #919191;
+  border: 2px solid black;
+  box-shadow: 0px 0px;
+}
+
+.button-disabled:hover{
+  color: #232323;
+  background-color: #919191;
+  box-shadow: 0px 0px;
+  background: -moz-linear-gradient(top, #919191 0%, #919191 100%);
+  background: -webkit-linear-gradient(top, #919191 0%, #919191 100%);
+  background: linear-gradient(to bottom, #919191 0%, #919191 100%);
+  cursor: pointer;
+}
+
 h2 {
   text-align: center;
 }
@@ -132,6 +154,20 @@ h2 {
   padding: 7%;
 }
 
+
+/* event description text within info window */
+.evntDesc {
+    background-color: #d8d1c3;
+    padding: 10px;
+    border: 2px solid saddleBrown;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.evntDesc {
+  background-color: #e5e0d7;
+}
+
 #sidebar-info:hover {
   background-color: #cec4a7;
 }
@@ -177,10 +213,10 @@ h2 {
 }
 
 .member-box {
-  background-color: #91886E;
+  background-color: #9b9181;
   border-radius: 4px;
   margin: 10px;
-  padding: 5px 5px;
+  padding: 10px 10px;
   min-width: 20%;
   min-height: 30%;
   /*max-width: 25%;*/
@@ -204,15 +240,16 @@ h2 {
 
 #health-bar-container {
   position: relative;
-  background-color: #E68364;
+  background-color: #a84848;
   height: 20px;
   border-radius: 10px;
   width: 110px;
+  margin: 5px 0px;
 }
 
 #health-bar {
   position: absolute;
-  background-color: #8DB255;
+  background-color: #84d666;
   border-radius: 10px 0px 0px 10px;
   height: 20px;
 }
@@ -222,14 +259,32 @@ h2 {
   height: 64px;
 }
 
-#distance-display {
+#sprite-bar {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
+  margin: 10px 0px;
+}
+
+#distance-display {
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+  background-color: #9b9181;
+  border: 2px solid saddleBrown;
+  border-radius: 10px;
+  width: 50%;
+  font-family: "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
+}
+
+#distance-display p {
+
 }
 
 /*SIDEBAR CHOICES*/
 #sidebar-choices {
-  background-color: #91886E;
+  background-color: #9b9181;
   height: 30%;
   width: 100%;
   box-shadow: inset 0 0 10px #4A4436;
@@ -270,33 +325,41 @@ button#option2 {
 
 #logoImg {
   display:flex;
-  justify-content: center;
+  justify-content: flex-end;
+  margin-bottom: 5px;
 }
 
 .modal {
   position: fixed; /* Stay in place */
+  margin: 0 auto;
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
-  height: 100vh;
+  height: 100%;
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
   font-family: "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
 }
 
 /* Modal Content/Box */
 
-.modal-content {
+#modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #fefefe;
+  border-radius: 40px;
   margin: 7% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 4px solid #7F5244;
-  width: 80%; /* Could be more or less, depending on screen size */
+  max-width: 40%; /* Could be more or less, depending on screen size */
   background-image: url(http://api.thumbr.it/whitenoise-600x400.png?background=ECD7B4&noise=626262&density=25&opacity=11);
   animation: blowUpModal .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 }
+
 
 .modal-click {
   position: fixed; /* Stay in place */
@@ -306,23 +369,19 @@ button#option2 {
   animation: deflateModal .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 }
 
-/* event description text within info window */
-.evntDesc {
-    background-color: #d8d1c3;
-    padding: 5px;
-    border: 5px solid #645853;
-    border-radius: 4px;
-}
-
-.evntDesc {
-  background-color: #e5e0d7;
-}
 
 #userInput {
-  border: 1px solid #7F5244;
+  -webkit-appearance:none;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 30px;
+  /*border: 1px solid #7F5244;*/
+  border: none;
+  border-radius: 6px;
+  padding: 5px;
   height: auto;
   outline-color: saddleBrown;
-  font-size: 15px;
+  font-size: 30px;
   font-family: "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
 }
 
@@ -330,6 +389,7 @@ button#option2 {
 
 #special-event-invisible {
   position: fixed;
+  margin: 0 auto;
   z-index: 1;
   top: 0;
   left: 0;
@@ -362,6 +422,7 @@ button#option2 {
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 4px solid #7F5244;
+  border-radius: 20px;
   max-width: 40%; /* Could be more or less, depending on screen size */
   background-image: url(http://api.thumbr.it/whitenoise-600x400.png?background=ECD7B4&noise=626262&density=25&opacity=11);
 }
@@ -376,6 +437,7 @@ button#option2 {
   justify-content: center;
   align-items: center;
   max-width: 80%;
+  min-width: 80%;
 }
 
 #event-sprite{

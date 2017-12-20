@@ -253,14 +253,15 @@ db.locations.insert({
           [
             { text: "Find Gold",
               goto: [10, 1],
-            moneyChange: {value: +10000, source: "GOLD GOLD GOLD"} },
+            moneyChange: {value: +10000, source: "gold"} },
           ]
       },{
           date: 1849,
-          text: "You're rich!  Well done, you win!",
+          text: "You have struck upon a rich vein of gold. After wandering these lands for so many years, things are finally looking up.",
           choices:
           [
-            { text: "End",
+            { text: "End Game",
+              endGame: "end"
               }
           ]
       }
