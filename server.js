@@ -9,8 +9,11 @@ app.use(express.static('client/build'));
 
 var MongoClient = require("mongodb").MongoClient;
 
+var db_details = require("./db_details");
 
-MongoClient.connect("mongodb://localhost:27017/journey", function(err, client){
+
+// MongoClient.connect("mongodb://localhost:27017/journey", function(err, client){
+MongoClient.connect("mongodb://admin:"+db_details.password+"@ds135156.mlab.com:35156/journey", function(err, client){
   if (err){
     return console.log(err);
   }
