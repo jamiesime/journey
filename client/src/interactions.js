@@ -19,9 +19,7 @@ var gameOver = false;
 
 var Interactions = {
   getSelectedChoice: function(choice){
-    console.log(gameOver);
     gameOver = checkMoneyAndFamily(gameOver);
-    console.log(gameOver);
     if (gameOver == false){
       checkSpecialEvents(choice);
       redrawRoute = true;
@@ -65,6 +63,9 @@ var reloadInfoWindow = function(){
 var determineLocation = function(locations){
   if (!inDiceGame){
     var location = new InfoView(locations[currentPosition]);
+  }
+  else {
+    startDiceGame();
   }
 
   var familyBtn = document.getElementById("family-btn");
