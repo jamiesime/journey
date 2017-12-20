@@ -213,7 +213,7 @@ h2 {
 }
 
 .member-box {
-  background-color: #91886E;
+  background-color: #9b9181;
   border-radius: 4px;
   margin: 10px;
   padding: 10px 10px;
@@ -259,10 +259,18 @@ h2 {
   height: 64px;
 }
 
+#sprite-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0px;
+}
+
 #distance-display {
   margin: auto;
   text-align: center;
-  background-color: #91886E;
+  background-color: #9b9181;
   border: 2px solid saddleBrown;
   border-radius: 10px;
   width: 50%;
@@ -275,7 +283,7 @@ h2 {
 
 /*SIDEBAR CHOICES*/
 #sidebar-choices {
-  background-color: #91886E;
+  background-color: #9b9181;
   height: 30%;
   width: 100%;
   box-shadow: inset 0 0 10px #4A4436;
@@ -322,6 +330,7 @@ button#option2 {
 
 .modal {
   position: fixed; /* Stay in place */
+  margin: 0 auto;
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
@@ -379,6 +388,7 @@ button#option2 {
 
 #special-event-invisible {
   position: fixed;
+  margin: 0 auto;
   z-index: 1;
   top: 0;
   left: 0;
@@ -411,6 +421,7 @@ button#option2 {
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 4px solid #7F5244;
+  border-radius: 20px;
   max-width: 40%; /* Could be more or less, depending on screen size */
   background-image: url(http://api.thumbr.it/whitenoise-600x400.png?background=ECD7B4&noise=626262&density=25&opacity=11);
 }

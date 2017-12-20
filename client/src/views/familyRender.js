@@ -10,21 +10,23 @@ FamilyRender.prototype = {
     var header = document.createElement("h2");
     header.innerText = "The " + family.name + " Family";
     container.appendChild(header);
-
-    var distanceDiv = document.createElement('div');
-    distanceDiv.id = "distance-display"
-    var distanceCovered = document.createElement("p");
-    distanceCovered.innerText = `Distance Travelled: ${kmCovered}km`;
-    distanceDiv.appendChild(distanceCovered);
-    container.appendChild(distanceDiv);
-
     familyContainer = document.createElement("div");
     familyContainer.id = "family-container";
     container.appendChild(familyContainer);
-    renderEachMember(family, location);
 
+    renderEachMember(family, location);
+    renderDistance(container)
   }
 
+}
+
+var renderDistance = function(container){
+  var distanceDiv = document.createElement('div');
+  distanceDiv.id = "distance-display"
+  var distanceCovered = document.createElement("p");
+  distanceCovered.innerText = `Distance Travelled: ${kmCovered}km`;
+  distanceDiv.appendChild(distanceCovered);
+  container.appendChild(distanceDiv);
 }
 
 var renderEachMember = function(family, location){
@@ -41,15 +43,7 @@ var renderEachMember = function(family, location){
 
     healthBar.style.width = member.health + "%";
 
-    var sprite = document.createElement("img");
-    sprite.src = "./images/" + member.name + ".png";
-    sprite.classList += "family-sprite";
-    var name = document.createElement("p");
-    name.innerText = member.name;
-    var age = document.createElement("p");
-    age.innerText = "Age: " + (location.events[0].date - member.born);
-    var health = document.createElement("p");
-    health.innerText = "Health: ";
+
 
     if(member.health > 95) {
       healthBar.style.borderRadius = "10px";
@@ -66,6 +60,18 @@ var renderEachMember = function(family, location){
     memberFlex.appendChild(memberBox);
     familyContainer.appendChild(memberFlex);
   })
+}
+
+var renderMemberDetails = function(){
+  var sprite = document.createElement("img");
+  sprite.src = "./images/" + member.name + ".png";
+  sprite.classList += "family-sprite";
+  var name = document.createElement("p");
+  name.innerText = member.name;
+  var age = document.createElement("p");
+  age.innerText = "Age: " + (location.events[0].date - member.born);
+  var health = document.createElement("p");
+  health.innerText = "Health: ";
 }
 
 module.exports = FamilyRender;

@@ -72,15 +72,31 @@ var renderInstructions = function(modal){
   var logo = document.createElement("img");
   logo.src = "./images/yorelogo.png";
   logo.id = "logoImg";
+  modalContent.appendChild(logo);
+  renderFamilySpriteBar(modalContent);
+  var header = document.createElement("h2");
+  header.innerText = "The " + family.name + " Family";
+  modalContent.appendChild(header);
   var modalText = document.createElement("p");
-  modalText.innerText = "The " + family.name + " family are leaving Scotland, in search of greener pastures, for Canada. This is the story of their journey. \n\nThe journey may be hazardous, and the decisions you help them make will determine the fate of the " + family.name + " family.";
+  modalText.innerText = "The " + family.name + " family are leaving Scotland, in search of greener pastures, for Canada. This is the story of their journey. \n\nTheir travels may be hazardous, and you must help them make decisions along the way. The lives of the " + family.name + " family are in your hands.";
   var closeBtn = document.createElement("button");
   closeBtn.id = "modal-close";
   closeBtn.innerText = "Begin";
-  modalContent.appendChild(logo);
   modalContent.appendChild(modalText);
   modalContent.appendChild(closeBtn);
   closeModal(modal);
+}
+
+var renderFamilySpriteBar = function(modalContent){
+  var spriteBar = document.createElement("div");
+  spriteBar.id = "sprite-bar";
+  family.members.forEach(function(member){
+    var memberSprite = document.createElement("img");
+    memberSprite.src = "./images/" + member.name + ".png";
+    memberSprite.classList.add("family-sprite");
+    spriteBar.appendChild(memberSprite);
+  });
+  modalContent.appendChild(spriteBar);
 }
 
 var closeModal = function(modal){
