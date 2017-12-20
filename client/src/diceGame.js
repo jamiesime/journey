@@ -56,6 +56,8 @@ var playerVictory = function(){;
   if (changeMoneyOnce == false){
     money += 10;
     var refresh = new SubMenuRender();
+    rollBtn = document.getElementById("reelroll");
+    rollBtn.style.display = "none";
     changeMoneyOnce = true;
   }
 }
@@ -64,6 +66,8 @@ var computerVictory = function(){
   if (changeMoneyOnce == false){
     money -= 10;
     var refresh = new SubMenuRender();
+    rollBtn = document.getElementById("reelroll");
+    rollBtn.style.display = "none";
     changeMoneyOnce = true;
   }
 }
