@@ -261,16 +261,19 @@ var checkMoneyAndFamily = function(){
     gameOver = true;
     console.log("game over");
     console.log(family.name);
-    var eventText = "The" + family.name + " family have run of out money! \n\n With no way to support themselves, the family perish."
+    var eventText = "The " + family.name + " family have run of out money! \n\n With no way to support themselves, the family perish."
     var gameOver = new Result(null, eventText, null, null);
+    eventQueue.splice(0, eventQueue.length);
     eventQueue.push(gameOver);
     family.members.forEach(function(member){
       removeFamilyMember(member);
     });
   }
   if(family.members.length === 0){
+    gameOver = true;
     var eventText = "Every member of the " + family.name + " has died. \n\n The journey has reached it's conclusion.";
     var gameOver = new Result(null, eventText, null, null);
+    eventQueue.splice(0, eventQueue.length);
     eventQueue.push(gameOver);
   }
 }

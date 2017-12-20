@@ -46,7 +46,7 @@ var renderEachMember = function(family, location){
     var age = document.createElement("p");
     age.innerText = "Age: " + (location.events[0].date - member.born);
     var health = document.createElement("p");
-    health.innerText = "Health: " + member.health;
+    health.innerText = "Health: ";
 
     if(member.health > 95) {
       healthBar.style.borderRadius = "10px";
@@ -59,8 +59,8 @@ var renderEachMember = function(family, location){
     memberBox.appendChild(name);
     memberBox.appendChild(age);
     memberBox.appendChild(health);
+    memberBox.appendChild(healthBarContainer);
     memberFlex.appendChild(memberBox);
-    memberFlex.appendChild(healthBarContainer);
     familyContainer.appendChild(memberFlex);
   })
 }

@@ -180,7 +180,7 @@ h2 {
   background-color: #91886E;
   border-radius: 4px;
   margin: 10px;
-  padding: 5px 5px;
+  padding: 10px 10px;
   min-width: 20%;
   min-height: 30%;
   /*max-width: 25%;*/
@@ -204,15 +204,16 @@ h2 {
 
 #health-bar-container {
   position: relative;
-  background-color: #E68364;
+  background-color: #a84848;
   height: 20px;
   border-radius: 10px;
   width: 110px;
+  margin: 5px 0px;
 }
 
 #health-bar {
   position: absolute;
-  background-color: #8DB255;
+  background-color: #84d666;
   border-radius: 10px 0px 0px 10px;
   height: 20px;
 }

@@ -11,7 +11,7 @@ var MarkerRender = require('./views/markerRender.js')
 
 // these are global variables that need to be accessed in interactions and views to render
 family = [];
-money = 50;
+money = 250;
 currentPosition = 0;
 currentEvent = 0;
 
@@ -130,15 +130,10 @@ var closeModal = function(modal){
   modal.style.display = "block";
   span.onclick = function() {
     modal.className = "modal-click";
-    // modal.style.display = "none";
-    //Following sets up initial family - all users will start with this familyMember
-    initialFamilySetUp();
   }
   window.onclick = function(event) {
     if (event.target == modal) {
       modal.className = "modal-click";
-      //Following sets up initial family - all users will start with this familyMember
-      initialFamilySetUp();
     }
   }
 }
