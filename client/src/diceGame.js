@@ -87,7 +87,7 @@ DiceGame.prototype.computerRollDice = function(){
             var btn = document.getElementById('reelroll');
             btn.disabled = true;
             var victory = document.getElementById('victory');
-            victory.innerText = "Computer wins!"
+            victory.innerText = "Salty Jack wins!"
           }
         }
       }
