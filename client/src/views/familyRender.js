@@ -10,16 +10,19 @@ FamilyRender.prototype = {
     var header = document.createElement("h2");
     header.innerText = "The " + family.name + " Family";
     container.appendChild(header);
-    familyContainer = document.createElement("div");
-    familyContainer.id = "family-container";
-    container.appendChild(familyContainer);
-    renderEachMember(family, location);
+
     var distanceDiv = document.createElement('div');
     distanceDiv.id = "distance-display"
     var distanceCovered = document.createElement("p");
     distanceCovered.innerText = `Distance Travelled: ${kmCovered}km`;
     distanceDiv.appendChild(distanceCovered);
     container.appendChild(distanceDiv);
+
+    familyContainer = document.createElement("div");
+    familyContainer.id = "family-container";
+    container.appendChild(familyContainer);
+    renderEachMember(family, location);
+
   }
 
 }

@@ -26,16 +26,16 @@ var Interactions = {
       currentEvent = choice.goto[1];
       url = "http://localhost:3000/getlocations";
       makeRequest(url, requestLocations);
-      addSubMenuListeners();
+      // addSubMenuListeners();
     }
     var refreshMenu = new SubMenuRender();
   }
 
 }
 
-var getLoggedEvents = function(){
-  return loggedEvents;
-}
+// var getLoggedEvents = function(){
+//   return loggedEvents;
+// }
 
 var makeRequest = function(url, callback){
   request = new XMLHttpRequest();
@@ -67,8 +67,12 @@ var determineLocation = function(locations){
 
   var familyBtn = document.getElementById("family-btn");
   familyBtn.addEventListener("click", function(){
+    setHighlightedButton(this);
     familyInfo = new FamilyRender(family, locations[currentPosition]);
   });
+
+  addSubMenuListeners();
+
   if (redrawRoute){
     var currentlocation  = new MarkerRender(locations[currentPosition]);
     var thisEvent = new TimelineRender(locations[currentPosition]);
@@ -85,15 +89,39 @@ var renderEventChoices = function(event){
 var addSubMenuListeners = function(){
   var eventBtn = document.getElementById("event-btn");
   eventBtn.addEventListener("click", function(){
+    setHighlightedButton(this);
     makeRequest(url, reloadInfoWindow);
   });
 
   var logBtn = document.getElementById("log-btn");
   logBtn.addEventListener("click", function(){
+    setHighlightedButton(this);
     var logInfo = new LogRender(loggedEvents);
   });
 
 }
+
+var setHighlightedButton = function(activeButton){
+  var logBtn = document.getElementById("log-btn");
+  var eventBtn = document.getElementById("event-btn");
+  var familyBtn = document.getElementById("family-btn");
+  var buttons = [];
+  buttons.push(logBtn);
+  buttons.push(eventBtn);
+  buttons.push(familyBtn);
+  buttons.forEach(function(button){
+    if(button.id == activeButton.id){
+      button.classList.add("button-highlight");
+    }
+    else {
+      button.classList.remove("button-highlight");
+    }
+  });
+}
+
+
+
+//ALL RESULT RELATED FUNCTIONS BELOW
 
 var checkSpecialEvents = function(choice){
   if(choice.diceGame != null && choice.diceGame != undefined){
