@@ -1,8 +1,10 @@
+var SubMenuRender = require("./views/submenuRender");
+
 var DiceGame = function(){
   this.sides = 6;
 }
 
-var doneOnce = false;
+var changeMoneyOnce = false;
 
 DiceGame.prototype.rollDice = function(){
   var arr = [1, 2, 3, 4, 5, 6];
@@ -40,7 +42,7 @@ DiceGame.prototype.rollDice = function(){
             var btn = document.getElementById('reelroll');
             btn.disabled = true;
             var victory = document.getElementById('victory');
-            victory.innerText = "You win!"
+            victory.innerText = "You win! Money increased by 10!"
             playerVictory();
           }
         }
@@ -51,16 +53,18 @@ DiceGame.prototype.rollDice = function(){
 }
 
 var playerVictory = function(){;
-  if (doneOnce == false){
+  if (changeMoneyOnce == false){
     money += 10;
-    doneOnce = true;
+    var refresh = new SubMenuRender();
+    changeMoneyOnce = true;
   }
 }
 
 var computerVictory = function(){
-  if (doneOnce == false){
+  if (changeMoneyOnce == false){
     money -= 10;
-    doneOnce = true;
+    var refresh = new SubMenuRender();
+    changeMoneyOnce = true;
   }
 }
 
@@ -99,7 +103,7 @@ DiceGame.prototype.computerRollDice = function(){
             var btn = document.getElementById('reelroll');
             btn.disabled = true;
             var victory = document.getElementById('victory');
-            victory.innerText = "Salty Jack wins!"
+            victory.innerText = "Salty Jack wins! Money decreased by 10"
             computerVictory();
           }
         }
