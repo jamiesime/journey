@@ -138,8 +138,8 @@ var checkSpecialEvents = function(choice){
   }
   if(choice.endGame != null && choice.endGame != undefined){
     eventText = "This is where we leave the story of the " + family.name + " family, at least for now. \n\n Maybe there will be more to this journey in the future...until then, thanks for playing, bye bye!";
-    imgUrl = "";
-    var endGame = new EndGameRender(eventText, imgUrl);
+    header = "THE END";
+    var endGame = new EndGameRender(eventText, header);
   }
   if(choice.memberAdd != null && choice.memberAdd != undefined){
     addFamilyMember(choice.memberAdd);
@@ -304,13 +304,13 @@ var checkMoneyAndFamily = function(gameOver){
 var endTheGame = function(){
   if (money < 1){
     var eventText = "The " + family.name + " family have run of out money! \n\n With no way to support themselves, the family perish."
-    var imgUrl = "";
-    var endGame = new EndGameRender(eventText, imgUrl);
+    var header = "GAME OVER";
+    var endGame = new EndGameRender(eventText, header);
   }
   if(family.members.length === 0){
     var eventText = "Every member of the " + family.name + " has died. \n\n The journey has reached it's conclusion.";
-    var imgUrl = "";
-    var endGame = new EndGameRender(eventText, imgUrl);
+    var header = "GAME OVER";
+    var endGame = new EndGameRender(eventText, header);
   }
 }
 

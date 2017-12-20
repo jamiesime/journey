@@ -11,7 +11,7 @@ var MarkerRender = require('./views/markerRender.js')
 
 // these are global variables that need to be accessed in interactions and views to render
 family = [];
-money = 200;
+money = 50;
 currentPosition = 0;
 currentEvent = 0;
 
