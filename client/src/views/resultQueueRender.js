@@ -25,11 +25,6 @@ ResultQueueRender.prototype = {
         renderImg(subEventContent, thisEvent.extraImgUrl);
       }
 
-      if(thisEvent.member != null || undefined){
-        renderMemberInfo(subEventContent, thisEvent.member, locations);
-      }
-
-
       renderEventText(subEventContent, thisEvent.eventText);
       content.appendChild(subEventContent);
     });
@@ -53,18 +48,6 @@ var renderImg = function(content, imgUrl){
   // eventImg.classList += "family-sprite";
   eventImg.id = "event-sprite";
   content.appendChild(eventImg);
-}
-
-var renderMemberInfo = function(content, member, locations){
-  // var name = document.createElement("p");
-  // name.innerText = member.name;
-  // var age = document.createElement("p");
-  // age.innerText = "Age: " + (locations[currentPosition].events[currentEvent].date - member.born);
-  // var health = document.createElement("p");
-  // health.innerText = "Health: " + member.health;
-  // content.appendChild(name);
-  // content.appendChild(age);
-  // content.appendChild(health);
 }
 
 var renderEventText = function(content, eventText){
