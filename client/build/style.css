@@ -271,7 +271,7 @@ button#option2 {
 #logoImg {
   display:flex;
   justify-content: flex-end;
-  margin-bottom: 50px;
+  margin-bottom: 5px;
 }
 
 .modal {
@@ -289,7 +289,7 @@ button#option2 {
 
 /* Modal Content/Box */
 
-.modal-content {
+#modal-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -329,7 +329,7 @@ button#option2 {
   -webkit-appearance:none;
   width: 50%;
   margin: auto;
-  margin-bottom: 75px;
+  margin-bottom: 30px;
   /*border: 1px solid #7F5244;*/
   border: none;
   border-radius: 6px;

@@ -26,14 +26,22 @@ var app = function(){
   mainMap = new MapWrapper(container, coords, 6);
 
   var modal = document.getElementById('myModal');
+  var nameInput = document.getElementById("userInput")
 
   //OPENING POPUPS
   var nextBtn = document.getElementById("modal-next");
-  nextBtn.addEventListener('keypress', function(){
+  console.log(nextBtn);
+  // nextBtn.addEventListener('keypress', function(){
+  //   nextBtn.disabled = false;
+  // });
+  nameInput.oninput = function(){
     nextBtn.disabled = false;
-  });
+  }
+
   nextBtn.addEventListener('click', function(){
     if(!nextBtn.disabled){
+      var familyName = document.getElementById("userInput").value;
+      initialFamilySetUp(familyName);
       renderInstructions(modal);
     }
   });
@@ -85,7 +93,7 @@ var renderNewMarker = function(locations){
   var currentlocation  = new MarkerRender(locations[currentPosition]);
 };
 
-var initialFamilySetUp = function(){
+var initialFamilySetUp = function(familyName){
   var member1 = new FamilyMember("Alice", 1805, 89);
   var member2 = new FamilyMember("John", 1804, 91);
   var member3 = new FamilyMember("Grace", 1824, 50);
@@ -97,11 +105,27 @@ var initialFamilySetUp = function(){
   initialMembers.push(member3);
   initialMembers.push(member4);
   initialMembers.push(member5);
-  familyName = document.getElementById('userInput').value;
   family = new Family(familyName, initialMembers);
 }
 
 var renderInstructions = function(modal){
+  var modalContent = document.getElementById("modal-content");
+  modalContent.innerHTML = "";
+  var logo = document.createElement("img");
+  logo.src = "./images/yorelogo.png";
+  logo.id = "logoImg";
+  var modalText = document.createElement("p");
+  modalText.innerText = "The " + family.name + " family are leaving Scotland, in search of greener pastures, for Canada. This is the story of their journey. \n\nThe journey may be hazardous, and the decisions you help them make will determine the fate of the " + family.name + " family.";
+  var closeBtn = document.createElement("button");
+  closeBtn.id = "modal-close";
+  closeBtn.innerText = "Begin";
+  modalContent.appendChild(logo);
+  modalContent.appendChild(modalText);
+  modalContent.appendChild(closeBtn);
+  closeModal(modal);
+}
+
+var closeModal = function(modal){
   var span = document.getElementById("modal-close");
   modal.style.display = "block";
   span.onclick = function() {
