@@ -8,7 +8,7 @@ FamilyRender.prototype = {
     container = document.getElementById("sidebar-info-content");
     container.innerHTML = "";
     var header = document.createElement("h2");
-    header.innerText = family.name + " family";
+    header.innerText = "The " + family.name + " Family";
     container.appendChild(header);
     familyContainer = document.createElement("div");
     familyContainer.id = "family-container";

@@ -97,8 +97,8 @@ var initialFamilySetUp = function(familyName){
   var member1 = new FamilyMember("Alice", 1805, 89);
   var member2 = new FamilyMember("John", 1804, 91);
   var member3 = new FamilyMember("Grace", 1824, 50);
-  var member4 = new FamilyMember("Gramps", 1770, 30);
-  var member5 = new FamilyMember("Grammy", 1769, 32);
+  var member4 = new FamilyMember("Alistair", 1770, 30);
+  var member5 = new FamilyMember("Elizabeth", 1769, 32);
   initialMembers = [];
   initialMembers.push(member1);
   initialMembers.push(member2);
