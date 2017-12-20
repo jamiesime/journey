@@ -10,7 +10,7 @@ The result of 6 days work is Yore - an in-browser historical game that puts the 
 
 <img src="https://i.imgur.com/Uppxxux.jpg" alt="Front splash page" width="500px" />
 
-<img src="https://i.imgur.com/LlGbUEP.png" alt="Main game content" width="100% />
+<img src="https://i.imgur.com/LlGbUEP.png" alt="Main game content" width="100%" />
 
 <img src="https://i.imgur.com/Xwh0nvJ.png" alt="Family page" width="500px" />
 
