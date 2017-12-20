@@ -277,6 +277,7 @@ textarea, input, button {
   border: 2px solid saddleBrown;
   border-radius: 10px;
   width: 50%;
+  padding: 0px 5px;
   font-family: "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
 }
 
@@ -289,6 +290,7 @@ textarea, input, button {
   background-color: #9b9181;
   height: 30%;
   width: 100%;
+  z-index: 1;
   box-shadow: inset 0 0 10px #4A4436;
 }
 
@@ -297,7 +299,8 @@ textarea, input, button {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  height:50%
+  flex-wrap: wrap;
+  height: 50%;
 }
 
 #choice-header {
@@ -308,7 +311,7 @@ textarea, input, button {
 }
 
 button.choice {
-  margin: 0;
+  margin: 5px 5px;;
 }
 
 button#advance {
@@ -334,7 +337,7 @@ button#option2 {
 .modal {
   position: fixed; /* Stay in place */
   margin: 0 auto;
-  z-index: 1; /* Sit on top */
+  z-index: 2; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -403,7 +406,7 @@ button#option2 {
 
 #special-event-display {
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 2; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
