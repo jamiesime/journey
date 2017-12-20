@@ -1,7 +1,5 @@
 /*GENERAL STYLING*/
 
-
-
 body {
   margin: 0 auto;
 }
@@ -55,6 +53,10 @@ button:active {
 
 h2 {
   text-align: center;
+}
+
+textarea, input, button {
+  outline: none;
 }
 
 /*TIMELINE SIDEBAR ITEMS*/
