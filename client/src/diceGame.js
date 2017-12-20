@@ -2,6 +2,8 @@ var DiceGame = function(){
   this.sides = 6;
 }
 
+var doneOnce = false;
+
 DiceGame.prototype.rollDice = function(){
   var arr = [1, 2, 3, 4, 5, 6];
   counter=1;
@@ -48,8 +50,18 @@ DiceGame.prototype.rollDice = function(){
   }
 }
 
-var playerVictory = function(){
-  money += 10;
+var playerVictory = function(){;
+  if (doneOnce == false){
+    money += 10;
+    doneOnce = true;
+  }
+}
+
+var computerVictory = function(){
+  if (doneOnce == false){
+    money -= 10;
+    doneOnce = true;
+  }
 }
 
 DiceGame.prototype.computerRollDice = function(){
@@ -88,6 +100,7 @@ DiceGame.prototype.computerRollDice = function(){
             btn.disabled = true;
             var victory = document.getElementById('victory');
             victory.innerText = "Salty Jack wins!"
+            computerVictory();
           }
         }
       }
